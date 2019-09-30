@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        scala_笔记_01 - KO_WHOY
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> don`t worry, be happy </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="/img/avatar.jpg" />
+        </div>
+        <div class="name">
+            <i>ko_whoy</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#定义变量"><span class="toc-text">定义变量</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#遍历"><span class="toc-text">遍历</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#数组"><span class="toc-text">数组</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#List"><span class="toc-text">List</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Tuples"><span class="toc-text">Tuples</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Set"><span class="toc-text">Set</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Map"><span class="toc-text">Map</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#读取文件"><span class="toc-text">读取文件</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> don`t worry, be happy </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        scala_笔记_01
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2019-09-29 15:49:06</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#scala" title="scala">scala</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h5 id="定义变量"><a href="#定义变量" class="headerlink" title="定义变量"></a>定义变量</h5><p>可以使用 val 或者 var 来定义变量</p>
+<p> val 定义的是常变量，类似于java的final变量，一经定义就不可以再重新赋值</p>
+<p> var 定义任意非final变量，可以任意重新赋值</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">scala&gt;</span><span class="bash"> val msg1 = <span class="string">"wojiushiwo"</span></span></span><br><span class="line"></span><br><span class="line">msg1: String = wojiushiwo</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">scala&gt;</span><span class="bash"> msg1 = <span class="string">"wojiushiwo "</span></span></span><br><span class="line"></span><br><span class="line">​            ^</span><br><span class="line">​       error: reassignment to val</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">scala&gt;</span><span class="bash"> var msg2 = <span class="string">"wojiushiwo"</span></span></span><br><span class="line"></span><br><span class="line">msg2: String = wojiushiwo</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">scala&gt;</span><span class="bash"> msg2 = <span class="string">"wojiushiwo "</span></span></span><br><span class="line"></span><br><span class="line">mutated msg2</span><br></pre></td></tr></table></figure>
+
+<p>指定类型的声明变量</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">scala&gt;</span><span class="bash"> val msg3:String = <span class="string">"wojiushiwo3"</span></span></span><br><span class="line"></span><br><span class="line">msg3: String = wojiushiwo3</span><br></pre></td></tr></table></figure>
+
+<h5 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h5><p>读取输入进行打印的几种方式</p>
+<p>方式一: while</p>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> i = <span class="number">0</span></span><br><span class="line"><span class="keyword">while</span> (i &lt; args.length) &#123;</span><br><span class="line">	println(args(i))</span><br><span class="line">  i+=<span class="number">1</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>⚠️  scala中没有 i++ 或者 ++i的操作，scala中访问数组的方式不是[] 而是 ()</p>
+<p>方式二: foreach</p>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">args.foreach(arg =&gt; println(arg))</span><br></pre></td></tr></table></figure>
+
+<p>方式二点五: foreach 简化</p>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">args.foreach(println)</span><br></pre></td></tr></table></figure>
+
+<p>⚠️ 如果一个函数只有一个参数并且只包含一个表达式，那么你无需明确指明参数</p>
+<p>方式三: for</p>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (arg &lt;- args)</span><br><span class="line">	println(arg)</span><br></pre></td></tr></table></figure>
+
+<h5 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h5><p>定义参数的几种方式</p>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">val</span> greetStrings = <span class="keyword">new</span> <span class="type">Array</span>[<span class="type">String</span>](<span class="number">3</span>)</span><br><span class="line">greetStrings(<span class="number">0</span>) = <span class="string">"Hello"</span></span><br><span class="line">greetStrings(<span class="number">1</span>) = <span class="string">","</span></span><br><span class="line">greetStrings(<span class="number">2</span>) = <span class="string">"World"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (i &lt;- <span class="number">0</span> to <span class="number">2</span>)</span><br><span class="line">	print(greetStrings(i))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">val</span> greetStrings = <span class="keyword">new</span> <span class="type">Array</span>[<span class="type">String</span>](<span class="number">3</span>)</span><br><span class="line">greetStrings.update(<span class="number">0</span>, <span class="string">"Hello"</span>)</span><br><span class="line">greetStrings.update(<span class="number">1</span>, <span class="string">","</span>)</span><br><span class="line">greetStrings.update(<span class="number">2</span>, <span class="string">"World"</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (i &lt;- <span class="number">0</span> to <span class="number">2</span>)</span><br><span class="line">	print(greetStrings.apply(i))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">val</span> greetStrings = <span class="type">Array</span>(<span class="string">"Hello"</span>, <span class="string">","</span>, <span class="string">"World"</span>)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">val</span> greetStrings = <span class="type">Array</span>.apply(<span class="string">"Hello"</span>, <span class="string">","</span>, <span class="string">"World"</span>)</span><br></pre></td></tr></table></figure>
+
+<p>⚠️ scala数组的数据是可变的，想要不可变使用 List</p>
+<h5 id="List"><a href="#List" class="headerlink" title="List"></a>List</h5><p>使用 ::: 可以将两个List进行连接</p>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">val</span> oneTwo = <span class="type">List</span>(<span class="number">1</span>, <span class="number">2</span>)</span><br><span class="line"><span class="keyword">val</span> threeFour = <span class="type">List</span>(<span class="number">3</span>, <span class="number">4</span>)</span><br><span class="line"><span class="keyword">val</span> oneTwoThreeFour = oneTwo ::: threeFour</span><br></pre></td></tr></table></figure>
+
+<p>可以使用 :: 来通过向List中添加元素的方式来创建List</p>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">val</span> oneTt = <span class="number">1</span> :: <span class="number">2</span>:: <span class="number">3</span> :: <span class="type">Nil</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">val</span> oneTd = <span class="type">Nil</span>.::(<span class="number">3</span>).::(<span class="number">2</span>).::(<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+
+<p>⚠️ List中的数据只能是同一种数据类型</p>
+<h5 id="Tuples"><a href="#Tuples" class="headerlink" title="Tuples"></a>Tuples</h5><p>可以使用 ._和索引来访问员组的元素 (矢量的分量，注意和数组不同的是，元组的索引从 1 开始)</p>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">val</span> pair = (<span class="number">99</span>, <span class="string">"wojiushiwo"</span>)</span><br><span class="line">print(pair._1)</span><br><span class="line">print(pair._2)</span><br></pre></td></tr></table></figure>
+
+<p>⚠️ 目前 scala支持的元祖最大长度为22，如果需要，可以自己扩展长度</p>
+<h5 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h5><figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> jetSet = <span class="type">Set</span>(<span class="string">"Beoing"</span>, <span class="string">"Airbus"</span>)</span><br><span class="line">jetSet += <span class="string">"Lear"</span></span><br><span class="line">println(jetSet.contains(<span class="string">"Cessna"</span>))</span><br></pre></td></tr></table></figure>
+
+<h5 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h5><figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">val</span> romanNumeral = <span class="type">Map</span>(<span class="number">1</span> -&gt; <span class="string">"I"</span>, <span class="number">2</span> -&gt; <span class="string">"II"</span>, <span class="number">3</span> -&gt; <span class="string">"III"</span>, <span class="number">4</span> -&gt; <span class="string">"IV"</span>, <span class="number">5</span> -&gt; <span class="string">"V"</span>)</span><br><span class="line">print(romanNumeral(<span class="number">4</span>))</span><br></pre></td></tr></table></figure>
+
+<p>#####函数编程风格</p>
+<ul>
+<li>Scala 语言的一个特点是支持面向函数编程</li>
+<li>如果代码中含有 var 类型的变量，这段代码就是传统的指令式编程，如果代码只有 val 变量，这段代码就很有可能是函数式代码，因此学会函数式编程关键是不使用 vars 来编写代码</li>
+<li>能不用 Vars，尽量不用 vars,能不用 mutable变量，尽量不用 mutable变量，能避免函数的副作用，尽量不产生副作用</li>
+</ul>
+<h5 id="读取文件"><a href="#读取文件" class="headerlink" title="读取文件"></a>读取文件</h5><figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> scala.io.<span class="type">Source</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (args.length &gt; <span class="number">0</span>) &#123;</span><br><span class="line">	<span class="keyword">for</span> (line &lt;- <span class="type">Source</span>.fromFile(args(<span class="number">0</span>)).getLines())</span><br><span class="line">		println(line.length + <span class="string">" "</span> + line)</span><br><span class="line">&#125; <span class="keyword">else</span> </span><br><span class="line">		<span class="type">Console</span>.err.println(<span class="string">"Please enter filename"</span>)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> scala.collection.mutable.<span class="type">Map</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ChecksumAccumulator</span></span>&#123;</span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">var</span> sum = <span class="number">0</span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">add</span> </span>(b:<span class="type">Byte</span>):<span class="type">Unit</span> = sum += b</span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">checksum</span></span>():<span class="type">Int</span> = ~(sum &amp; <span class="number">0xFF</span>) + <span class="number">1</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">object</span> <span class="title">ChecksumAccumulator</span></span>&#123;</span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">val</span> cache = <span class="type">Map</span>[<span class="type">String</span>, <span class="type">Int</span>]()</span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">calculate</span></span>(s:<span class="type">String</span>):<span class="type">Int</span> = </span><br><span class="line">  	<span class="keyword">if</span> (cache.contains(s))</span><br><span class="line">  		cache(s)</span><br><span class="line"> 		<span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">var</span> acc = <span class="keyword">new</span> <span class="type">ChecksumAccumulator</span></span><br><span class="line">      <span class="keyword">for</span> (c &lt;- s)</span><br><span class="line">      	acc.add(c.toByte)</span><br><span class="line">    	<span class="keyword">val</span> cs = acc.checksum()</span><br><span class="line">      cache += (s -&gt; cs)</span><br><span class="line">      cs</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">println(<span class="type">ChecksumAccumulator</span>.calculate(<span class="string">"welcome to scala"</span>))</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Scala 的类定义可以有参数，称为类参数</li>
+<li>类定义和主构造函数合并在一起，在定义类的同时也定义了类的主构造函数</li>
+<li>在 Scala 中，可以使用 override 来重载基类定义的方法，必须使用 override 关键字表示重新定义基类中的成员</li>
+<li>Scala 调用这些函数或方法的调用者需要满足的条件; Scala 中解决这个问题的一个方法是使用 require 方法</li>
+</ul>
+<p>scala 辅助构造函数</p>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="/img/donate.jpg" data-src="/img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = ""
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>
