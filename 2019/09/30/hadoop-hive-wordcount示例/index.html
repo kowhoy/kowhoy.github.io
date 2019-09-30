@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        hadoop-hive-wordcount示例 - KO_WHOY
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> don`t worry, be happy </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="/img/avatar.jpg" />
+        </div>
+        <div class="name">
+            <i>ko_whoy</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#一、MapReduce-方式的wordcount"><span class="toc-text">一、MapReduce 方式的wordcount</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#准备数据"><span class="toc-text">准备数据</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#放入hdfs"><span class="toc-text">放入hdfs</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#mapreduce-demo-mapper-py文件"><span class="toc-text">~/mapreduce_demo/mapper.py文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#mapreduce-demo-reducer-py-文件"><span class="toc-text">~/mapreduce_demo/reducer.py 文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#hadoop-任务"><span class="toc-text">hadoop 任务</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#查看统计结果"><span class="toc-text">查看统计结果</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、hive-方式的wordcount"><span class="toc-text">二、hive 方式的wordcount</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#mysql数据"><span class="toc-text">mysql数据</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#hive同步"><span class="toc-text">hive同步</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#hive数据"><span class="toc-text">hive数据</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#hive统计"><span class="toc-text">hive统计</span></a></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> don`t worry, be happy </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        hadoop-hive-wordcount示例
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2019-09-30 17:13:11</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#大数据 hadoop hive" title="大数据 hadoop hive">大数据 hadoop hive</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h3 id="一、MapReduce-方式的wordcount"><a href="#一、MapReduce-方式的wordcount" class="headerlink" title="一、MapReduce 方式的wordcount"></a>一、MapReduce 方式的wordcount</h3><blockquote>
+<p>思路： 使用python代码构建map 和 reduce 两部分，使用hadoop进行执行</p>
+</blockquote>
+<h4 id="准备数据"><a href="#准备数据" class="headerlink" title="准备数据"></a>准备数据</h4><ul>
+<li><p>~/mapreduce_demo/datas/dt_01.txt</p>
+<blockquote>
+<p>wd wd tr tr dt rd dt</p>
+</blockquote>
+</li>
+<li><p>~/mapreduce_demo/datas/dt_02.txt</p>
+<blockquote>
+<p>ev ev ev </p>
+</blockquote>
+<blockquote>
+<p>sds ec ve ec</p>
+</blockquote>
+<blockquote>
+<p>dse de de </p>
+</blockquote>
+</li>
+</ul>
+<h4 id="放入hdfs"><a href="#放入hdfs" class="headerlink" title="放入hdfs"></a>放入hdfs</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hadoop fs -copyFromLocal ~/mapreduce_demo/datas hdfs_in</span><br></pre></td></tr></table></figure>
+
+<h4 id="mapreduce-demo-mapper-py文件"><a href="#mapreduce-demo-mapper-py文件" class="headerlink" title="~/mapreduce_demo/mapper.py文件"></a>~/mapreduce_demo/mapper.py文件</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> line <span class="keyword">in</span> sys.stdin:</span><br><span class="line">    line = line.strip()</span><br><span class="line">    words = line.split()</span><br><span class="line">    <span class="keyword">for</span> word <span class="keyword">in</span> words:</span><br><span class="line">        print(<span class="string">"%s\t%s"</span>%(word, <span class="number">1</span>))</span><br></pre></td></tr></table></figure>
+
+<h4 id="mapreduce-demo-reducer-py-文件"><a href="#mapreduce-demo-reducer-py-文件" class="headerlink" title="~/mapreduce_demo/reducer.py 文件"></a>~/mapreduce_demo/reducer.py 文件</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> operator <span class="keyword">import</span> itemgetter</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line">current_word = <span class="literal">None</span></span><br><span class="line">current_count = <span class="number">0</span></span><br><span class="line">word = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> line <span class="keyword">in</span> sys.stdin:</span><br><span class="line">    line = line.strip()</span><br><span class="line">    word, count = line.split(<span class="string">'\t'</span>, <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        count = int(count)</span><br><span class="line">    <span class="keyword">except</span> ValueError:</span><br><span class="line">        coutinue</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> current_word == word:</span><br><span class="line">        current_count += count</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">    <span class="keyword">if</span> current_word:</span><br><span class="line">        print(<span class="string">"%s\t%s"</span>%(cureent_word, current_count))</span><br><span class="line">    current_count = count</span><br><span class="line">    current_word = word</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> word == current_word:</span><br><span class="line">    print(<span class="string">"%s\t%s"</span>%(current_word, current_count))</span><br></pre></td></tr></table></figure>
+
+<p>⚠️：hadoop会将map之后的数据排序之后在reducer 所以上面代码有个隐藏逻辑【排序】</p>
+<h4 id="hadoop-任务"><a href="#hadoop-任务" class="headerlink" title="hadoop 任务"></a>hadoop 任务</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd $HADOOP_HOME/share/hadoop/tools/lib</span><br><span class="line"></span><br><span class="line">hadoop jar ./hadoop-streaming-*.jar -file ~/mapreduce_demo/mapper.py -mapper ~/mapreduce_demo/mapper.py -file /~/mapreduce_demo/reduce.py -reducer ~/mapreduce_demo/reduce.py -input /user/hdfs_in/ -output /user/hdfs_out</span><br></pre></td></tr></table></figure>
+
+<h4 id="查看统计结果"><a href="#查看统计结果" class="headerlink" title="查看统计结果"></a>查看统计结果</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hadoop fs -cat /user/hdfs_out/part-00000</span><br></pre></td></tr></table></figure>
+
+<h3 id="二、hive-方式的wordcount"><a href="#二、hive-方式的wordcount" class="headerlink" title="二、hive 方式的wordcount"></a>二、hive 方式的wordcount</h3><blockquote>
+<p>思路：首先在mysql中创建数据,通过sqoop将数据同步到hive中，使用hiveSQL统计</p>
+</blockquote>
+<h4 id="mysql数据"><a href="#mysql数据" class="headerlink" title="mysql数据"></a>mysql数据</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> word_count_demo;</span><br><span class="line"></span><br><span class="line">+<span class="comment">------+</span></span><br><span class="line">| word |</span><br><span class="line">+<span class="comment">------+</span></span><br><span class="line">| de   |</span><br><span class="line">| de   |</span><br><span class="line">| a    |</span><br><span class="line">| cc   |</span><br><span class="line">| dd   |</span><br><span class="line">| a    |</span><br><span class="line">| dd   |</span><br><span class="line">+<span class="comment">------+</span></span><br><span class="line">7 rows in <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br></pre></td></tr></table></figure>
+
+<h4 id="hive同步"><a href="#hive同步" class="headerlink" title="hive同步"></a>hive同步</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sqoop import --connect "jdbc:mysql://localhost:3306/hive_demo?zeroDateTimeBeHavior=CONVERT_TO_NULL" --username hive -P --table word_count_demo --hive-import -m 1</span><br></pre></td></tr></table></figure>
+
+<h4 id="hive数据"><a href="#hive数据" class="headerlink" title="hive数据"></a>hive数据</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">    <span class="keyword">select</span> * <span class="keyword">from</span> word_count_demo;</span><br><span class="line"></span><br><span class="line">OK</span><br><span class="line">de</span><br><span class="line">de</span><br><span class="line">a</span><br><span class="line">cc</span><br><span class="line">dd</span><br><span class="line">a</span><br><span class="line">dd</span><br><span class="line">Time taken: 1.724 seconds, Fetched: 7 row(s)</span><br></pre></td></tr></table></figure>
+
+<h4 id="hive统计"><a href="#hive统计" class="headerlink" title="hive统计"></a>hive统计</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">    <span class="keyword">select</span> <span class="keyword">count</span>(*) <span class="keyword">as</span> <span class="keyword">num</span>, word <span class="keyword">from</span> word_count_demo <span class="keyword">group</span> <span class="keyword">by</span> word;</span><br><span class="line"></span><br><span class="line">Total MapReduce CPU Time Spent: 0 msec</span><br><span class="line">OK</span><br><span class="line">2	a</span><br><span class="line">1	cc</span><br><span class="line">2	dd</span><br><span class="line">2	de</span><br><span class="line">Time taken: 20.697 seconds, Fetched: 4 row(s)</span><br></pre></td></tr></table></figure>
+
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="/img/donate.jpg" data-src="/img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = ""
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>
