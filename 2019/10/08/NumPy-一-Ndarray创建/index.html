@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        NumPy(一):Ndarray创建 - KO_WHOY
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> don`t worry, be happy </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="/img/avatar.jpg" />
+        </div>
+        <div class="name">
+            <i>ko_whoy</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#NumPy-Ndarray-对象"><span class="toc-text">NumPy Ndarray 对象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#定义"><span class="toc-text">定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#组成"><span class="toc-text">组成</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#创建"><span class="toc-text">创建</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#NumPy数组属性"><span class="toc-text">NumPy数组属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#NumPy-创建数组"><span class="toc-text">NumPy 创建数组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#NumPy-从已有的数组创建数组"><span class="toc-text">NumPy 从已有的数组创建数组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#NumPy从数值范围创建数组"><span class="toc-text">NumPy从数值范围创建数组</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> don`t worry, be happy </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        NumPy(一):Ndarray创建
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2019-10-08 15:28:25</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#python NumPy" title="python NumPy">python NumPy</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h2 id="NumPy-Ndarray-对象"><a href="#NumPy-Ndarray-对象" class="headerlink" title="NumPy Ndarray 对象"></a>NumPy Ndarray 对象</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><blockquote>
+<p>Ndarray是N维数组对象， 是<code>同类型</code>数据集合， 每个元素在内存中的大小相同</p>
+</blockquote>
+<h3 id="组成"><a href="#组成" class="headerlink" title="组成"></a>组成</h3><blockquote>
+<ul>
+<li>一个指向数据的指针(内存或者内存映射文件中的一块数据)</li>
+<li>数据类型或者dtype, 规定了元素的大小</li>
+<li>一个表示数组形状(shape)的元组</li>
+<li>一个跨度元组（stride），其中的整数指的是为了前进到当前维度下一个元素需要”跨过”的字节数</li>
+</ul>
+</blockquote>
+<h3 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h3><p>使用numpy的array函数</p>
+<p><code>numpy.array(object, dtype=None, copy=True, order=None, subok=False, ndmin=0)</code></p>
+<blockquote>
+<ul>
+<li>object 数组或者嵌套数列</li>
+<li>dtype 数据类型， 可选</li>
+<li>copy 对象是否需要复制，可选</li>
+<li>order 创建数组的样式，C为行方向，F为列方向，A为任意方向（默认）</li>
+<li>subok 默认返回一个与基类类型一致的数组</li>
+<li>ndmin 指定生成数组的最小维度</li>
+</ul>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">1</span>]: <span class="keyword">import</span> numpy <span class="keyword">as</span> np                                                                          </span><br><span class="line"></span><br><span class="line">In [<span class="number">2</span>]: np.array([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>])                                                                         </span><br><span class="line">Out[<span class="number">2</span>]: array([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>])</span><br><span class="line"></span><br><span class="line">In [<span class="number">3</span>]: np.array([[<span class="number">1</span>,<span class="number">2</span>],[<span class="number">3</span>,<span class="number">4</span>]])                                                                     </span><br><span class="line">Out[<span class="number">3</span>]: </span><br><span class="line">array([[<span class="number">1</span>, <span class="number">2</span>],</span><br><span class="line">       [<span class="number">3</span>, <span class="number">4</span>]])</span><br><span class="line"></span><br><span class="line">In [<span class="number">4</span>]: np.array([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>], ndmin=<span class="number">3</span>)                                                              </span><br><span class="line">Out[<span class="number">4</span>]: array([[[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]]])</span><br><span class="line"></span><br><span class="line">In [<span class="number">5</span>]: np.array([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>], dtype=complex)                                                            </span><br><span class="line">Out[<span class="number">5</span>]: array([<span class="number">1.</span>+<span class="number">0.j</span>, <span class="number">2.</span>+<span class="number">0.j</span>, <span class="number">3.</span>+<span class="number">0.j</span>])</span><br></pre></td></tr></table></figure>
+
+<h2 id="NumPy数组属性"><a href="#NumPy数组属性" class="headerlink" title="NumPy数组属性"></a>NumPy数组属性</h2><ul>
+<li><p>ndarray.ndim  [秩，轴的数量或者维度的数量]</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">a = np.arange(<span class="number">24</span>)</span><br><span class="line">print(a.ndim) <span class="comment"># 1</span></span><br><span class="line">b = a.reshape(<span class="number">2</span>, <span class="number">4</span>, <span class="number">3</span>)</span><br><span class="line">print(b.ndim) <span class="comment"># 3</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>ndarray.shape [数组的维度，对于矩阵，n 行 m 列]</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">27</span>]: <span class="keyword">import</span> numpy <span class="keyword">as</span> np                                                                         </span><br><span class="line"></span><br><span class="line">In [<span class="number">28</span>]: a = np.array([[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>], [<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]])                                                           </span><br><span class="line"></span><br><span class="line">In [<span class="number">29</span>]: a.shape                                                                                    </span><br><span class="line">Out[<span class="number">29</span>]: (<span class="number">2</span>, <span class="number">3</span>)</span><br><span class="line"></span><br><span class="line">In [<span class="number">30</span>]: a.shape = (<span class="number">3</span>,<span class="number">2</span>)                                                                            </span><br><span class="line"></span><br><span class="line">In [<span class="number">31</span>]: a                                                                                          </span><br><span class="line">Out[<span class="number">31</span>]: </span><br><span class="line">array([[<span class="number">1</span>, <span class="number">2</span>],</span><br><span class="line">       [<span class="number">3</span>, <span class="number">4</span>],</span><br><span class="line">       [<span class="number">5</span>, <span class="number">6</span>]])</span><br><span class="line"></span><br><span class="line">In [<span class="number">32</span>]: a                                                                                          </span><br><span class="line">Out[<span class="number">32</span>]: </span><br><span class="line">array([[<span class="number">1</span>, <span class="number">2</span>],</span><br><span class="line">       [<span class="number">3</span>, <span class="number">4</span>],</span><br><span class="line">       [<span class="number">5</span>, <span class="number">6</span>]])</span><br><span class="line"></span><br><span class="line">In [<span class="number">33</span>]: a.reshape(<span class="number">2</span>, <span class="number">3</span>)                                                                            </span><br><span class="line">Out[<span class="number">33</span>]: </span><br><span class="line">array([[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>],</span><br><span class="line">       [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]])</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>ndarray.size [数组元素的总个数，相当于 .shape 中 n*m 的值]</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">35</span>]: <span class="keyword">import</span> numpy <span class="keyword">as</span> np                                                                         </span><br><span class="line"></span><br><span class="line">In [<span class="number">36</span>]: a = np.array([[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]])                                                            </span><br><span class="line"></span><br><span class="line">In [<span class="number">37</span>]: a.size                                                                                     </span><br><span class="line">Out[<span class="number">37</span>]: <span class="number">6</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>ndarray.dtype [对象的元素类型]</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">35</span>]: <span class="keyword">import</span> numpy <span class="keyword">as</span> np                                                                         </span><br><span class="line"></span><br><span class="line">In [<span class="number">36</span>]: a = np.array([[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]])                      </span><br><span class="line"></span><br><span class="line">In [<span class="number">38</span>]: a.dtype                                                                                    </span><br><span class="line">Out[<span class="number">38</span>]: dtype(<span class="string">'int64'</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>ndarray.itemsize [对象中每个元素的大小，以字节为单位]</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">39</span>]: <span class="keyword">import</span> numpy <span class="keyword">as</span> np                                                                                                 </span><br><span class="line">In [<span class="number">40</span>]: x = np.array([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>], dtype=np.int8)                                                   </span><br><span class="line"></span><br><span class="line">In [<span class="number">41</span>]: x.itemsize                                                                                 </span><br><span class="line">Out[<span class="number">41</span>]: <span class="number">1</span></span><br><span class="line"></span><br><span class="line">In [<span class="number">42</span>]: y = np.array([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>], dtype=np.float64)                                                </span><br><span class="line"></span><br><span class="line">In [<span class="number">43</span>]: y.itemsize                                                                                 </span><br><span class="line">Out[<span class="number">43</span>]: <span class="number">8</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>ndarray.flags [对象的内存信息]</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">44</span>]: x.flags                                                                                    </span><br><span class="line">Out[<span class="number">44</span>]: </span><br><span class="line">  C_CONTIGUOUS : <span class="literal">True</span></span><br><span class="line">  F_CONTIGUOUS : <span class="literal">True</span></span><br><span class="line">  OWNDATA : <span class="literal">True</span></span><br><span class="line">  WRITEABLE : <span class="literal">True</span></span><br><span class="line">  ALIGNED : <span class="literal">True</span></span><br><span class="line">  WRITEBACKIFCOPY : <span class="literal">False</span></span><br><span class="line">  UPDATEIFCOPY : <span class="literal">False</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="NumPy-创建数组"><a href="#NumPy-创建数组" class="headerlink" title="NumPy 创建数组"></a>NumPy 创建数组</h2><p><code>numpy.empty(shape, dtype=float, sort=&#39;C&#39;)</code></p>
+<blockquote>
+<ul>
+<li>shape 数组形状</li>
+<li>dtype 数据类型</li>
+<li>sort  有”C”和”F”两个选项,分别代表，行优先和列优先，在计算机内存中的存储元素的顺序</li>
+</ul>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">45</span>]: x = np.empty([<span class="number">3</span>, <span class="number">2</span>], dtype=int)                                                            </span><br><span class="line"></span><br><span class="line">In [<span class="number">46</span>]: x                                                                                          </span><br><span class="line">Out[<span class="number">46</span>]: </span><br><span class="line">array([[<span class="number">12</span>,  <span class="number">0</span>],</span><br><span class="line">       [ <span class="number">0</span>,  <span class="number">0</span>],</span><br><span class="line">       [ <span class="number">0</span>,  <span class="number">0</span>]])</span><br><span class="line"></span><br><span class="line">In [<span class="number">47</span>]: x = np.empty([<span class="number">3</span>, <span class="number">2</span>], dtype=float)                                                          </span><br><span class="line"></span><br><span class="line">In [<span class="number">48</span>]: x                                                                                          </span><br><span class="line">Out[<span class="number">48</span>]: </span><br><span class="line">array([[<span class="number">0.</span>, <span class="number">0.</span>],</span><br><span class="line">       [<span class="number">0.</span>, <span class="number">0.</span>],</span><br><span class="line">       [<span class="number">0.</span>, <span class="number">0.</span>]])</span><br></pre></td></tr></table></figure>
+
+<p><code>numpy.zeros(shape, dtype = float, order = &#39;C&#39;)</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">53</span>]: np.zeros([<span class="number">1</span>,<span class="number">2</span>])                                                                            </span><br><span class="line">Out[<span class="number">53</span>]: array([[<span class="number">0.</span>, <span class="number">0.</span>]])</span><br><span class="line"></span><br><span class="line">In [<span class="number">54</span>]: np.zeros((<span class="number">2</span>,<span class="number">1</span>))                                                                            </span><br><span class="line">Out[<span class="number">54</span>]: </span><br><span class="line">array([[<span class="number">0.</span>],</span><br><span class="line">       [<span class="number">0.</span>]])</span><br><span class="line"></span><br><span class="line">In [<span class="number">55</span>]: np.zeros((<span class="number">5</span>,), dtype=np.int)                                                               </span><br><span class="line">Out[<span class="number">55</span>]: array([<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>])</span><br><span class="line"></span><br><span class="line">In [<span class="number">56</span>]: np.zeros((<span class="number">5</span>), dtype=np.int)                                                                </span><br><span class="line">Out[<span class="number">56</span>]: array([<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>])</span><br></pre></td></tr></table></figure>
+
+<p><code>numpy.ones(shape, dtype = None, order = &#39;C&#39;)</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">57</span>]: np.ones((<span class="number">5</span>))                                                                               </span><br><span class="line">Out[<span class="number">57</span>]: array([<span class="number">1.</span>, <span class="number">1.</span>, <span class="number">1.</span>, <span class="number">1.</span>, <span class="number">1.</span>])</span><br><span class="line"></span><br><span class="line">In [<span class="number">58</span>]: np.ones((<span class="number">5</span>), dtype=int)                                                                    </span><br><span class="line">Out[<span class="number">58</span>]: array([<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>])</span><br></pre></td></tr></table></figure>
+
+<h2 id="NumPy-从已有的数组创建数组"><a href="#NumPy-从已有的数组创建数组" class="headerlink" title="NumPy 从已有的数组创建数组"></a>NumPy 从已有的数组创建数组</h2><p><code>numpy.asarray(a, dtype= None, order=None)</code></p>
+<blockquote>
+<p>numpy.asarray 类似 numpy.array，但 numpy.asarray 参数只有三个，比 numpy.array 少两个。</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">59</span>]: <span class="keyword">import</span> numpy <span class="keyword">as</span> np                                                                         </span><br><span class="line"></span><br><span class="line">In [<span class="number">60</span>]: x = [[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>], [<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]]                                                                     </span><br><span class="line"></span><br><span class="line">In [<span class="number">61</span>]: np.asarray(x)                                                                              </span><br><span class="line">Out[<span class="number">61</span>]: </span><br><span class="line">array([[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>],</span><br><span class="line">       [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]])</span><br><span class="line"></span><br><span class="line">In [<span class="number">64</span>]: np.asarray(x, dtype=np.float64)                                                            </span><br><span class="line">Out[<span class="number">64</span>]: </span><br><span class="line">array([[<span class="number">1.</span>, <span class="number">2.</span>, <span class="number">3.</span>],</span><br><span class="line">       [<span class="number">4.</span>, <span class="number">5.</span>, <span class="number">6.</span>]])</span><br></pre></td></tr></table></figure>
+
+<p><code>numpy.frombuffer(buffer, dtype = float, count = -1, offset = 0)</code></p>
+<blockquote>
+<ul>
+<li>numpy.frombuffer 用于实现动态数组</li>
+<li>numpy.frombuffer 接受 buffer 输入参数，以流的形式读入转化成 ndarray 对象</li>
+</ul>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">72</span>]: <span class="keyword">import</span> numpy <span class="keyword">as</span> np                                                                         </span><br><span class="line"></span><br><span class="line">In [<span class="number">73</span>]: s = <span class="string">b'Hello World'</span>                                                                         </span><br><span class="line"></span><br><span class="line">In [<span class="number">74</span>]: np.frombuffer(s, dtype=<span class="string">'S1'</span>)                                                               </span><br><span class="line">Out[<span class="number">74</span>]: </span><br><span class="line">array([<span class="string">b'H'</span>, <span class="string">b'e'</span>, <span class="string">b'l'</span>, <span class="string">b'l'</span>, <span class="string">b'o'</span>, <span class="string">b' '</span>, <span class="string">b'W'</span>, <span class="string">b'o'</span>, <span class="string">b'r'</span>, <span class="string">b'l'</span>, <span class="string">b'd'</span>],</span><br><span class="line">      dtype=<span class="string">'|S1'</span>)</span><br></pre></td></tr></table></figure>
+
+<p><code>numpy.fromiter(iterable, dtype, count=-1)</code></p>
+<blockquote>
+<p>numpy.fromiter 方法从可迭代对象中建立 ndarray 对象，返回一维数组</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">75</span>]: <span class="keyword">import</span> numpy <span class="keyword">as</span> np                                                                         </span><br><span class="line"></span><br><span class="line">In [<span class="number">76</span>]: list = range(<span class="number">5</span>)                                                                            </span><br><span class="line"></span><br><span class="line">In [<span class="number">77</span>]: x = np.fromiter(list, dtype=float)                                                         </span><br><span class="line"></span><br><span class="line">In [<span class="number">78</span>]: x                                                                                          </span><br><span class="line">Out[<span class="number">78</span>]: array([<span class="number">0.</span>, <span class="number">1.</span>, <span class="number">2.</span>, <span class="number">3.</span>, <span class="number">4.</span>])</span><br><span class="line"></span><br><span class="line">In [<span class="number">79</span>]: str = <span class="string">'string'</span>                                                                             </span><br><span class="line">In [<span class="number">81</span>]: y = np.fromiter(str, dtype=<span class="string">'S1'</span>)                                                           </span><br><span class="line"></span><br><span class="line">In [<span class="number">82</span>]: y                                                                                          </span><br><span class="line">Out[<span class="number">82</span>]: array([<span class="string">b's'</span>, <span class="string">b't'</span>, <span class="string">b'r'</span>, <span class="string">b'i'</span>, <span class="string">b'n'</span>, <span class="string">b'g'</span>], dtype=<span class="string">'|S1'</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="NumPy从数值范围创建数组"><a href="#NumPy从数值范围创建数组" class="headerlink" title="NumPy从数值范围创建数组"></a>NumPy从数值范围创建数组</h2><p><code>numpy.arange(start, stop, step, dtype)</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">83</span>]: <span class="keyword">import</span> numpy <span class="keyword">as</span> np                                                                         </span><br><span class="line">In [<span class="number">84</span>]: x = np.arange(<span class="number">5</span>)                                                                           </span><br><span class="line"></span><br><span class="line">In [<span class="number">85</span>]: x                                                                                          </span><br><span class="line">Out[<span class="number">85</span>]: array([<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>])</span><br><span class="line"></span><br><span class="line">In [<span class="number">86</span>]: np.arange(<span class="number">2</span>, <span class="number">10</span>, <span class="number">2</span>)                                                                        </span><br><span class="line">Out[<span class="number">86</span>]: array([<span class="number">2</span>, <span class="number">4</span>, <span class="number">6</span>, <span class="number">8</span>])</span><br></pre></td></tr></table></figure>
+
+<p><code>numpy.linspace(start, stop, num=50, endpoint=True, retstep=False, dtype=None)</code> </p>
+<blockquote>
+<ul>
+<li>生成等差数列</li>
+<li>start, stop 起止值</li>
+<li>num 生成样本数量</li>
+<li>endpoint 为true包含stop,反之不包含</li>
+<li>retstep 如果为 True 时，生成的数组中会显示间距，反之不显示</li>
+</ul>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">87</span>]: <span class="keyword">import</span> numpy <span class="keyword">as</span> np                                                                         </span><br><span class="line"></span><br><span class="line">In [<span class="number">88</span>]: np.linspace(<span class="number">1</span>,<span class="number">10</span>, <span class="number">10</span>)                                                                      </span><br><span class="line">Out[<span class="number">88</span>]: array([ <span class="number">1.</span>,  <span class="number">2.</span>,  <span class="number">3.</span>,  <span class="number">4.</span>,  <span class="number">5.</span>,  <span class="number">6.</span>,  <span class="number">7.</span>,  <span class="number">8.</span>,  <span class="number">9.</span>, <span class="number">10.</span>])</span><br><span class="line"></span><br><span class="line">In [<span class="number">89</span>]: np.linspace(<span class="number">9</span>,<span class="number">10</span>, <span class="number">10</span>)                                                                      </span><br><span class="line">Out[<span class="number">89</span>]: </span><br><span class="line">array([ <span class="number">9.</span>        ,  <span class="number">9.11111111</span>,  <span class="number">9.22222222</span>,  <span class="number">9.33333333</span>,  <span class="number">9.44444444</span>,</span><br><span class="line">        <span class="number">9.55555556</span>,  <span class="number">9.66666667</span>,  <span class="number">9.77777778</span>,  <span class="number">9.88888889</span>, <span class="number">10.</span>        ])</span><br><span class="line"></span><br><span class="line">In [<span class="number">90</span>]: np.linspace(<span class="number">9</span>,<span class="number">10</span>, <span class="number">10</span>, endpoint=<span class="literal">False</span>)                                                      </span><br><span class="line">Out[<span class="number">90</span>]: array([<span class="number">9.</span> , <span class="number">9.1</span>, <span class="number">9.2</span>, <span class="number">9.3</span>, <span class="number">9.4</span>, <span class="number">9.5</span>, <span class="number">9.6</span>, <span class="number">9.7</span>, <span class="number">9.8</span>, <span class="number">9.9</span>])</span><br><span class="line"></span><br><span class="line">In [<span class="number">91</span>]: np.linspace(<span class="number">9</span>,<span class="number">10</span>, <span class="number">10</span>, endpoint=<span class="literal">False</span>, retstep=<span class="literal">True</span>)                                        </span><br><span class="line">Out[<span class="number">91</span>]: (array([<span class="number">9.</span> , <span class="number">9.1</span>, <span class="number">9.2</span>, <span class="number">9.3</span>, <span class="number">9.4</span>, <span class="number">9.5</span>, <span class="number">9.6</span>, <span class="number">9.7</span>, <span class="number">9.8</span>, <span class="number">9.9</span>]), <span class="number">0.1</span>)</span><br></pre></td></tr></table></figure>
+
+<p><code>numpy.logspace(start, stop, num=50, endpoint=True, base=10.0, dtype=None)</code></p>
+<blockquote>
+<ul>
+<li>创建一个等比数列</li>
+<li>start  序列的起始值为：base ** start</li>
+<li>stop 序列的终止值为：base ** stop</li>
+<li>num 生成样本数量 默认50</li>
+<li>endpoint 为true包含stop,反之不包含</li>
+<li>base log的底数</li>
+<li>dtype</li>
+</ul>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">92</span>]: <span class="keyword">import</span> numpy <span class="keyword">as</span> np                                                                         </span><br><span class="line"></span><br><span class="line">In [<span class="number">93</span>]: np.logspace(<span class="number">1.0</span>, <span class="number">2.0</span>, num=<span class="number">10</span>)                                                              </span><br><span class="line">Out[<span class="number">93</span>]: </span><br><span class="line">array([ <span class="number">10.</span>        ,  <span class="number">12.91549665</span>,  <span class="number">16.68100537</span>,  <span class="number">21.5443469</span> ,</span><br><span class="line">        <span class="number">27.82559402</span>,  <span class="number">35.93813664</span>,  <span class="number">46.41588834</span>,  <span class="number">59.94842503</span>,</span><br><span class="line">        <span class="number">77.42636827</span>, <span class="number">100.</span>        ])</span><br><span class="line"></span><br><span class="line">In [<span class="number">94</span>]: np.logspace(<span class="number">0</span>, <span class="number">9</span>, <span class="number">10</span>, base=<span class="number">2</span>)                                                              </span><br><span class="line">Out[<span class="number">94</span>]: array([  <span class="number">1.</span>,   <span class="number">2.</span>,   <span class="number">4.</span>,   <span class="number">8.</span>,  <span class="number">16.</span>,  <span class="number">32.</span>,  <span class="number">64.</span>, <span class="number">128.</span>, <span class="number">256.</span>, <span class="number">512.</span>])</span><br></pre></td></tr></table></figure>
+
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="/img/donate.jpg" data-src="/img/donate.jpg">
+        <p>  </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = ""
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>
