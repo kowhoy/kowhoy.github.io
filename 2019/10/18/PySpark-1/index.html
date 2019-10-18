@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        PySpark_1 - KO_WHOY
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> don`t worry, be happy </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="/img/avatar.jpg" />
+        </div>
+        <div class="name">
+            <i>ko_whoy</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#了解Spark"><span class="toc-text">了解Spark</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#弹性分布式数据集"><span class="toc-text">弹性分布式数据集</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#一-RDD的内部运行方式"><span class="toc-text">一.  RDD的内部运行方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二-创建RDD"><span class="toc-text">二. 创建RDD</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三-全局作用域和局部作用域"><span class="toc-text">三. 全局作用域和局部作用域</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#四-转换"><span class="toc-text">四. 转换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#五-操作"><span class="toc-text">五. 操作</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DataFrame"><span class="toc-text">DataFrame</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#创建DataFrame"><span class="toc-text">创建DataFrame</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#简单的DataFrame查询"><span class="toc-text">简单的DataFrame查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RDD的交互操作"><span class="toc-text">RDD的交互操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#利用DataFrame-API查询"><span class="toc-text">利用DataFrame API查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#利用SQL查询"><span class="toc-text">利用SQL查询</span></a></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> don`t worry, be happy </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        PySpark_1
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2019-10-18 18:22:09</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#PySpark" title="PySpark">PySpark</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h2 id="了解Spark"><a href="#了解Spark" class="headerlink" title="了解Spark"></a>了解Spark</h2><p><code>Spark是开源的分布式查询和处理引擎，具有MapReduce的灵活性和可扩展性，但是速度更快，当数据存储在内存中，速度比hadoop快100倍，存储在磁盘中快10倍。</code></p>
+<ul>
+<li><p>任何Spark应用程序都会分离主节点上的单一驱动进程(可以包含多个作业)，然后将执行进程(包含多个任务)分配到多个工作节点。<br><code>任何工作节点都可以执行来自不同作业的多个任务</code><br><img src="spark_notes_imgs/im1.png" alt="i1"></p>
+</li>
+<li><p>弹性分布式数据集(RDD)<br>  弹性分布式数据集是<code>不可变</code>Java虚拟机(JVM)对象的<code>分布式集合</code>，Spark就是围绕RDD构建的。</p>
+<ol>
+<li>RDD的计算可以使用到缓存和存在内存的模式进行，速度要比hadoop快一个数量级；</li>
+<li>RDD提供一些粗粒度的数据转换(如 map/reduce/filter)，保持了Hadoop的灵活性和扩展性；</li>
+<li>RDD以并行方式应用和记录数据转换，提高了速度和容错力；</li>
+</ol>
+</li>
+</ul>
+<ol start="4">
+<li><p>RDD提供了数据沿袭，保护了RDD避免数据丢失，如果一个RDD分区丢失，会有足够的信息重新创建丢失分区。</p>
+<p> RDD两组并行操作：<code>转换(transformation)</code> 和 <code>动作(action)</code></p>
+<ol>
+<li><p>transformation: 在已经存在的RDD基础上创建新的RDD，返回指向新RDD的指针，是惰性(lazy)操作，即：不会立即计算结果，只有遇到action，并且需要将结果返回给驱动程序时，才会计算转换；</p>
+</li>
+<li><p>action: 在执行相关的操作之后返回结果</p>
+</li>
+</ol>
+</li>
+</ol>
+<ul>
+<li>DataFrame<br>  DataFrame像RDD一样，是分布在集群的节点中的不可变的数据集合，不同的是，DataFrame中的数据是以命名列的方式组织的，与pandas中的DataFrame、关系型数据库表类似<br>  作用：使大型数据集的处理更加容易；与Java和Scala相比，Python中的RDD非常慢，DataFrame的引入使性能在各语言中保持稳定。</li>
+</ul>
+<ul>
+<li>Dataset<br>  DataSet是分布式的数据集合，Dataset提供了<code>强类型</code>支持，也是在RDD的每行数据加了类型约束。DataSet是在Spark1.6中添加的新的接口。它集中了RDD的优点（强类型和可以用强大lambda函数）以及使用了Spark SQL优化的执行引擎。PySpark目前不支持，因为Python不是一种类型安全的语言。</li>
+</ul>
+<p><img src="spark_notes_imgs/im2.png" alt="数据集"></p>
+<p><code>在Spark2.0中，DataFrame和DataSet进行了统一，DataFrame是未类型化的DataSet的一个别名</code><br><code>DataFrame = DataSet[Row]</code></p>
+<ul>
+<li><p>Catalyst优化器</p>
+</li>
+<li><p>钨丝计划</p>
+</li>
+<li><p>SparkSession<br>  在过去，会使用SparkCond, SparkContext, SQLContext, HiveContext来分别执行配置 Spark、SQL、Hive等环境的Spark查询。SparkSession本质是这些环境的组合，包含StreamingContext</p>
+</li>
+<li><p>Tungsten Phase 2</p>
+</li>
+<li><p>结构化流</p>
+</li>
+<li><p>连续应用</p>
+</li>
+</ul>
+<hr>
+<h2 id="弹性分布式数据集"><a href="#弹性分布式数据集" class="headerlink" title="弹性分布式数据集"></a>弹性分布式数据集</h2><h3 id="一-RDD的内部运行方式"><a href="#一-RDD的内部运行方式" class="headerlink" title="一.  RDD的内部运行方式"></a>一.  RDD的内部运行方式</h3><ul>
+<li>RDD是并行操作，Spark工作原理的最大优势是：每个转换并行执行可以大大提高速度。</li>
+<li>数据集转换通常为惰性</li>
+</ul>
+<h3 id="二-创建RDD"><a href="#二-创建RDD" class="headerlink" title="二. 创建RDD"></a>二. 创建RDD</h3><p>有两种方式创建RDD，分别为<code>parallelize</code> 和 <code>textFile</code></p>
+<ul>
+<li>parallelize 将list或者array转化为RDD</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data = sc.parallelize([<span class="string">'A'</span>, <span class="string">'B'</span>, <span class="string">'C'</span>])</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>textFile 从文件系统读取文件转化为RDD<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data_from_file = sc.textFile(<span class="string">'file_path'</span>, <span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p><code>第二个参数表示该数据集被划分的分区个数</code></p>
+<p>RDD是无schema的数据结构，所以tuple、dict、list可以混用</p>
+<p>例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data = sc.parallelize([&#123;<span class="string">"a"</span>:<span class="number">1</span>&#125;, (<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>), [<span class="number">4</span>,<span class="number">3</span>,<span class="number">2</span>]])</span><br></pre></td></tr></table></figure>
+
+<p>从文本文件中读入数据，文件中每一行形成RDD的一个元素</p>
+<h3 id="三-全局作用域和局部作用域"><a href="#三-全局作用域和局部作用域" class="headerlink" title="三. 全局作用域和局部作用域"></a>三. 全局作用域和局部作用域</h3><ul>
+<li>Spark可以在两种模式下运行: 本地和集群</li>
+<li>在本地运行Spark和使用python没有什么不同，只是语法上的不同，数据和代码在不同的工作者进程之间复制</li>
+<li>在集群模式下，提交执行任务时，驱动程序节点会为任务创建DAG，决定工作者节点在运行特定的任务，会有一组变量和方法给工作者节点，如果在运行任务时，执行者改变变量或者覆盖这些方法，不会影响到其他的工作者，会产生不可预知的错误。</li>
+</ul>
+<h3 id="四-转换"><a href="#四-转换" class="headerlink" title="四. 转换"></a>四. 转换</h3><p><code>数据集： highway.txt</code></p>
+<ul>
+<li><p>.map(…)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">data_from_file = sc.textFile(<span class="string">'file_path.txt'</span>)</span><br><span class="line"></span><br><span class="line">kind_data = data_from_file.map(<span class="keyword">lambda</span> row: row.split(<span class="string">','</span>)[<span class="number">2</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment">#kind_data.collect()</span></span><br><span class="line"></span><br><span class="line">kind_data.take(<span class="number">10</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>.filter(…)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">data_filter = kind_data.filter(<span class="keyword">lambda</span> row: row != <span class="string">'KIND'</span> <span class="keyword">and</span> int(row) == <span class="number">8301</span>)</span><br><span class="line">data_filter.take(<span class="number">10</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>.flatMap(…)<br><code>flatMap返回一个扁平的结果，可以将每一行看作一个列表，将所有的记录简单加入到一起</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">kind_data_add_str = kind_data.map(<span class="keyword">lambda</span> row: (row, row+<span class="string">'abc'</span>))</span><br><span class="line">kind_data_add_str.take(<span class="number">3</span>)</span><br><span class="line"><span class="comment">#[('KIND', 'KINDabc'), ('8301', '8301abc'), ('8301', '8301abc')]</span></span><br><span class="line"></span><br><span class="line">kind_data_add_str_2 = kind_data.flatMap(<span class="keyword">lambda</span> row: (row, row+<span class="string">'abc'</span>))</span><br><span class="line">kind_data_add_str_2.take(<span class="number">3</span>)</span><br><span class="line"><span class="comment">#['KIND', 'KINDabc', '8301']</span></span><br><span class="line"></span><br><span class="line">kind_data_add_str_3 = kind_data.map(<span class="keyword">lambda</span> row: row + <span class="string">'abc'</span>)</span><br><span class="line">kind_data_add_str_3.take(<span class="number">5</span>)</span><br><span class="line"><span class="comment">#['KINDabc', '8301abc', '8301abc', '8302abc', '8302abc']</span></span><br><span class="line"></span><br><span class="line">kind_data_add_str_4 = kind_data.flatMap(<span class="keyword">lambda</span> row: row + <span class="string">'abc'</span>)</span><br><span class="line">kind_data_add_str_4.take(<span class="number">5</span>)</span><br><span class="line"><span class="comment">#['K', 'I', 'N', 'D', 'a']</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>.distinct(…)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">distinct_kind = data_from_file.map(<span class="keyword">lambda</span> row: row.split(<span class="string">','</span>)[<span class="number">2</span>]).distinct()</span><br><span class="line">distinct_kind.collect()</span><br><span class="line"><span class="comment"># ['KIND', '8302', '8301']</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p><code>⚠️:这是一个高开销的操作，只有在必要的时候才使用</code></p>
+<ul>
+<li><p>.sample(…)<br><code>sample()方法返回数据集的随机样本，第一个参数指定采样是否应该替换，第二个参数返回数据的分数(分子)， 第三个参数伪随机数产生器的种子</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">fraction = <span class="number">0.1</span></span><br><span class="line">sample_data = data_from_file.sample(<span class="literal">False</span>, fraction, <span class="number">666</span>)</span><br><span class="line">data_sample.take(<span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>.leftOuterJoin(…), .join(…), .intersection(…)<br><code>相当于SQL中的左连</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">rdd1 = sc.parallelize([(<span class="string">'a'</span>, <span class="number">1</span>), (<span class="string">'b'</span>, <span class="number">2</span>), (<span class="string">'c'</span>, <span class="number">3</span>)])</span><br><span class="line">rdd2 = sc.parallelize([(<span class="string">'a'</span>, <span class="number">8</span>), (<span class="string">'c'</span>, <span class="number">9</span>), (<span class="string">'d'</span>, <span class="number">10</span>)])</span><br><span class="line"></span><br><span class="line">rdd3 = rdd1.leftOuterJoin(rdd2)</span><br><span class="line">rdd3.collect()</span><br><span class="line"><span class="comment"># [('a', (1, 8)), ('b', (2, None)), ('c', (3, 9))]</span></span><br><span class="line"></span><br><span class="line">rdd4 = rdd1.join(rdd2)</span><br><span class="line"><span class="comment"># [('a', (1, 8)), ('c', (3, 9))]</span></span><br><span class="line"></span><br><span class="line">rdd5 = rdd1.intersection(rdd2) <span class="comment">## 返回两个RDD中相等的记录</span></span><br><span class="line"><span class="comment"># []</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p><code>⚠️: 这是一个高开销的操作，谨慎使用</code></p>
+<ul>
+<li>.repartition(…)<br><code>重新对数据集进行分区，改变数据集分区的数量，此操作会对性能产生巨大的影响</code></li>
+</ul>
+<h3 id="五-操作"><a href="#五-操作" class="headerlink" title="五. 操作"></a>五. 操作</h3><ul>
+<li><p>.take(…)<br><code>返回数据集，take()方法优于collect()方法，因为take()可以指定数据分区的前n行，collect()返回的是全部RDD，使用.takeSample(...)可以随机记录</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data_from_file.takeSample(<span class="literal">False</span>, <span class="number">3</span>, <span class="number">666</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>.collect(…)</p>
+</li>
+</ul>
+<ul>
+<li>.reduce(…), reductByKey(…)<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">rdd1_num = rdd1.map(<span class="keyword">lambda</span> row: row[<span class="number">1</span>])</span><br><span class="line">rdd1_num_sum = rdd1.map(<span class="keyword">lambda</span> row: row[<span class="number">1</span>]).reduce(<span class="keyword">lambda</span> x, y: x+y)</span><br><span class="line">rdd1_num_sum</span><br><span class="line"><span class="comment"># 6</span></span><br><span class="line"></span><br><span class="line">data_ley = sc.parallelize([(<span class="string">'a'</span>, <span class="number">4</span>), (<span class="string">'b'</span>, <span class="number">3</span>), (<span class="string">'c'</span>, <span class="number">2</span>), (<span class="string">'a'</span>, <span class="number">8</span>), (<span class="string">'d'</span>, <span class="number">2</span>), (<span class="string">'b'</span>, <span class="number">1</span>), [<span class="string">'d'</span>, <span class="number">3</span>]], <span class="number">3</span>)</span><br><span class="line"></span><br><span class="line">data_ley.reduceByKey(<span class="keyword">lambda</span> x, y: x+y).collect()</span><br><span class="line"><span class="comment"># [('d', 5), ('b', 4), ('a', 12), ('c', 2)]</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p><code>⚠️: reducer传递的函数需要是关联的，即元素顺序改变，结果不变；函数也是可交换的，操作符改变，结果不变</code></p>
+<ul>
+<li>.count(…), .countByKey(…)</li>
+</ul>
+<ul>
+<li>.saveAsTextFile(…)</li>
+</ul>
+<ul>
+<li>.foreach(…)<br><code>对每一条记录应用一个定义好的函数。当希望数据保存到PySpark本身不支持的数据时，就可以使用，比如print()</code></li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">(x)</span>:</span></span><br><span class="line">    print(x)</span><br><span class="line"></span><br><span class="line">data_key.foreach(f)</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="DataFrame"><a href="#DataFrame" class="headerlink" title="DataFrame"></a>DataFrame</h2><p><code>DataFrame是一种不可变的犯不是数据集，被组织成指定的列，类似于关系型数据库的表；引入DataFrame之前，Python查询速度普遍是使用RDD的Scala查询慢两倍，主要消耗在Python和JVM之间的通信开销</code></p>
+<h3 id="创建DataFrame"><a href="#创建DataFrame" class="headerlink" title="创建DataFrame"></a>创建DataFrame</h3><p>通常使用SparkSession来导入数据创建DataFrame</p>
+<p>在Spark中直接生成DataFrame数据</p>
+<ul>
+<li><p>生成JSON文件</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>stringJSONRDD = sc.parallelize((<span class="string">"""</span></span><br><span class="line"><span class="string"><span class="meta">... </span>&#123;"id":"123","name":"Katie", "age":19, "eyeColor":"brown"&#125;"""</span>,</span><br><span class="line"><span class="meta">... </span><span class="string">"""&#123;"id":"234", "name":"Michael", "age":22, "eyeColor":"green"&#125;"""</span>,</span><br><span class="line"><span class="meta">... </span><span class="string">"""&#123;"id":"345", "name":"Simone", "age":23, "eyeColor":"blue"&#125;"""</span>))</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>创建DataFrame<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>swimmersJSON = spark.read.json(stringJSONRDD)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>swimmersJSON</span><br><span class="line">DataFrame[age: bigint, eyeColor: string, id: string, name: string]</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="简单的DataFrame查询"><a href="#简单的DataFrame查询" class="headerlink" title="简单的DataFrame查询"></a>简单的DataFrame查询</h3><ol>
+<li><p>.show() 默认显示前十行</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>swimmersJSON.show()</span><br><span class="line">+---+--------+---+-------+</span><br><span class="line">|age|eyeColor| id|   name|</span><br><span class="line">+---+--------+---+-------+</span><br><span class="line">| <span class="number">19</span>|   brown|<span class="number">123</span>|  Katie|</span><br><span class="line">| <span class="number">22</span>|   green|<span class="number">234</span>|Michael|</span><br><span class="line">| <span class="number">23</span>|    blue|<span class="number">345</span>| Simone|</span><br><span class="line">+---+--------+---+-------+</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>SQL查询  ## 需要线生成表</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">swimmersJSON.createOrReplaceTempView(<span class="string">"swimmers"</span>)</span><br><span class="line"></span><br><span class="line">spark.sql(<span class="string">"select count(*) from swimmers"</span>).show()</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h3 id="RDD的交互操作"><a href="#RDD的交互操作" class="headerlink" title="RDD的交互操作"></a>RDD的交互操作</h3><p><code>有两种从RDD转换到DataFrame的方法： 反射推断模式、编程方式指定模式</code></p>
+<ul>
+<li><p>使用反射来推断模式</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>airports = spark.read.csv(airportsFilePath, header=<span class="string">'true'</span>, inferSchema=<span class="string">'true'</span>, sep=<span class="string">'\t'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>airports.take(<span class="number">2</span>)</span><br><span class="line">[Row(City=<span class="string">'Abbotsford'</span>, State=<span class="string">'BC'</span>, Country=<span class="string">'Canada'</span>, IATA=<span class="string">'YXX'</span>), Row(City=<span class="string">'Aberdeen'</span>, State=<span class="string">'SD'</span>, Country=<span class="string">'USA'</span>, IATA=<span class="string">'ABR'</span>)]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>airports.createOrReplaceTempView(<span class="string">"airports"</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>flightPerf = spark.read.csv(flightPerFilePath, header=<span class="string">'true'</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>编程指定模式</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>stringCSVRDD = sc.parallelize([(<span class="number">123</span>, <span class="string">'Katie'</span>, <span class="number">19</span>, <span class="string">'brown'</span>), (<span class="number">234</span>, <span class="string">'Michael'</span>, <span class="number">22</span>, <span class="string">'green'</span>), (<span class="number">345</span>, <span class="string">'Simone'</span>, <span class="number">23</span>, <span class="string">'blue'</span>)])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>schema = StructType([StructField(<span class="string">"id"</span>, LongType(), <span class="literal">True</span>), StructField(<span class="string">"name"</span>, StringType(), <span class="literal">True</span>), StructField(<span class="string">"age"</span>, LongType(), <span class="literal">True</span>), StructField(<span class="string">"eyeColor"</span>, StringType(), <span class="literal">True</span>)])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>swimmers = spark.createDataFrame(stringCSVRDD, schema)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>swimmers.show()</span><br><span class="line">+---+-------+---+--------+</span><br><span class="line">| id|   name|age|eyeColor|</span><br><span class="line">+---+-------+---+--------+</span><br><span class="line">|<span class="number">123</span>|  Katie| <span class="number">19</span>|   brown|</span><br><span class="line">|<span class="number">234</span>|Michael| <span class="number">22</span>|   green|</span><br><span class="line">|<span class="number">345</span>| Simone| <span class="number">23</span>|    blue|</span><br><span class="line">+---+-------+---+--------+</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="利用DataFrame-API查询"><a href="#利用DataFrame-API查询" class="headerlink" title="利用DataFrame API查询"></a>利用DataFrame API查询</h3><ul>
+<li><p>.count() 行数</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>swimmers.count()</span><br><span class="line"><span class="number">3</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>运行筛选语句</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>swimmers.select(<span class="string">"id"</span>, <span class="string">"age"</span>).filter(<span class="string">"age = 22"</span>).show()</span><br><span class="line">+---+---+</span><br><span class="line">| id|age|</span><br><span class="line">+---+---+</span><br><span class="line">|<span class="number">234</span>| <span class="number">22</span>|</span><br><span class="line">+---+---+</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>swimmers.select(swimmers.id, swimmers.age).filter(swimmers.age == <span class="number">22</span>).show()</span><br><span class="line">+---+---+</span><br><span class="line">| id|age|</span><br><span class="line">+---+---+</span><br><span class="line">|<span class="number">234</span>| <span class="number">22</span>|</span><br><span class="line">+---+---+</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>swimmers.select(<span class="string">"name"</span>, <span class="string">"eyeColor"</span>).filter(<span class="string">"eyeColor like 'b%'"</span>).show()</span><br><span class="line">+------+--------+</span><br><span class="line">|  name|eyeColor|</span><br><span class="line">+------+--------+</span><br><span class="line">| Katie|   brown|</span><br><span class="line">|Simone|    blue|</span><br><span class="line">+------+--------+</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="利用SQL查询"><a href="#利用SQL查询" class="headerlink" title="利用SQL查询"></a>利用SQL查询</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>swimmers.createOrReplaceTempView(<span class="string">"swimmers"</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>spark.sql(<span class="string">"select count(*) from swimmers"</span>).show()</span><br><span class="line">+--------+</span><br><span class="line">|count(<span class="number">1</span>)|</span><br><span class="line">+--------+</span><br><span class="line">|       <span class="number">3</span>|</span><br><span class="line">+--------+</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>spark.sql(<span class="string">"select name, eyeColor from swimmers where eyeColor like 'b%'"</span>).show()</span><br><span class="line">+------+--------+</span><br><span class="line">|  name|eyeColor|</span><br><span class="line">+------+--------+</span><br><span class="line">| Katie|   brown|</span><br><span class="line">|Simone|    blue|</span><br><span class="line">+------+--------+</span><br></pre></td></tr></table></figure>
+
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="/img/donate.jpg" data-src="/img/donate.jpg">
+        <p>  </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = ""
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>
