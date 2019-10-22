@@ -106,7 +106,7 @@
         <div class="content markdown animated fadeIn slower">
             <h2 id="了解Spark"><a href="#了解Spark" class="headerlink" title="了解Spark"></a>了解Spark</h2><p><code>Spark是开源的分布式查询和处理引擎，具有MapReduce的灵活性和可扩展性，但是速度更快，当数据存储在内存中，速度比hadoop快100倍，存储在磁盘中快10倍。</code></p>
 <ul>
-<li><p>任何Spark应用程序都会分离主节点上的单一驱动进程(可以包含多个作业)，然后将执行进程(包含多个任务)分配到多个工作节点。<br><code>任何工作节点都可以执行来自不同作业的多个任务</code><br><img src="spark_notes_imgs/im1.png" alt="i1"></p>
+<li><p>任何Spark应用程序都会分离主节点上的单一驱动进程(可以包含多个作业)，然后将执行进程(包含多个任务)分配到多个工作节点。<br><code>任何工作节点都可以执行来自不同作业的多个任务</code><br><img src="https://i.loli.net/2019/10/22/OaKzt83TiDmVCWl.png" alt="im1.png"></p>
 </li>
 <li><p>弹性分布式数据集(RDD)<br>  弹性分布式数据集是<code>不可变</code>Java虚拟机(JVM)对象的<code>分布式集合</code>，Spark就是围绕RDD构建的。</p>
 <ol>
@@ -133,7 +133,7 @@
 <ul>
 <li>Dataset<br>  DataSet是分布式的数据集合，Dataset提供了<code>强类型</code>支持，也是在RDD的每行数据加了类型约束。DataSet是在Spark1.6中添加的新的接口。它集中了RDD的优点（强类型和可以用强大lambda函数）以及使用了Spark SQL优化的执行引擎。PySpark目前不支持，因为Python不是一种类型安全的语言。</li>
 </ul>
-<p><img src="spark_notes_imgs/im2.png" alt="数据集"></p>
+<p><img src="https://i.loli.net/2019/10/22/tO4X73WKrkwNbAj.png" alt="im2.png"></p>
 <p><code>在Spark2.0中，DataFrame和DataSet进行了统一，DataFrame是未类型化的DataSet的一个别名</code><br><code>DataFrame = DataSet[Row]</code></p>
 <ul>
 <li><p>Catalyst优化器</p>
@@ -287,22 +287,23 @@ DataFrame[age: bigint, eyeColor: string, id: string, name: string]</code></pre>
 </li>
 </ul>
 <h3 id="简单的DataFrame查询"><a href="#简单的DataFrame查询" class="headerlink" title="简单的DataFrame查询"></a>简单的DataFrame查询</h3><ol>
-<li>.show() 默认显示前十行<br>```python<blockquote>
-<blockquote>
-<blockquote>
-<p>swimmersJSON.show()</p>
-</blockquote>
-</blockquote>
-</blockquote>
-</li>
+<li>.show() 默认显示前十行</li>
 </ol>
-<p>+—+——–+—+——-+<br>|age|eyeColor| id|   name|<br>+—+——–+—+——-+<br>| 19|   brown|123|  Katie|<br>| 22|   green|234|Michael|<br>| 23|    blue|345| Simone|<br>+—+——–+—+——-+</p>
-<pre><code>
-2. SQL查询  ## 需要线生成表
-```python
-    swimmersJSON.createOrReplaceTempView(&quot;swimmers&quot;)
+<pre><code class="python">&gt;&gt;&gt; swimmersJSON.show()
++---+--------+---+-------+
+|age|eyeColor| id|   name|
++---+--------+---+-------+
+| 19|   brown|123|  Katie|
+| 22|   green|234|Michael|
+| 23|    blue|345| Simone|
++---+--------+---+-------+</code></pre>
+<ol start="2">
+<li>SQL查询  ## 需要线生成表</li>
+</ol>
+<pre><code class="python">    swimmersJSON.createOrReplaceTempView(&quot;swimmers&quot;)
 
-    spark.sql(&quot;select count(*) from swimmers&quot;).show()</code></pre><h3 id="RDD的交互操作"><a href="#RDD的交互操作" class="headerlink" title="RDD的交互操作"></a>RDD的交互操作</h3><p><code>有两种从RDD转换到DataFrame的方法： 反射推断模式、编程方式指定模式</code></p>
+    spark.sql(&quot;select count(*) from swimmers&quot;).show()</code></pre>
+<h3 id="RDD的交互操作"><a href="#RDD的交互操作" class="headerlink" title="RDD的交互操作"></a>RDD的交互操作</h3><p><code>有两种从RDD转换到DataFrame的方法： 反射推断模式、编程方式指定模式</code></p>
 <ul>
 <li><p>使用反射来推断模式</p>
 <pre><code class="python">&gt;&gt;&gt; airports = spark.read.csv(airportsFilePath, header=&#39;true&#39;, inferSchema=&#39;true&#39;, sep=&#39;\t&#39;)
@@ -316,54 +317,55 @@ DataFrame[age: bigint, eyeColor: string, id: string, name: string]</code></pre>
 &gt;&gt;&gt; 
 &gt;&gt;&gt; flightPerf = spark.read.csv(flightPerFilePath, header=&#39;true&#39;)</code></pre>
 </li>
-<li><p>编程指定模式<br>```python</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>stringCSVRDD = sc.parallelize([(123, ‘Katie’, 19, ‘brown’), (234, ‘Michael’, 22, ‘green’), (345, ‘Simone’, 23, ‘blue’)])</p>
-<p>schema = StructType([StructField(“id”, LongType(), True), StructField(“name”, StringType(), True), StructField(“age”, LongType(), True), StructField(“eyeColor”, StringType(), True)])</p>
-<p>swimmers = spark.createDataFrame(stringCSVRDD, schema)</p>
-<p>swimmers.show()</p>
-</blockquote>
-</blockquote>
-</blockquote>
+<li><p>编程指定模式</p>
 </li>
 </ul>
-<p>+—+——-+—+——–+<br>| id|   name|age|eyeColor|<br>+—+——-+—+——–+<br>|123|  Katie| 19|   brown|<br>|234|Michael| 22|   green|<br>|345| Simone| 23|    blue|<br>+—+——-+—+——–+</p>
-<pre><code>
-### 利用DataFrame API查询
-- .count() 行数
-```python
-&gt;&gt;&gt; swimmers.count()
-3</code></pre><ul>
-<li>运行筛选语句<br>```python<blockquote>
-<blockquote>
-<blockquote>
-<p>swimmers.select(“id”, “age”).filter(“age = 22”).show()</p>
-</blockquote>
-</blockquote>
-</blockquote>
+<pre><code class="python">&gt;&gt;&gt; stringCSVRDD = sc.parallelize([(123, &#39;Katie&#39;, 19, &#39;brown&#39;), (234, &#39;Michael&#39;, 22, &#39;green&#39;), (345, &#39;Simone&#39;, 23, &#39;blue&#39;)])
+&gt;&gt;&gt; 
+&gt;&gt;&gt; schema = StructType([StructField(&quot;id&quot;, LongType(), True), StructField(&quot;name&quot;, StringType(), True), StructField(&quot;age&quot;, LongType(), True), StructField(&quot;eyeColor&quot;, StringType(), True)])
+&gt;&gt;&gt; 
+&gt;&gt;&gt; swimmers = spark.createDataFrame(stringCSVRDD, schema)
+&gt;&gt;&gt; 
+&gt;&gt;&gt; swimmers.show()
++---+-------+---+--------+
+| id|   name|age|eyeColor|
++---+-------+---+--------+
+|123|  Katie| 19|   brown|
+|234|Michael| 22|   green|
+|345| Simone| 23|    blue|
++---+-------+---+--------+</code></pre>
+<h3 id="利用DataFrame-API查询"><a href="#利用DataFrame-API查询" class="headerlink" title="利用DataFrame API查询"></a>利用DataFrame API查询</h3><ul>
+<li><p>.count() 行数</p>
+<pre><code class="python">&gt;&gt;&gt; swimmers.count()
+3</code></pre>
+</li>
+<li><p>运行筛选语句</p>
 </li>
 </ul>
-<p>+—+—+<br>| id|age|<br>+—+—+<br>|234| 22|<br>+—+—+</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>swimmers.select(swimmers.id, swimmers.age).filter(swimmers.age == 22).show()<br>+—+—+<br>| id|age|<br>+—+—+<br>|234| 22|<br>+—+—+</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>swimmers.select(“name”, “eyeColor”).filter(“eyeColor like ‘b%’”).show()<br>+——+——–+<br>|  name|eyeColor|<br>+——+——–+<br>| Katie|   brown|<br>|Simone|    blue|<br>+——+——–+</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<pre><code>
-### 利用SQL查询
-```python
-&gt;&gt;&gt; swimmers.createOrReplaceTempView(&quot;swimmers&quot;)
+<pre><code class="python">&gt;&gt;&gt; swimmers.select(&quot;id&quot;, &quot;age&quot;).filter(&quot;age = 22&quot;).show()
++---+---+
+| id|age|
++---+---+
+|234| 22|
++---+---+
+
+&gt;&gt;&gt; 
+&gt;&gt;&gt; swimmers.select(swimmers.id, swimmers.age).filter(swimmers.age == 22).show()
++---+---+
+| id|age|
++---+---+
+|234| 22|
++---+---+
+
+&gt;&gt;&gt; swimmers.select(&quot;name&quot;, &quot;eyeColor&quot;).filter(&quot;eyeColor like &#39;b%&#39;&quot;).show()
++------+--------+
+|  name|eyeColor|
++------+--------+
+| Katie|   brown|
+|Simone|    blue|
++------+--------+
+</code></pre>
+<h3 id="利用SQL查询"><a href="#利用SQL查询" class="headerlink" title="利用SQL查询"></a>利用SQL查询</h3><pre><code class="python">&gt;&gt;&gt; swimmers.createOrReplaceTempView(&quot;swimmers&quot;)
 &gt;&gt;&gt; 
 &gt;&gt;&gt; spark.sql(&quot;select count(*) from swimmers&quot;).show()
 +--------+
@@ -380,6 +382,7 @@ DataFrame[age: bigint, eyeColor: string, id: string, name: string]</code></pre>
 | Katie|   brown|
 |Simone|    blue|
 +------+--------+</code></pre>
+
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
                 <source type="audio/mpeg" src="">
