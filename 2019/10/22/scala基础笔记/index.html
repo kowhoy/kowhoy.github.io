@@ -81,11 +81,6 @@ Welcome to Scala 2.13.0 (Java HotSpot(TM) 64-Bit Server VM, Jav,">
                     </span>
                     
                     
-                        <span id="/2019/10/22/scala基础笔记/" class="leancloud_visitors" data-flag-title="scala基础笔记">
-                            <b class="iconfont icon-read"></b> <i>Read count</i>
-                            <i class="leancloud-visitors-count">1000000</i>
-                        </span>
-                    
                     
                 </p>
             
@@ -969,8 +964,6 @@ object Demo21 {
             
             
             
-                <div id="vcomments"></div>
-            
         </div>
         <div class="sidebar">
             <div class="box animated fadeInRight">
@@ -1026,15 +1019,6 @@ object Demo21 {
 <script src="//cdn.bootcss.com/typed.js/2.0.10/typed.min.js"></script>
 <script src="//cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script>
 
-
-    <script src="/js/busuanzi.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            if ($('span[id^="busuanzi_"]').length) {
-                initialBusuanzi();
-            }
-        });
-    </script>
 
 
 <link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.css">
@@ -1129,37 +1113,5 @@ object Demo21 {
     }
 </script>
 
-
-    <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-    <script>
-
-        var valine = new Valine();
-
-        function initValine(path) {
-            if (!path) path = window.location.pathname;
-            let language = 'zh';
-            if (!language) {
-                language = 'en';
-            } else {
-                language = language.toLowerCase();
-            }
-            valine.init({
-                el: '#vcomments',
-                appId: '',
-                appKey: '',
-                notify: 'false',
-                verify: 'false',
-                avatar: 'mp',
-                placeholder: 'Leave your throughs behind~',
-                visitor: 'true',
-                path: path,
-                lang: language
-            });
-        }
-
-        $(document).ready(function () {
-            initValine();
-        });
-    </script>
 
 </html>
