@@ -1,137 +1,115 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh" class="loading">
 <head><meta name="generator" content="Hexo 3.9.0">
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content>
-    <meta name="keyword" content>
-    <link rel="shortcut icon" href="/img/favicon.ico">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>PySpark_1 - ko_whoy</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate">
+    <meta name="keywords" content="ko_whoy,"> 
+    <meta name="description" content="了解SparkSpark是开源的分布式查询和处理引擎，具有MapReduce的灵活性和可扩展性，但是速度更快，当数据存储在内存中，速度比hadoop快100倍，存储在磁盘中快10倍。
 
-    <title>
-        
-        PySpark_1 - KO_WHOY
-        
-    </title>
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/aircloud.css">
-    <link rel="stylesheet" href="/css/gitment.css">
-    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
-    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
-    <!-- ga & ba script hoook -->
-    <script></script>
+任何Spar,"> 
+    <meta name="author" content="ko_whoy"> 
+    <link rel="alternative" href="atom.xml" title="ko_whoy" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link href="/font/Rubik-Bold-kern-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link href="/font/Rubik-Regular-kern-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_7jr8c7mf4wi.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.7.2/animate.min.css">
+    <link rel="stylesheet" href="/css/obsidian.css">
 </head>
-
-<body>
-
-<div class="site-nav-toggle" id="site-nav-toggle">
-    <button>
-        <span class="btn-bar"></span>
-        <span class="btn-bar"></span>
-        <span class="btn-bar"></span>
-    </button>
-</div>
-
-<div class="index-about">
-    <i> don`t worry, be happy </i>
-</div>
-
-<div class="index-container">
-    
-    <div class="index-left">
-        
-<div class="nav" id="nav">
-    <div class="avatar-name">
-        <div class="avatar ">
-            <img src="/img/avatar.jpg" />
-        </div>
-        <div class="name">
-            <i>ko_whoy</i>
-        </div>
+</html>
+<body class="loading">
+    <span id="config-title" style="display:none">ko_whoy</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div class="scrollbar gradient-bg-rev"></div>
+<div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a id="home-icon" class="image-icon icon-home iconfont" href="javascript:;" data-url="https://kowhoy.github.io"></a>
+    <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
+    <h3 class="subtitle">PySpark_1</h3>
+    <div class="social">
+<!--        <div class="like-icon">-->
+<!--            <a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+<!--        </div>-->
+<!--        <div>-->
+<!--            <div class="share">-->
+<!--                <a title="Get qrcode" id="qr-icon" href="javascript:;" class="iconfont icon-QRcode-o"></a>-->
+<!--            </div>-->
+<!--            <div id="qr"></div>-->
+<!--        </div>-->
     </div>
-    <div class="contents" id="nav-content">
-        <ul>
-            <li >
-                <a href="/">
-                    <i class="iconfont icon-shouye1"></i>
-                    <span>主页</span>
-                </a>
-            </li>
-            <li >
-                <a href="/tags">
-                    <i class="iconfont icon-biaoqian1"></i>
-                    <span>标签</span>
-                </a>
-            </li>
-            <li >
-                <a href="/archives">
-                    <i class="iconfont icon-guidang2"></i>
-                    <span>存档</span>
-                </a>
-            </li>
-            <li >
-                <a href="/about/">
-                    <i class="iconfont icon-guanyu2"></i>
-                    <span>关于</span>
-                </a>
-            </li>
+</div>
+
+    <div class="section">
+        <div class= article-header-wrapper>
+    <div class="article-header">
+        <div class="article-cover animated fadeIn" style="
+            animation-delay: 600ms;
+            animation-duration: 1.2s;
+            background-image: 
+                radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+                url(/img/cover.jpg);">
+        </div>
+        <div class="else">
+            <p class="animated fadeInDown">
+                
+                    <a href="javascript:;"><b>「 </b>Article<b> 」</b></a>
+                
+                October 18, 2019
+            </p>
+            <h3 class="post-title animated fadeInDown"><a href="/2019/10/18/PySpark-1/" title="PySpark_1">PySpark_1</a></h3>
             
-        </ul>
-    </div>
-    
-        <div id="toc" class="toc-article">
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#了解Spark"><span class="toc-text">了解Spark</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#弹性分布式数据集"><span class="toc-text">弹性分布式数据集</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#一-RDD的内部运行方式"><span class="toc-text">一.  RDD的内部运行方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二-创建RDD"><span class="toc-text">二. 创建RDD</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三-全局作用域和局部作用域"><span class="toc-text">三. 全局作用域和局部作用域</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#四-转换"><span class="toc-text">四. 转换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#五-操作"><span class="toc-text">五. 操作</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DataFrame"><span class="toc-text">DataFrame</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#创建DataFrame"><span class="toc-text">创建DataFrame</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#简单的DataFrame查询"><span class="toc-text">简单的DataFrame查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RDD的交互操作"><span class="toc-text">RDD的交互操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#利用DataFrame-API查询"><span class="toc-text">利用DataFrame API查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#利用SQL查询"><span class="toc-text">利用SQL查询</span></a></li></ol></li></ol>
-</div>
-    
-</div>
-
-
-<div class="search-field" id="search-field">
-    <div class="search-container">
-        <div class="search-input">
-            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
-            <input id="search-input"/>
-            <span id="begin-search">搜索</span>
+                <p class="post-count animated fadeInDown">
+                    
+                        <span>
+                        <b class="iconfont icon-text2"></b> <i>Words count</i>
+                        12k
+                    </span>
+                    
+                    
+                        <span>
+                        <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
+                        11 mins.
+                    </span>
+                    
+                    
+                        <span id="/2019/10/18/PySpark-1/" class="leancloud_visitors" data-flag-title="PySpark_1">
+                            <b class="iconfont icon-read"></b> <i>Read count</i>
+                            <i class="leancloud-visitors-count">1000000</i>
+                        </span>
+                    
+                    
+                </p>
+            
+            
+                <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/PySpark/">PySpark</a></li></ul>
+            
         </div>
-        <div class="search-result-container" id="search-result-container">
+    </div>
+</div>
 
+<div class="screen-gradient-after">
+    <div class="screen-gradient-content">
+        <div class="screen-gradient-content-inside">
+            <div class="bold-underline-links screen-gradient-sponsor">
+                <p>
+                    <span></span>  
+                </p>
+            </div>
         </div>
     </div>
 </div>
 
-        <div class="index-about-mobile">
-            <i> don`t worry, be happy </i>
-        </div>
-    </div>
-    
-    <div class="index-middle">
-        <!-- Main Content -->
-        
-
-
-<div class="post-container">
-    <div class="post-title">
-        PySpark_1
-    </div>
-
-    <div class="post-meta">
-        <span class="attr">发布于：<span>2019-10-18 18:22:09</span></span>
-        
-        <span class="attr">标签：/
-        
-        <a class="tag" href="/tags/#PySpark" title="PySpark">PySpark</a>
-        <span>/</span>
-        
-        
-        </span>
-        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
-</span>
-</span>
-    </div>
-    <div class="post-content ">
-        <h2 id="了解Spark"><a href="#了解Spark" class="headerlink" title="了解Spark"></a>了解Spark</h2><p><code>Spark是开源的分布式查询和处理引擎，具有MapReduce的灵活性和可扩展性，但是速度更快，当数据存储在内存中，速度比hadoop快100倍，存储在磁盘中快10倍。</code></p>
+<div class="article">
+    <div class='main'>
+        <div class="content markdown animated fadeIn slower">
+            <h2 id="了解Spark"><a href="#了解Spark" class="headerlink" title="了解Spark"></a>了解Spark</h2><p><code>Spark是开源的分布式查询和处理引擎，具有MapReduce的灵活性和可扩展性，但是速度更快，当数据存储在内存中，速度比hadoop快100倍，存储在磁盘中快10倍。</code></p>
 <ul>
 <li><p>任何Spark应用程序都会分离主节点上的单一驱动进程(可以包含多个作业)，然后将执行进程(包含多个任务)分配到多个工作节点。<br><code>任何工作节点都可以执行来自不同作业的多个任务</code><br><img src="spark_notes_imgs/im1.png" alt="i1"></p>
 </li>
@@ -185,18 +163,14 @@
 <ul>
 <li>parallelize 将list或者array转化为RDD</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data = sc.parallelize([<span class="string">'A'</span>, <span class="string">'B'</span>, <span class="string">'C'</span>])</span><br></pre></td></tr></table></figure>
-
+<pre><code class="python">    data = sc.parallelize([&#39;A&#39;, &#39;B&#39;, &#39;C&#39;])</code></pre>
 <ul>
-<li>textFile 从文件系统读取文件转化为RDD<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data_from_file = sc.textFile(<span class="string">'file_path'</span>, <span class="number">3</span>)</span><br></pre></td></tr></table></figure>
-
-</li>
+<li>textFile 从文件系统读取文件转化为RDD<pre><code class="python">  data_from_file = sc.textFile(&#39;file_path&#39;, 3)</code></pre>
+<code>第二个参数表示该数据集被划分的分区个数</code></li>
 </ul>
-<p><code>第二个参数表示该数据集被划分的分区个数</code></p>
 <p>RDD是无schema的数据结构，所以tuple、dict、list可以混用</p>
 <p>例：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data = sc.parallelize([&#123;<span class="string">"a"</span>:<span class="number">1</span>&#125;, (<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>), [<span class="number">4</span>,<span class="number">3</span>,<span class="number">2</span>]])</span><br></pre></td></tr></table></figure>
-
+<pre><code class="python">data = sc.parallelize([{&quot;a&quot;:1}, (1,2,3,4), [4,3,2]])</code></pre>
 <p>从文本文件中读入数据，文件中每一行形成RDD的一个元素</p>
 <h3 id="三-全局作用域和局部作用域"><a href="#三-全局作用域和局部作用域" class="headerlink" title="三. 全局作用域和局部作用域"></a>三. 全局作用域和局部作用域</h3><ul>
 <li>Spark可以在两种模式下运行: 本地和集群</li>
@@ -206,48 +180,88 @@
 <h3 id="四-转换"><a href="#四-转换" class="headerlink" title="四. 转换"></a>四. 转换</h3><p><code>数据集： highway.txt</code></p>
 <ul>
 <li><p>.map(…)</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">data_from_file = sc.textFile(<span class="string">'file_path.txt'</span>)</span><br><span class="line"></span><br><span class="line">kind_data = data_from_file.map(<span class="keyword">lambda</span> row: row.split(<span class="string">','</span>)[<span class="number">2</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment">#kind_data.collect()</span></span><br><span class="line"></span><br><span class="line">kind_data.take(<span class="number">10</span>)</span><br></pre></td></tr></table></figure>
+<pre><code class="python">  data_from_file = sc.textFile(&#39;file_path.txt&#39;)
+
+  kind_data = data_from_file.map(lambda row: row.split(&#39;,&#39;)[2])
+
+  #kind_data.collect()
+
+  kind_data.take(10)</code></pre>
 </li>
 <li><p>.filter(…)</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">data_filter = kind_data.filter(<span class="keyword">lambda</span> row: row != <span class="string">'KIND'</span> <span class="keyword">and</span> int(row) == <span class="number">8301</span>)</span><br><span class="line">data_filter.take(<span class="number">10</span>)</span><br></pre></td></tr></table></figure>
+<pre><code class="python">  data_filter = kind_data.filter(lambda row: row != &#39;KIND&#39; and int(row) == 8301)
+  data_filter.take(10)</code></pre>
 </li>
+</ul>
+<ul>
 <li><p>.flatMap(…)<br><code>flatMap返回一个扁平的结果，可以将每一行看作一个列表，将所有的记录简单加入到一起</code></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">kind_data_add_str = kind_data.map(<span class="keyword">lambda</span> row: (row, row+<span class="string">'abc'</span>))</span><br><span class="line">kind_data_add_str.take(<span class="number">3</span>)</span><br><span class="line"><span class="comment">#[('KIND', 'KINDabc'), ('8301', '8301abc'), ('8301', '8301abc')]</span></span><br><span class="line"></span><br><span class="line">kind_data_add_str_2 = kind_data.flatMap(<span class="keyword">lambda</span> row: (row, row+<span class="string">'abc'</span>))</span><br><span class="line">kind_data_add_str_2.take(<span class="number">3</span>)</span><br><span class="line"><span class="comment">#['KIND', 'KINDabc', '8301']</span></span><br><span class="line"></span><br><span class="line">kind_data_add_str_3 = kind_data.map(<span class="keyword">lambda</span> row: row + <span class="string">'abc'</span>)</span><br><span class="line">kind_data_add_str_3.take(<span class="number">5</span>)</span><br><span class="line"><span class="comment">#['KINDabc', '8301abc', '8301abc', '8302abc', '8302abc']</span></span><br><span class="line"></span><br><span class="line">kind_data_add_str_4 = kind_data.flatMap(<span class="keyword">lambda</span> row: row + <span class="string">'abc'</span>)</span><br><span class="line">kind_data_add_str_4.take(<span class="number">5</span>)</span><br><span class="line"><span class="comment">#['K', 'I', 'N', 'D', 'a']</span></span><br></pre></td></tr></table></figure>
+<pre><code class="python">  kind_data_add_str = kind_data.map(lambda row: (row, row+&#39;abc&#39;))
+  kind_data_add_str.take(3)
+  #[(&#39;KIND&#39;, &#39;KINDabc&#39;), (&#39;8301&#39;, &#39;8301abc&#39;), (&#39;8301&#39;, &#39;8301abc&#39;)]
+
+  kind_data_add_str_2 = kind_data.flatMap(lambda row: (row, row+&#39;abc&#39;))
+  kind_data_add_str_2.take(3)
+  #[&#39;KIND&#39;, &#39;KINDabc&#39;, &#39;8301&#39;]
+
+  kind_data_add_str_3 = kind_data.map(lambda row: row + &#39;abc&#39;)
+  kind_data_add_str_3.take(5)
+  #[&#39;KINDabc&#39;, &#39;8301abc&#39;, &#39;8301abc&#39;, &#39;8302abc&#39;, &#39;8302abc&#39;]
+
+  kind_data_add_str_4 = kind_data.flatMap(lambda row: row + &#39;abc&#39;)
+  kind_data_add_str_4.take(5)
+  #[&#39;K&#39;, &#39;I&#39;, &#39;N&#39;, &#39;D&#39;, &#39;a&#39;]</code></pre>
 </li>
 <li><p>.distinct(…)</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">distinct_kind = data_from_file.map(<span class="keyword">lambda</span> row: row.split(<span class="string">','</span>)[<span class="number">2</span>]).distinct()</span><br><span class="line">distinct_kind.collect()</span><br><span class="line"><span class="comment"># ['KIND', '8302', '8301']</span></span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
+<pre><code class="python">  distinct_kind = data_from_file.map(lambda row: row.split(&#39;,&#39;)[2]).distinct()
+  distinct_kind.collect()
+  # [&#39;KIND&#39;, &#39;8302&#39;, &#39;8301&#39;]</code></pre>
 <p><code>⚠️:这是一个高开销的操作，只有在必要的时候才使用</code></p>
-<ul>
+</li>
 <li><p>.sample(…)<br><code>sample()方法返回数据集的随机样本，第一个参数指定采样是否应该替换，第二个参数返回数据的分数(分子)， 第三个参数伪随机数产生器的种子</code></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">fraction = <span class="number">0.1</span></span><br><span class="line">sample_data = data_from_file.sample(<span class="literal">False</span>, fraction, <span class="number">666</span>)</span><br><span class="line">data_sample.take(<span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+<pre><code class="python">  fraction = 0.1
+  sample_data = data_from_file.sample(False, fraction, 666)
+  data_sample.take(3)</code></pre>
 </li>
 <li><p>.leftOuterJoin(…), .join(…), .intersection(…)<br><code>相当于SQL中的左连</code></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">rdd1 = sc.parallelize([(<span class="string">'a'</span>, <span class="number">1</span>), (<span class="string">'b'</span>, <span class="number">2</span>), (<span class="string">'c'</span>, <span class="number">3</span>)])</span><br><span class="line">rdd2 = sc.parallelize([(<span class="string">'a'</span>, <span class="number">8</span>), (<span class="string">'c'</span>, <span class="number">9</span>), (<span class="string">'d'</span>, <span class="number">10</span>)])</span><br><span class="line"></span><br><span class="line">rdd3 = rdd1.leftOuterJoin(rdd2)</span><br><span class="line">rdd3.collect()</span><br><span class="line"><span class="comment"># [('a', (1, 8)), ('b', (2, None)), ('c', (3, 9))]</span></span><br><span class="line"></span><br><span class="line">rdd4 = rdd1.join(rdd2)</span><br><span class="line"><span class="comment"># [('a', (1, 8)), ('c', (3, 9))]</span></span><br><span class="line"></span><br><span class="line">rdd5 = rdd1.intersection(rdd2) <span class="comment">## 返回两个RDD中相等的记录</span></span><br><span class="line"><span class="comment"># []</span></span><br></pre></td></tr></table></figure>
+<pre><code class="python">  rdd1 = sc.parallelize([(&#39;a&#39;, 1), (&#39;b&#39;, 2), (&#39;c&#39;, 3)])
+  rdd2 = sc.parallelize([(&#39;a&#39;, 8), (&#39;c&#39;, 9), (&#39;d&#39;, 10)])
 
-</li>
-</ul>
+  rdd3 = rdd1.leftOuterJoin(rdd2)
+  rdd3.collect()
+  # [(&#39;a&#39;, (1, 8)), (&#39;b&#39;, (2, None)), (&#39;c&#39;, (3, 9))]
+
+  rdd4 = rdd1.join(rdd2)
+  # [(&#39;a&#39;, (1, 8)), (&#39;c&#39;, (3, 9))]
+
+  rdd5 = rdd1.intersection(rdd2) ## 返回两个RDD中相等的记录
+  # []</code></pre>
 <p><code>⚠️: 这是一个高开销的操作，谨慎使用</code></p>
-<ul>
-<li>.repartition(…)<br><code>重新对数据集进行分区，改变数据集分区的数量，此操作会对性能产生巨大的影响</code></li>
+</li>
+<li><p>.repartition(…)<br><code>重新对数据集进行分区，改变数据集分区的数量，此操作会对性能产生巨大的影响</code></p>
+</li>
 </ul>
 <h3 id="五-操作"><a href="#五-操作" class="headerlink" title="五. 操作"></a>五. 操作</h3><ul>
 <li><p>.take(…)<br><code>返回数据集，take()方法优于collect()方法，因为take()可以指定数据分区的前n行，collect()返回的是全部RDD，使用.takeSample(...)可以随机记录</code></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data_from_file.takeSample(<span class="literal">False</span>, <span class="number">3</span>, <span class="number">666</span>)</span><br></pre></td></tr></table></figure>
+<pre><code class="python">  data_from_file.takeSample(False, 3, 666)</code></pre>
 </li>
 <li><p>.collect(…)</p>
 </li>
 </ul>
 <ul>
-<li>.reduce(…), reductByKey(…)<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">rdd1_num = rdd1.map(<span class="keyword">lambda</span> row: row[<span class="number">1</span>])</span><br><span class="line">rdd1_num_sum = rdd1.map(<span class="keyword">lambda</span> row: row[<span class="number">1</span>]).reduce(<span class="keyword">lambda</span> x, y: x+y)</span><br><span class="line">rdd1_num_sum</span><br><span class="line"><span class="comment"># 6</span></span><br><span class="line"></span><br><span class="line">data_ley = sc.parallelize([(<span class="string">'a'</span>, <span class="number">4</span>), (<span class="string">'b'</span>, <span class="number">3</span>), (<span class="string">'c'</span>, <span class="number">2</span>), (<span class="string">'a'</span>, <span class="number">8</span>), (<span class="string">'d'</span>, <span class="number">2</span>), (<span class="string">'b'</span>, <span class="number">1</span>), [<span class="string">'d'</span>, <span class="number">3</span>]], <span class="number">3</span>)</span><br><span class="line"></span><br><span class="line">data_ley.reduceByKey(<span class="keyword">lambda</span> x, y: x+y).collect()</span><br><span class="line"><span class="comment"># [('d', 5), ('b', 4), ('a', 12), ('c', 2)]</span></span><br></pre></td></tr></table></figure>
+<li><p>.reduce(…), reductByKey(…)</p>
+<pre><code class="python">  rdd1_num = rdd1.map(lambda row: row[1])
+  rdd1_num_sum = rdd1.map(lambda row: row[1]).reduce(lambda x, y: x+y)
+  rdd1_num_sum
+  # 6
 
-</li>
-</ul>
+  data_ley = sc.parallelize([(&#39;a&#39;, 4), (&#39;b&#39;, 3), (&#39;c&#39;, 2), (&#39;a&#39;, 8), (&#39;d&#39;, 2), (&#39;b&#39;, 1), [&#39;d&#39;, 3]], 3)
+
+  data_ley.reduceByKey(lambda x, y: x+y).collect()
+  # [(&#39;d&#39;, 5), (&#39;b&#39;, 4), (&#39;a&#39;, 12), (&#39;c&#39;, 2)]</code></pre>
 <p><code>⚠️: reducer传递的函数需要是关联的，即元素顺序改变，结果不变；函数也是可交换的，操作符改变，结果不变</code></p>
-<ul>
-<li>.count(…), .countByKey(…)</li>
+</li>
+<li><p>.count(…), .countByKey(…)</p>
+</li>
 </ul>
 <ul>
 <li>.saveAsTextFile(…)</li>
@@ -255,121 +269,328 @@
 <ul>
 <li>.foreach(…)<br><code>对每一条记录应用一个定义好的函数。当希望数据保存到PySpark本身不支持的数据时，就可以使用，比如print()</code></li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">(x)</span>:</span></span><br><span class="line">    print(x)</span><br><span class="line"></span><br><span class="line">data_key.foreach(f)</span><br></pre></td></tr></table></figure>
+<pre><code class="python">    def f(x):
+        print(x)
 
+    data_key.foreach(f)</code></pre>
 <hr>
 <h2 id="DataFrame"><a href="#DataFrame" class="headerlink" title="DataFrame"></a>DataFrame</h2><p><code>DataFrame是一种不可变的犯不是数据集，被组织成指定的列，类似于关系型数据库的表；引入DataFrame之前，Python查询速度普遍是使用RDD的Scala查询慢两倍，主要消耗在Python和JVM之间的通信开销</code></p>
 <h3 id="创建DataFrame"><a href="#创建DataFrame" class="headerlink" title="创建DataFrame"></a>创建DataFrame</h3><p>通常使用SparkSession来导入数据创建DataFrame</p>
 <p>在Spark中直接生成DataFrame数据</p>
 <ul>
 <li><p>生成JSON文件</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>stringJSONRDD = sc.parallelize((<span class="string">"""</span></span><br><span class="line"><span class="string"><span class="meta">... </span>&#123;"id":"123","name":"Katie", "age":19, "eyeColor":"brown"&#125;"""</span>,</span><br><span class="line"><span class="meta">... </span><span class="string">"""&#123;"id":"234", "name":"Michael", "age":22, "eyeColor":"green"&#125;"""</span>,</span><br><span class="line"><span class="meta">... </span><span class="string">"""&#123;"id":"345", "name":"Simone", "age":23, "eyeColor":"blue"&#125;"""</span>))</span><br></pre></td></tr></table></figure>
-
+<pre><code class="python">&gt;&gt;&gt; stringJSONRDD = sc.parallelize((&quot;&quot;&quot;
+... {&quot;id&quot;:&quot;123&quot;,&quot;name&quot;:&quot;Katie&quot;, &quot;age&quot;:19, &quot;eyeColor&quot;:&quot;brown&quot;}&quot;&quot;&quot;,
+... &quot;&quot;&quot;{&quot;id&quot;:&quot;234&quot;, &quot;name&quot;:&quot;Michael&quot;, &quot;age&quot;:22, &quot;eyeColor&quot;:&quot;green&quot;}&quot;&quot;&quot;,
+... &quot;&quot;&quot;{&quot;id&quot;:&quot;345&quot;, &quot;name&quot;:&quot;Simone&quot;, &quot;age&quot;:23, &quot;eyeColor&quot;:&quot;blue&quot;}&quot;&quot;&quot;))</code></pre>
 <ul>
-<li>创建DataFrame<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>swimmersJSON = spark.read.json(stringJSONRDD)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>swimmersJSON</span><br><span class="line">DataFrame[age: bigint, eyeColor: string, id: string, name: string]</span><br></pre></td></tr></table></figure>
-
+<li>创建DataFrame<pre><code class="python">&gt;&gt;&gt; swimmersJSON = spark.read.json(stringJSONRDD)
+&gt;&gt;&gt; swimmersJSON
+DataFrame[age: bigint, eyeColor: string, id: string, name: string]</code></pre>
 </li>
 </ul>
 </li>
 </ul>
 <h3 id="简单的DataFrame查询"><a href="#简单的DataFrame查询" class="headerlink" title="简单的DataFrame查询"></a>简单的DataFrame查询</h3><ol>
-<li><p>.show() 默认显示前十行</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>swimmersJSON.show()</span><br><span class="line">+---+--------+---+-------+</span><br><span class="line">|age|eyeColor| id|   name|</span><br><span class="line">+---+--------+---+-------+</span><br><span class="line">| <span class="number">19</span>|   brown|<span class="number">123</span>|  Katie|</span><br><span class="line">| <span class="number">22</span>|   green|<span class="number">234</span>|Michael|</span><br><span class="line">| <span class="number">23</span>|    blue|<span class="number">345</span>| Simone|</span><br><span class="line">+---+--------+---+-------+</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>SQL查询  ## 需要线生成表</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">swimmersJSON.createOrReplaceTempView(<span class="string">"swimmers"</span>)</span><br><span class="line"></span><br><span class="line">spark.sql(<span class="string">"select count(*) from swimmers"</span>).show()</span><br></pre></td></tr></table></figure>
-
+<li>.show() 默认显示前十行<br>```python<blockquote>
+<blockquote>
+<blockquote>
+<p>swimmersJSON.show()</p>
+</blockquote>
+</blockquote>
+</blockquote>
 </li>
 </ol>
-<h3 id="RDD的交互操作"><a href="#RDD的交互操作" class="headerlink" title="RDD的交互操作"></a>RDD的交互操作</h3><p><code>有两种从RDD转换到DataFrame的方法： 反射推断模式、编程方式指定模式</code></p>
+<p>+—+——–+—+——-+<br>|age|eyeColor| id|   name|<br>+—+——–+—+——-+<br>| 19|   brown|123|  Katie|<br>| 22|   green|234|Michael|<br>| 23|    blue|345| Simone|<br>+—+——–+—+——-+</p>
+<pre><code>
+2. SQL查询  ## 需要线生成表
+```python
+    swimmersJSON.createOrReplaceTempView(&quot;swimmers&quot;)
+
+    spark.sql(&quot;select count(*) from swimmers&quot;).show()</code></pre><h3 id="RDD的交互操作"><a href="#RDD的交互操作" class="headerlink" title="RDD的交互操作"></a>RDD的交互操作</h3><p><code>有两种从RDD转换到DataFrame的方法： 反射推断模式、编程方式指定模式</code></p>
 <ul>
 <li><p>使用反射来推断模式</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>airports = spark.read.csv(airportsFilePath, header=<span class="string">'true'</span>, inferSchema=<span class="string">'true'</span>, sep=<span class="string">'\t'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>airports.take(<span class="number">2</span>)</span><br><span class="line">[Row(City=<span class="string">'Abbotsford'</span>, State=<span class="string">'BC'</span>, Country=<span class="string">'Canada'</span>, IATA=<span class="string">'YXX'</span>), Row(City=<span class="string">'Aberdeen'</span>, State=<span class="string">'SD'</span>, Country=<span class="string">'USA'</span>, IATA=<span class="string">'ABR'</span>)]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>airports.createOrReplaceTempView(<span class="string">"airports"</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>flightPerf = spark.read.csv(flightPerFilePath, header=<span class="string">'true'</span>)</span><br></pre></td></tr></table></figure>
+<pre><code class="python">&gt;&gt;&gt; airports = spark.read.csv(airportsFilePath, header=&#39;true&#39;, inferSchema=&#39;true&#39;, sep=&#39;\t&#39;)
+&gt;&gt;&gt; 
+&gt;&gt;&gt; 
+&gt;&gt;&gt; airports.take(2)
+[Row(City=&#39;Abbotsford&#39;, State=&#39;BC&#39;, Country=&#39;Canada&#39;, IATA=&#39;YXX&#39;), Row(City=&#39;Aberdeen&#39;, State=&#39;SD&#39;, Country=&#39;USA&#39;, IATA=&#39;ABR&#39;)]
+&gt;&gt;&gt; 
+&gt;&gt;&gt; airports.createOrReplaceTempView(&quot;airports&quot;)
+&gt;&gt;&gt; 
+&gt;&gt;&gt; 
+&gt;&gt;&gt; flightPerf = spark.read.csv(flightPerFilePath, header=&#39;true&#39;)</code></pre>
 </li>
-<li><p>编程指定模式</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>stringCSVRDD = sc.parallelize([(<span class="number">123</span>, <span class="string">'Katie'</span>, <span class="number">19</span>, <span class="string">'brown'</span>), (<span class="number">234</span>, <span class="string">'Michael'</span>, <span class="number">22</span>, <span class="string">'green'</span>), (<span class="number">345</span>, <span class="string">'Simone'</span>, <span class="number">23</span>, <span class="string">'blue'</span>)])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>schema = StructType([StructField(<span class="string">"id"</span>, LongType(), <span class="literal">True</span>), StructField(<span class="string">"name"</span>, StringType(), <span class="literal">True</span>), StructField(<span class="string">"age"</span>, LongType(), <span class="literal">True</span>), StructField(<span class="string">"eyeColor"</span>, StringType(), <span class="literal">True</span>)])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>swimmers = spark.createDataFrame(stringCSVRDD, schema)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>swimmers.show()</span><br><span class="line">+---+-------+---+--------+</span><br><span class="line">| id|   name|age|eyeColor|</span><br><span class="line">+---+-------+---+--------+</span><br><span class="line">|<span class="number">123</span>|  Katie| <span class="number">19</span>|   brown|</span><br><span class="line">|<span class="number">234</span>|Michael| <span class="number">22</span>|   green|</span><br><span class="line">|<span class="number">345</span>| Simone| <span class="number">23</span>|    blue|</span><br><span class="line">+---+-------+---+--------+</span><br></pre></td></tr></table></figure>
-
+<li><p>编程指定模式<br>```python</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>stringCSVRDD = sc.parallelize([(123, ‘Katie’, 19, ‘brown’), (234, ‘Michael’, 22, ‘green’), (345, ‘Simone’, 23, ‘blue’)])</p>
+<p>schema = StructType([StructField(“id”, LongType(), True), StructField(“name”, StringType(), True), StructField(“age”, LongType(), True), StructField(“eyeColor”, StringType(), True)])</p>
+<p>swimmers = spark.createDataFrame(stringCSVRDD, schema)</p>
+<p>swimmers.show()</p>
+</blockquote>
+</blockquote>
+</blockquote>
 </li>
 </ul>
-<h3 id="利用DataFrame-API查询"><a href="#利用DataFrame-API查询" class="headerlink" title="利用DataFrame API查询"></a>利用DataFrame API查询</h3><ul>
-<li><p>.count() 行数</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>swimmers.count()</span><br><span class="line"><span class="number">3</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>运行筛选语句</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>swimmers.select(<span class="string">"id"</span>, <span class="string">"age"</span>).filter(<span class="string">"age = 22"</span>).show()</span><br><span class="line">+---+---+</span><br><span class="line">| id|age|</span><br><span class="line">+---+---+</span><br><span class="line">|<span class="number">234</span>| <span class="number">22</span>|</span><br><span class="line">+---+---+</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>swimmers.select(swimmers.id, swimmers.age).filter(swimmers.age == <span class="number">22</span>).show()</span><br><span class="line">+---+---+</span><br><span class="line">| id|age|</span><br><span class="line">+---+---+</span><br><span class="line">|<span class="number">234</span>| <span class="number">22</span>|</span><br><span class="line">+---+---+</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>swimmers.select(<span class="string">"name"</span>, <span class="string">"eyeColor"</span>).filter(<span class="string">"eyeColor like 'b%'"</span>).show()</span><br><span class="line">+------+--------+</span><br><span class="line">|  name|eyeColor|</span><br><span class="line">+------+--------+</span><br><span class="line">| Katie|   brown|</span><br><span class="line">|Simone|    blue|</span><br><span class="line">+------+--------+</span><br></pre></td></tr></table></figure>
-
+<p>+—+——-+—+——–+<br>| id|   name|age|eyeColor|<br>+—+——-+—+——–+<br>|123|  Katie| 19|   brown|<br>|234|Michael| 22|   green|<br>|345| Simone| 23|    blue|<br>+—+——-+—+——–+</p>
+<pre><code>
+### 利用DataFrame API查询
+- .count() 行数
+```python
+&gt;&gt;&gt; swimmers.count()
+3</code></pre><ul>
+<li>运行筛选语句<br>```python<blockquote>
+<blockquote>
+<blockquote>
+<p>swimmers.select(“id”, “age”).filter(“age = 22”).show()</p>
+</blockquote>
+</blockquote>
+</blockquote>
 </li>
 </ul>
-<h3 id="利用SQL查询"><a href="#利用SQL查询" class="headerlink" title="利用SQL查询"></a>利用SQL查询</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>swimmers.createOrReplaceTempView(<span class="string">"swimmers"</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>spark.sql(<span class="string">"select count(*) from swimmers"</span>).show()</span><br><span class="line">+--------+</span><br><span class="line">|count(<span class="number">1</span>)|</span><br><span class="line">+--------+</span><br><span class="line">|       <span class="number">3</span>|</span><br><span class="line">+--------+</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>spark.sql(<span class="string">"select name, eyeColor from swimmers where eyeColor like 'b%'"</span>).show()</span><br><span class="line">+------+--------+</span><br><span class="line">|  name|eyeColor|</span><br><span class="line">+------+--------+</span><br><span class="line">| Katie|   brown|</span><br><span class="line">|Simone|    blue|</span><br><span class="line">+------+--------+</span><br></pre></td></tr></table></figure>
+<p>+—+—+<br>| id|age|<br>+—+—+<br>|234| 22|<br>+—+—+</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>swimmers.select(swimmers.id, swimmers.age).filter(swimmers.age == 22).show()<br>+—+—+<br>| id|age|<br>+—+—+<br>|234| 22|<br>+—+—+</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>swimmers.select(“name”, “eyeColor”).filter(“eyeColor like ‘b%’”).show()<br>+——+——–+<br>|  name|eyeColor|<br>+——+——–+<br>| Katie|   brown|<br>|Simone|    blue|<br>+——+——–+</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<pre><code>
+### 利用SQL查询
+```python
+&gt;&gt;&gt; swimmers.createOrReplaceTempView(&quot;swimmers&quot;)
+&gt;&gt;&gt; 
+&gt;&gt;&gt; spark.sql(&quot;select count(*) from swimmers&quot;).show()
++--------+
+|count(1)|
++--------+
+|       3|
++--------+
 
-
-        
-            <div class="donate-container">
-    <div class="donate-button">
-        <button id="donate-button">赞赏</button>
-    </div>
-    <div class="donate-img-container hide" id="donate-img-container">
-        <img id="donate-img" src="/img/donate.jpg" data-src="/img/donate.jpg">
-        <p>  </p>
-    </div>
-</div>
-        
-        <br />
-        <div id="comment-container">
+&gt;&gt;&gt; 
+&gt;&gt;&gt; spark.sql(&quot;select name, eyeColor from swimmers where eyeColor like &#39;b%&#39;&quot;).show()
++------+--------+
+|  name|eyeColor|
++------+--------+
+| Katie|   brown|
+|Simone|    blue|
++------+--------+</code></pre>
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='/statics/chengdu.mp3'></li>
+                        
+                    
+                </ul>
+            
+            
+            
+                <div id="vcomments"></div>
+            
         </div>
-        <div id="disqus_thread"></div>
-
-        <div id="lv-container">
+        <div class="sidebar">
+            <div class="box animated fadeInRight">
+                <div class="subbox">
+                    <img src="https://res.cloudinary.com/tridiamond/image/upload/v1571154379/TriDiamondLogoCircleLighting_llbad2.png" height=300 width=300></img>
+                    <p>ko_whoy</p>
+                    <span>Don`t worry, be happy</span>
+                    <dl>
+                        <dd><a href="https://github.com/kowhoy" target="_blank"><span class=" iconfont icon-github"></span></a></dd>
+                        <dd><a href="https://twitter.com/kowhoy" target="_blank"><span class=" iconfont icon-twitter"></span></a></dd>
+                        <dd><a href="https://stackoverflow.com/users" target="_blank"><span class=" iconfont icon-stack-overflow"></span></a></dd>
+                    </dl>
+                </div>
+                <ul>
+                    <li><a href="/">6 <p>Articles</p></a></li>
+                    <li><a href="/categories">1 <p>Categories</p></a></li>
+                    <li><a href="/tags">7 <p>Tags</p></a></li>
+                </ul>
+            </div>
+            
         </div>
-
-    </div>
-</div>
-
     </div>
 </div>
 
 
-<footer class="footer">
-    <ul class="list-inline text-center">
-        
-        
-
-        
-
-        
-
-        
-
-        
-
-    </ul>
-    
-    <p>
-        <span id="busuanzi_container_site_pv">
-            <span id="busuanzi_value_site_pv"></span>PV
+    </div>
+</div>
+    <div id="back-to-top" class="animated fadeIn faster">
+        <div class="flow"></div>
+        <span class="percentage animated fadeIn faster">0%</span>
+        <span class="iconfont icon-top02 animated fadeIn faster"></span>
+    </div>
+</body>
+<footer>
+    <p class="copyright" id="copyright">
+        &copy; 2019
+        <span class="gradient-text">
+            ko_whoy
+        </span>.
+        Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
+        Theme
+        <span class="gradient-text">
+            <a href="https://github.com/TriDiamond/hexo-theme-obsidian" title="Obsidian" target="_blank" rel="noopener">Obsidian</a>
+            <small><a href="https://github.com/TriDiamond/hexo-theme-obsidian/blob/master/CHANGELOG.md" title="1.3.1" target="_blank" rel="noopener">1.3.1</a></small>
         </span>
-        <span id="busuanzi_container_site_uv">
-            <span id="busuanzi_value_site_uv"></span>UV
-        </span>
-        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+    </p>
 </footer>
 
+<script src="//cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/obsidian.js"></script>
+<script src="/js/jquery.truncate.js"></script>
+<script src="//cdn.bootcss.com/typed.js/2.0.10/typed.min.js"></script>
+<script src="//cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script>
+
+
+    <script src="/js/busuanzi.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            if ($('span[id^="busuanzi_"]').length) {
+                initialBusuanzi();
+            }
+        });
+    </script>
+
+
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.css">
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/default-skin/default-skin.min.css">
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.js"></script>
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 
-</body>
+
+
+
+    <!-- Highlight.js -->
+    <link rel="stylesheet" href="/css/dracula.css">
+    <script src="//cdn.bootcss.com/highlight.js/9.15.10/highlight.min.js">
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            document.querySelectorAll('pre code').forEach((block) => {
+                hljs.highlightBlock(block);
+            });
+        });
+    </script>
+
 
 <script>
-    // We expose some of the variables needed by the front end
-    window.hexo_search_path = ""
-    window.hexo_root = "/"
-    window.isPost = true
+    function initialTyped () {
+        var typedTextEl = $('.typed-text');
+        if (typedTextEl && typedTextEl.length > 0) {
+            var typed = new Typed('.typed-text', {
+                strings: ["Don`t worry, be happy", ""],
+                typeSpeed: 90,
+                loop: true,
+                loopCount: Infinity,
+                backSpeed: 20,
+            });
+        }
+    }
+
+    if ($('.article-header') && $('.article-header').length) {
+        $(document).ready(function () {
+            initialTyped();
+        });
+    }
 </script>
-<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
-<script src="/js/index.js"></script>
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 
+    <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+    <script>
 
+        var valine = new Valine();
+
+        function initValine(path) {
+            if (!path) path = window.location.pathname;
+            let language = 'zh';
+            if (!language) {
+                language = 'en';
+            } else {
+                language = language.toLowerCase();
+            }
+            valine.init({
+                el: '#vcomments',
+                appId: '',
+                appKey: '',
+                notify: 'false',
+                verify: 'false',
+                avatar: 'mp',
+                placeholder: 'Leave your throughs behind~',
+                visitor: 'true',
+                path: path,
+                lang: language
+            });
+        }
+
+        $(document).ready(function () {
+            initValine();
+        });
+    </script>
 
 </html>

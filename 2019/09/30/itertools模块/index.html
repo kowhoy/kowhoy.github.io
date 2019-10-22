@@ -1,137 +1,117 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh" class="loading">
 <head><meta name="generator" content="Hexo 3.9.0">
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content>
-    <meta name="keyword" content>
-    <link rel="shortcut icon" href="/img/favicon.ico">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>itertools模块 - ko_whoy</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate">
+    <meta name="keywords" content="ko_whoy,"> 
+    <meta name="description" content="迭代器
+迭代器是 惰性求值(lazy evaluation) 的, 只有在迭代到某个值的时候才会计算，而不是一开始就计算好，所以迭代器适合遍历大文件或者无限集合等。
 
-    <title>
-        
-        itertools模块 - KO_WHOY
-        
-    </title>
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/aircloud.css">
-    <link rel="stylesheet" href="/css/gitment.css">
-    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
-    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
-    <!-- ga & ba script hoook -->
-    <script></script>
+itertools模块
+pyt,"> 
+    <meta name="author" content="ko_whoy"> 
+    <link rel="alternative" href="atom.xml" title="ko_whoy" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link href="/font/Rubik-Bold-kern-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link href="/font/Rubik-Regular-kern-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_7jr8c7mf4wi.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.7.2/animate.min.css">
+    <link rel="stylesheet" href="/css/obsidian.css">
 </head>
-
-<body>
-
-<div class="site-nav-toggle" id="site-nav-toggle">
-    <button>
-        <span class="btn-bar"></span>
-        <span class="btn-bar"></span>
-        <span class="btn-bar"></span>
-    </button>
-</div>
-
-<div class="index-about">
-    <i> don`t worry, be happy </i>
-</div>
-
-<div class="index-container">
-    
-    <div class="index-left">
-        
-<div class="nav" id="nav">
-    <div class="avatar-name">
-        <div class="avatar ">
-            <img src="/img/avatar.jpg" />
-        </div>
-        <div class="name">
-            <i>ko_whoy</i>
-        </div>
+</html>
+<body class="loading">
+    <span id="config-title" style="display:none">ko_whoy</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div class="scrollbar gradient-bg-rev"></div>
+<div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a id="home-icon" class="image-icon icon-home iconfont" href="javascript:;" data-url="https://kowhoy.github.io"></a>
+    <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
+    <h3 class="subtitle">itertools模块</h3>
+    <div class="social">
+<!--        <div class="like-icon">-->
+<!--            <a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+<!--        </div>-->
+<!--        <div>-->
+<!--            <div class="share">-->
+<!--                <a title="Get qrcode" id="qr-icon" href="javascript:;" class="iconfont icon-QRcode-o"></a>-->
+<!--            </div>-->
+<!--            <div id="qr"></div>-->
+<!--        </div>-->
     </div>
-    <div class="contents" id="nav-content">
-        <ul>
-            <li >
-                <a href="/">
-                    <i class="iconfont icon-shouye1"></i>
-                    <span>主页</span>
-                </a>
-            </li>
-            <li >
-                <a href="/tags">
-                    <i class="iconfont icon-biaoqian1"></i>
-                    <span>标签</span>
-                </a>
-            </li>
-            <li >
-                <a href="/archives">
-                    <i class="iconfont icon-guidang2"></i>
-                    <span>存档</span>
-                </a>
-            </li>
-            <li >
-                <a href="/about/">
-                    <i class="iconfont icon-guanyu2"></i>
-                    <span>关于</span>
-                </a>
-            </li>
+</div>
+
+    <div class="section">
+        <div class= article-header-wrapper>
+    <div class="article-header">
+        <div class="article-cover animated fadeIn" style="
+            animation-delay: 600ms;
+            animation-duration: 1.2s;
+            background-image: 
+                radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+                url(/img/cover.jpg);">
+        </div>
+        <div class="else">
+            <p class="animated fadeInDown">
+                
+                    <a href="javascript:;"><b>「 </b>Article<b> 」</b></a>
+                
+                September 30, 2019
+            </p>
+            <h3 class="post-title animated fadeInDown"><a href="/2019/09/30/itertools模块/" title="itertools模块">itertools模块</a></h3>
             
-        </ul>
-    </div>
-    
-        <div id="toc" class="toc-article">
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#迭代器"><span class="toc-text">迭代器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#itertools模块"><span class="toc-text">itertools模块</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#三种迭代器"><span class="toc-text">三种迭代器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#无限迭代器"><span class="toc-text">无限迭代器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-count-firstval-step"><span class="toc-text">1. count(firstval, step)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-cycle-iterable"><span class="toc-text">2. cycle(iterable)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-repeat-object-times"><span class="toc-text">3. repeat(object [,times])</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#有限迭代器"><span class="toc-text">有限迭代器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-chain-iter1-iter2-iter3-……"><span class="toc-text">1. chain(iter1, iter2, iter3, ……)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-compress-data-selectors"><span class="toc-text">2. compress(data, selectors)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-dropwhile-predicate-iterable"><span class="toc-text">3. dropwhile(predicate, iterable)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-groupby-iterable-keyfunc"><span class="toc-text">4. groupby(iterable [, keyfunc])</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-islice-iterable-start-stop-step"><span class="toc-text">5. islice(iterable [, start], stop [, step])</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-tee-iterable-n"><span class="toc-text">6. tee(iterable [, n])</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-takewhile-func-iterable"><span class="toc-text">7. takewhile(func, iterable)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#组合生成器"><span class="toc-text">组合生成器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-product-iter1-iter2-iter3-…"><span class="toc-text">1. product(iter1, iter2, iter3 …..)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-permutations-iterable-r"><span class="toc-text">2. permutations(iterable [, r])</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-combinations-iterable-r"><span class="toc-text">3. combinations(iterable, r)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-combinations-with-replacement-iterable-r"><span class="toc-text">4. combinations_with_replacement(iterable, r)</span></a></li></ol></li></ol>
-</div>
-    
-</div>
-
-
-<div class="search-field" id="search-field">
-    <div class="search-container">
-        <div class="search-input">
-            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
-            <input id="search-input"/>
-            <span id="begin-search">搜索</span>
+                <p class="post-count animated fadeInDown">
+                    
+                        <span>
+                        <b class="iconfont icon-text2"></b> <i>Words count</i>
+                        11k
+                    </span>
+                    
+                    
+                        <span>
+                        <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
+                        10 mins.
+                    </span>
+                    
+                    
+                        <span id="/2019/09/30/itertools模块/" class="leancloud_visitors" data-flag-title="itertools模块">
+                            <b class="iconfont icon-read"></b> <i>Read count</i>
+                            <i class="leancloud-visitors-count">1000000</i>
+                        </span>
+                    
+                    
+                </p>
+            
+            
+                <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/python/">python</a></li></ul>
+            
         </div>
-        <div class="search-result-container" id="search-result-container">
+    </div>
+</div>
 
+<div class="screen-gradient-after">
+    <div class="screen-gradient-content">
+        <div class="screen-gradient-content-inside">
+            <div class="bold-underline-links screen-gradient-sponsor">
+                <p>
+                    <span></span>  
+                </p>
+            </div>
         </div>
     </div>
 </div>
 
-        <div class="index-about-mobile">
-            <i> don`t worry, be happy </i>
-        </div>
-    </div>
-    
-    <div class="index-middle">
-        <!-- Main Content -->
-        
-
-
-<div class="post-container">
-    <div class="post-title">
-        itertools模块
-    </div>
-
-    <div class="post-meta">
-        <span class="attr">发布于：<span>2019-09-30 11:22:09</span></span>
-        
-        <span class="attr">标签：/
-        
-        <a class="tag" href="/tags/#python" title="python">python</a>
-        <span>/</span>
-        
-        
-        </span>
-        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
-</span>
-</span>
-    </div>
-    <div class="post-content ">
-        <h3 id="迭代器"><a href="#迭代器" class="headerlink" title="迭代器"></a>迭代器</h3><blockquote>
+<div class="article">
+    <div class='main'>
+        <div class="content markdown animated fadeIn slower">
+            <h3 id="迭代器"><a href="#迭代器" class="headerlink" title="迭代器"></a>迭代器</h3><blockquote>
 <p>迭代器是 <strong><em>惰性求值(lazy evaluation)</em></strong> 的, 只有在迭代到某个值的时候才会计算，而不是一开始就计算好，所以迭代器适合遍历大文件或者无限集合等。</p>
 </blockquote>
 <h3 id="itertools模块"><a href="#itertools模块" class="headerlink" title="itertools模块"></a>itertools模块</h3><blockquote>
@@ -148,141 +128,436 @@
 <h4 id="无限迭代器"><a href="#无限迭代器" class="headerlink" title="无限迭代器"></a>无限迭代器</h4><h4 id="1-count-firstval-step"><a href="#1-count-firstval-step" class="headerlink" title="1. count(firstval, step)"></a>1. count(firstval, step)</h4><pre><code>@desc: 生成firstval开始的，步长为step的无限迭代器
 @params: firstval 开始值(默认为0)
          step 步长</code></pre><p>example:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">1</span>]: <span class="keyword">from</span> itertools <span class="keyword">import</span> count</span><br><span class="line">In [<span class="number">2</span>]: <span class="keyword">for</span> i <span class="keyword">in</span> count(<span class="number">0</span>, <span class="number">2</span>): </span><br><span class="line">   ...:     <span class="keyword">if</span> i &gt; <span class="number">12</span>: </span><br><span class="line">   ...:         <span class="keyword">break</span> </span><br><span class="line">   ...:     print(i) </span><br><span class="line">   ...:                                                                                             </span><br><span class="line"><span class="number">0</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">4</span></span><br><span class="line"><span class="number">6</span></span><br><span class="line"><span class="number">8</span></span><br><span class="line"><span class="number">10</span></span><br><span class="line"><span class="number">12</span></span><br></pre></td></tr></table></figure>
-
+<pre><code class="python">In [1]: from itertools import count
+In [2]: for i in count(0, 2): 
+   ...:     if i &gt; 12: 
+   ...:         break 
+   ...:     print(i) 
+   ...:                                                                                             
+0
+2
+4
+6
+8
+10
+12</code></pre>
 <h4 id="2-cycle-iterable"><a href="#2-cycle-iterable" class="headerlink" title="2. cycle(iterable)"></a>2. cycle(iterable)</h4><pre><code>@desc: 将可迭代的对象反复执行循环
 @param: iterable 可迭代对象</code></pre><p>example:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">3</span>]: count = <span class="number">0</span> </span><br><span class="line">In [<span class="number">4</span>]: <span class="keyword">from</span> itertools <span class="keyword">import</span> cycle </span><br><span class="line">In [<span class="number">5</span>]: <span class="keyword">for</span> s <span class="keyword">in</span> cycle([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]): </span><br><span class="line">   ...:     count += <span class="number">1</span> </span><br><span class="line">   ...:     print(count, s) </span><br><span class="line">   ...:     <span class="keyword">if</span> count &gt;= <span class="number">10</span>: </span><br><span class="line">   ...:         <span class="keyword">break</span> </span><br><span class="line">   ...:                                                                   </span><br><span class="line"></span><br><span class="line"><span class="number">1</span> <span class="number">1</span></span><br><span class="line"><span class="number">2</span> <span class="number">2</span></span><br><span class="line"><span class="number">3</span> <span class="number">3</span></span><br><span class="line"><span class="number">4</span> <span class="number">1</span></span><br><span class="line"><span class="number">5</span> <span class="number">2</span></span><br><span class="line"><span class="number">6</span> <span class="number">3</span></span><br><span class="line"><span class="number">7</span> <span class="number">1</span></span><br><span class="line"><span class="number">8</span> <span class="number">2</span></span><br><span class="line"><span class="number">9</span> <span class="number">3</span></span><br><span class="line"><span class="number">10</span> <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<pre><code class="python">In [3]: count = 0 
+In [4]: from itertools import cycle 
+In [5]: for s in cycle([1,2,3]): 
+   ...:     count += 1 
+   ...:     print(count, s) 
+   ...:     if count &gt;= 10: 
+   ...:         break 
+   ...:                                                                   
 
+1 1
+2 2
+3 3
+4 1
+5 2
+6 3
+7 1
+8 2
+9 3
+10 1</code></pre>
 <h4 id="3-repeat-object-times"><a href="#3-repeat-object-times" class="headerlink" title="3. repeat(object [,times])"></a>3. repeat(object [,times])</h4><pre><code>@desc: 重复times生成object
 @params: object 需要生成的对象
         [times] 重复次数</code></pre><p>example:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">6</span>]: <span class="keyword">from</span> itertools <span class="keyword">import</span> repeat</span><br><span class="line">In [<span class="number">7</span>]: <span class="keyword">for</span> s <span class="keyword">in</span> repeat([<span class="number">1</span>, <span class="number">2</span>, <span class="number">4</span>], <span class="number">4</span>): </span><br><span class="line">   ...:     print(s) </span><br><span class="line">   ...:                                                                      </span><br><span class="line"></span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">4</span>]</span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">4</span>]</span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">4</span>]</span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">4</span>]</span><br><span class="line"></span><br><span class="line">In [<span class="number">8</span>]: count = <span class="number">0</span></span><br><span class="line">In [<span class="number">9</span>]: <span class="keyword">for</span> s <span class="keyword">in</span> repeat([<span class="number">1</span>, <span class="number">3</span>, <span class="number">4</span>]): </span><br><span class="line">   ...:     count += <span class="number">1</span> </span><br><span class="line">   ...:     print(count, s) </span><br><span class="line">   ...:     <span class="keyword">if</span> count &gt;= <span class="number">3</span>: </span><br><span class="line">   ...:         <span class="keyword">break</span> </span><br><span class="line">   ...:                                                                           </span><br><span class="line"></span><br><span class="line"><span class="number">1</span> [<span class="number">1</span>, <span class="number">3</span>, <span class="number">4</span>]</span><br><span class="line"><span class="number">2</span> [<span class="number">1</span>, <span class="number">3</span>, <span class="number">4</span>]</span><br><span class="line"><span class="number">3</span> [<span class="number">1</span>, <span class="number">3</span>, <span class="number">4</span>]</span><br></pre></td></tr></table></figure>
+<pre><code class="python">In [6]: from itertools import repeat
+In [7]: for s in repeat([1, 2, 4], 4): 
+   ...:     print(s) 
+   ...:                                                                      
 
+[1, 2, 4]
+[1, 2, 4]
+[1, 2, 4]
+[1, 2, 4]
+
+In [8]: count = 0
+In [9]: for s in repeat([1, 3, 4]): 
+   ...:     count += 1 
+   ...:     print(count, s) 
+   ...:     if count &gt;= 3: 
+   ...:         break 
+   ...:                                                                           
+
+1 [1, 3, 4]
+2 [1, 3, 4]
+3 [1, 3, 4]</code></pre>
 <hr>
 <h4 id="有限迭代器"><a href="#有限迭代器" class="headerlink" title="有限迭代器"></a>有限迭代器</h4><h4 id="1-chain-iter1-iter2-iter3-……"><a href="#1-chain-iter1-iter2-iter3-……" class="headerlink" title="1. chain(iter1, iter2, iter3, ……)"></a>1. chain(iter1, iter2, iter3, ……)</h4><pre><code>@desc: 将多个可迭代对象进行连接成一个迭代器
 @params: 多个可迭代对象</code></pre><p>example:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">10</span>]: <span class="keyword">from</span> itertools <span class="keyword">import</span> chain                                                                </span><br><span class="line"></span><br><span class="line">In [<span class="number">11</span>]: <span class="keyword">for</span> s <span class="keyword">in</span> chain([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>], <span class="string">'ABC'</span>, (<span class="number">7</span>,<span class="number">8</span>,<span class="number">0</span>)): </span><br><span class="line">    ...:     print(s) </span><br><span class="line">    ...:                                                                                            </span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">3</span></span><br><span class="line">A</span><br><span class="line">B</span><br><span class="line">C</span><br><span class="line"><span class="number">7</span></span><br><span class="line"><span class="number">8</span></span><br><span class="line"><span class="number">0</span></span><br></pre></td></tr></table></figure>
+<pre><code class="python">In [10]: from itertools import chain                                                                
 
+In [11]: for s in chain([1,2,3], &#39;ABC&#39;, (7,8,0)): 
+    ...:     print(s) 
+    ...:                                                                                            
+1
+2
+3
+A
+B
+C
+7
+8
+0</code></pre>
 <h4 id="2-compress-data-selectors"><a href="#2-compress-data-selectors" class="headerlink" title="2. compress(data, selectors)"></a>2. compress(data, selectors)</h4><pre><code>@desc: 保留和selectors为True对应位置的data数据, 否则舍弃
 @params: data  待处理的数据
         selectors true or false 选择器</code></pre><p>example:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">12</span>]: <span class="keyword">from</span> itertools <span class="keyword">import</span> compress                                                             </span><br><span class="line"></span><br><span class="line">In [<span class="number">13</span>]: <span class="keyword">for</span> s <span class="keyword">in</span> compress(<span class="string">'ABABABAB'</span>, [<span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>]): </span><br><span class="line">    ...:     print(s) </span><br><span class="line">    ...:                                                                                            </span><br><span class="line">A</span><br><span class="line">A</span><br><span class="line">A</span><br><span class="line">A</span><br></pre></td></tr></table></figure>
+<pre><code class="python">In [12]: from itertools import compress                                                             
 
+In [13]: for s in compress(&#39;ABABABAB&#39;, [1, 0, 1, 0, 1, 0, 1, 0]): 
+    ...:     print(s) 
+    ...:                                                                                            
+A
+A
+A
+A</code></pre>
 <h4 id="3-dropwhile-predicate-iterable"><a href="#3-dropwhile-predicate-iterable" class="headerlink" title="3. dropwhile(predicate, iterable)"></a>3. dropwhile(predicate, iterable)</h4><pre><code>@desc: 对每个iterable元素执行predicate函数，为True舍弃，否则返回该项【及所有后续项】
 @params: predicate 函数
          iterable 可迭代对象</code></pre><p>example:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">14</span>]: <span class="keyword">from</span> itertools <span class="keyword">import</span> dropwhile                                                            </span><br><span class="line"></span><br><span class="line">In [<span class="number">15</span>]: <span class="keyword">for</span> s <span class="keyword">in</span> dropwhile(<span class="keyword">lambda</span> x: x&gt;<span class="number">5</span>, [<span class="number">6</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">4</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">9</span>,<span class="number">7</span>]): </span><br><span class="line">    ...:     print(s) </span><br><span class="line">    ...:                                                                                            </span><br><span class="line"><span class="number">4</span></span><br><span class="line"><span class="number">3</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">9</span></span><br><span class="line"><span class="number">7</span></span><br></pre></td></tr></table></figure>
+<pre><code class="python">In [14]: from itertools import dropwhile                                                            
 
+In [15]: for s in dropwhile(lambda x: x&gt;5, [6,6,7,4,3,2,9,7]): 
+    ...:     print(s) 
+    ...:                                                                                            
+4
+3
+2
+9
+7</code></pre>
 <h4 id="4-groupby-iterable-keyfunc"><a href="#4-groupby-iterable-keyfunc" class="headerlink" title="4. groupby(iterable [, keyfunc])"></a>4. groupby(iterable [, keyfunc])</h4><pre><code>@desc: 根据keyfunc(可选)对iterable进行分组，默认是将连续相同的元组分为一组
 @paras: iterable可迭代对象
         [keyfunc] 分组依据
 @return: key: sub-iterator</code></pre><p>example:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">16</span>]: <span class="keyword">from</span> itertools <span class="keyword">import</span> groupby                                                              </span><br><span class="line"></span><br><span class="line">In [<span class="number">17</span>]: <span class="keyword">for</span> key, se <span class="keyword">in</span> groupby(<span class="string">'ABCACCDEFA'</span>): </span><br><span class="line">    ...:     print(key, <span class="string">":"</span>, list(se)) </span><br><span class="line">    ...:                                                                                            </span><br><span class="line">A : [<span class="string">'A'</span>]</span><br><span class="line">B : [<span class="string">'B'</span>]</span><br><span class="line">C : [<span class="string">'C'</span>]</span><br><span class="line">A : [<span class="string">'A'</span>]</span><br><span class="line">C : [<span class="string">'C'</span>, <span class="string">'C'</span>]</span><br><span class="line">D : [<span class="string">'D'</span>]</span><br><span class="line">E : [<span class="string">'E'</span>]</span><br><span class="line">F : [<span class="string">'F'</span>]</span><br><span class="line">A : [<span class="string">'A'</span>]</span><br><span class="line"></span><br><span class="line">In [<span class="number">19</span>]: <span class="keyword">for</span> key, se <span class="keyword">in</span> groupby([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">-1</span>, <span class="number">-1</span>, <span class="number">2</span>, <span class="number">-3</span>], abs): </span><br><span class="line">    ...:     print(key, <span class="string">':'</span>, list(se)) </span><br><span class="line">    ...:                                                                                            </span><br><span class="line"><span class="number">1</span> : [<span class="number">1</span>]</span><br><span class="line"><span class="number">2</span> : [<span class="number">2</span>]</span><br><span class="line"><span class="number">3</span> : [<span class="number">3</span>]</span><br><span class="line"><span class="number">1</span> : [<span class="number">-1</span>, <span class="number">-1</span>]</span><br><span class="line"><span class="number">2</span> : [<span class="number">2</span>]</span><br><span class="line"><span class="number">3</span> : [<span class="number">-3</span>]</span><br></pre></td></tr></table></figure>
+<pre><code class="python">In [16]: from itertools import groupby                                                              
 
+In [17]: for key, se in groupby(&#39;ABCACCDEFA&#39;): 
+    ...:     print(key, &quot;:&quot;, list(se)) 
+    ...:                                                                                            
+A : [&#39;A&#39;]
+B : [&#39;B&#39;]
+C : [&#39;C&#39;]
+A : [&#39;A&#39;]
+C : [&#39;C&#39;, &#39;C&#39;]
+D : [&#39;D&#39;]
+E : [&#39;E&#39;]
+F : [&#39;F&#39;]
+A : [&#39;A&#39;]
+
+In [19]: for key, se in groupby([1, 2, 3, -1, -1, 2, -3], abs): 
+    ...:     print(key, &#39;:&#39;, list(se)) 
+    ...:                                                                                            
+1 : [1]
+2 : [2]
+3 : [3]
+1 : [-1, -1]
+2 : [2]
+3 : [-3]</code></pre>
 <h4 id="5-islice-iterable-start-stop-step"><a href="#5-islice-iterable-start-stop-step" class="headerlink" title="5. islice(iterable [, start], stop [, step])"></a>5. islice(iterable [, start], stop [, step])</h4><pre><code>@desc: 切片
 @params: iterable 可迭代对象
          [start] 开始索引
          stop 结束索引
          [step] 步长</code></pre><p>example:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">20</span>]: <span class="keyword">from</span> itertools <span class="keyword">import</span> islice, count                                                        </span><br><span class="line"></span><br><span class="line">In [<span class="number">21</span>]: list(islice([<span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">42</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>], <span class="number">4</span>))                                                    </span><br><span class="line">Out[<span class="number">21</span>]: [<span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">42</span>]</span><br><span class="line"></span><br><span class="line">In [<span class="number">22</span>]: list(islice([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>], <span class="number">1</span>, <span class="number">6</span>, <span class="number">2</span>))                                                 </span><br><span class="line">Out[<span class="number">22</span>]: [<span class="number">2</span>, <span class="number">4</span>, <span class="number">6</span>]</span><br><span class="line"></span><br><span class="line">In [<span class="number">23</span>]: list(islice(count(<span class="number">2</span>,<span class="number">2</span>), <span class="number">6</span>))                                                                </span><br><span class="line">Out[<span class="number">23</span>]: [<span class="number">2</span>, <span class="number">4</span>, <span class="number">6</span>, <span class="number">8</span>, <span class="number">10</span>, <span class="number">12</span>]</span><br></pre></td></tr></table></figure>
+<pre><code class="python">In [20]: from itertools import islice, count                                                        
 
+In [21]: list(islice([1, 2, 2, 42, 4, 5, 6], 4))                                                    
+Out[21]: [1, 2, 2, 42]
+
+In [22]: list(islice([1,2,3,4,5,6,7,8,9], 1, 6, 2))                                                 
+Out[22]: [2, 4, 6]
+
+In [23]: list(islice(count(2,2), 6))                                                                
+Out[23]: [2, 4, 6, 8, 10, 12]
+</code></pre>
 <h4 id="6-tee-iterable-n"><a href="#6-tee-iterable-n" class="headerlink" title="6. tee(iterable [, n])"></a>6. tee(iterable [, n])</h4><pre><code>@desc: 创建n个iterable迭代器
 @params: iterable 可迭代对象
          n 迭代器个数</code></pre><p>example:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">24</span>]: <span class="keyword">from</span> itertools <span class="keyword">import</span> tee                                                                  </span><br><span class="line"></span><br><span class="line">In [<span class="number">25</span>]: list(list(tee(<span class="string">'asdasda'</span>))[<span class="number">0</span>])                                                              </span><br><span class="line">Out[<span class="number">25</span>]: [<span class="string">'a'</span>, <span class="string">'s'</span>, <span class="string">'d'</span>, <span class="string">'a'</span>, <span class="string">'s'</span>, <span class="string">'d'</span>, <span class="string">'a'</span>]</span><br><span class="line"></span><br><span class="line">In [<span class="number">26</span>]: list(tee(<span class="string">'asdasda'</span>)[<span class="number">0</span>])                                                                    </span><br><span class="line">Out[<span class="number">26</span>]: [<span class="string">'a'</span>, <span class="string">'s'</span>, <span class="string">'d'</span>, <span class="string">'a'</span>, <span class="string">'s'</span>, <span class="string">'d'</span>, <span class="string">'a'</span>]</span><br></pre></td></tr></table></figure>
+<pre><code class="python">In [24]: from itertools import tee                                                                  
 
+In [25]: list(list(tee(&#39;asdasda&#39;))[0])                                                              
+Out[25]: [&#39;a&#39;, &#39;s&#39;, &#39;d&#39;, &#39;a&#39;, &#39;s&#39;, &#39;d&#39;, &#39;a&#39;]
+
+In [26]: list(tee(&#39;asdasda&#39;)[0])                                                                    
+Out[26]: [&#39;a&#39;, &#39;s&#39;, &#39;d&#39;, &#39;a&#39;, &#39;s&#39;, &#39;d&#39;, &#39;a&#39;]</code></pre>
 <h4 id="7-takewhile-func-iterable"><a href="#7-takewhile-func-iterable" class="headerlink" title="7. takewhile(func, iterable)"></a>7. takewhile(func, iterable)</h4><pre><code>@desc: 当func(item)为true时，保留，当出现false时候立即停止
 @params: func 判断函数
          iterable 可迭代对象</code></pre><p>example:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">28</span>]: <span class="keyword">from</span> itertools <span class="keyword">import</span> takewhile                                                            </span><br><span class="line"></span><br><span class="line">In [<span class="number">29</span>]: list(takewhile(<span class="keyword">lambda</span> x: x&lt;<span class="number">5</span>, [<span class="number">1</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">3</span>, <span class="number">6</span>, <span class="number">2</span>]))                                      </span><br><span class="line">Out[<span class="number">29</span>]: [<span class="number">1</span>, <span class="number">2</span>, <span class="number">4</span>]</span><br></pre></td></tr></table></figure>
+<pre><code class="python">In [28]: from itertools import takewhile                                                            
 
+In [29]: list(takewhile(lambda x: x&lt;5, [1, 2, 4, 5, 3, 6, 2]))                                      
+Out[29]: [1, 2, 4]</code></pre>
 <hr>
 <h4 id="组合生成器"><a href="#组合生成器" class="headerlink" title="组合生成器"></a>组合生成器</h4><h4 id="1-product-iter1-iter2-iter3-…"><a href="#1-product-iter1-iter2-iter3-…" class="headerlink" title="1. product(iter1, iter2, iter3 …..)"></a>1. product(iter1, iter2, iter3 …..)</h4><pre><code>@desc: 多个可迭代对象笛卡尔积
 @params: 多个可迭代对象</code></pre><p>example:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">30</span>]: <span class="keyword">from</span> itertools <span class="keyword">import</span> product                                                              </span><br><span class="line"></span><br><span class="line">In [<span class="number">31</span>]: <span class="keyword">for</span> i <span class="keyword">in</span> product([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], <span class="string">'ABS'</span>, (<span class="number">1</span>, <span class="number">3</span>, <span class="number">4</span>)): </span><br><span class="line">    ...:     print(i) </span><br><span class="line">    ...:                                                                                            </span><br><span class="line">(<span class="number">1</span>, <span class="string">'A'</span>, <span class="number">1</span>)</span><br><span class="line">(<span class="number">1</span>, <span class="string">'A'</span>, <span class="number">3</span>)</span><br><span class="line">(<span class="number">1</span>, <span class="string">'A'</span>, <span class="number">4</span>)</span><br><span class="line">(<span class="number">1</span>, <span class="string">'B'</span>, <span class="number">1</span>)</span><br><span class="line">(<span class="number">1</span>, <span class="string">'B'</span>, <span class="number">3</span>)</span><br><span class="line">(<span class="number">1</span>, <span class="string">'B'</span>, <span class="number">4</span>)</span><br><span class="line">(<span class="number">1</span>, <span class="string">'S'</span>, <span class="number">1</span>)</span><br><span class="line">(<span class="number">1</span>, <span class="string">'S'</span>, <span class="number">3</span>)</span><br><span class="line">(<span class="number">1</span>, <span class="string">'S'</span>, <span class="number">4</span>)</span><br><span class="line">(<span class="number">2</span>, <span class="string">'A'</span>, <span class="number">1</span>)</span><br><span class="line">(<span class="number">2</span>, <span class="string">'A'</span>, <span class="number">3</span>)</span><br><span class="line">(<span class="number">2</span>, <span class="string">'A'</span>, <span class="number">4</span>)</span><br><span class="line">(<span class="number">2</span>, <span class="string">'B'</span>, <span class="number">1</span>)</span><br><span class="line">(<span class="number">2</span>, <span class="string">'B'</span>, <span class="number">3</span>)</span><br><span class="line">(<span class="number">2</span>, <span class="string">'B'</span>, <span class="number">4</span>)</span><br><span class="line">(<span class="number">2</span>, <span class="string">'S'</span>, <span class="number">1</span>)</span><br><span class="line">(<span class="number">2</span>, <span class="string">'S'</span>, <span class="number">3</span>)</span><br><span class="line">(<span class="number">2</span>, <span class="string">'S'</span>, <span class="number">4</span>)</span><br><span class="line">(<span class="number">3</span>, <span class="string">'A'</span>, <span class="number">1</span>)</span><br><span class="line">(<span class="number">3</span>, <span class="string">'A'</span>, <span class="number">3</span>)</span><br><span class="line">(<span class="number">3</span>, <span class="string">'A'</span>, <span class="number">4</span>)</span><br><span class="line">(<span class="number">3</span>, <span class="string">'B'</span>, <span class="number">1</span>)</span><br><span class="line">(<span class="number">3</span>, <span class="string">'B'</span>, <span class="number">3</span>)</span><br><span class="line">(<span class="number">3</span>, <span class="string">'B'</span>, <span class="number">4</span>)</span><br><span class="line">(<span class="number">3</span>, <span class="string">'S'</span>, <span class="number">1</span>)</span><br><span class="line">(<span class="number">3</span>, <span class="string">'S'</span>, <span class="number">3</span>)</span><br><span class="line">(<span class="number">3</span>, <span class="string">'S'</span>, <span class="number">4</span>)</span><br></pre></td></tr></table></figure>
+<pre><code class="python">In [30]: from itertools import product                                                              
 
+In [31]: for i in product([1, 2, 3], &#39;ABS&#39;, (1, 3, 4)): 
+    ...:     print(i) 
+    ...:                                                                                            
+(1, &#39;A&#39;, 1)
+(1, &#39;A&#39;, 3)
+(1, &#39;A&#39;, 4)
+(1, &#39;B&#39;, 1)
+(1, &#39;B&#39;, 3)
+(1, &#39;B&#39;, 4)
+(1, &#39;S&#39;, 1)
+(1, &#39;S&#39;, 3)
+(1, &#39;S&#39;, 4)
+(2, &#39;A&#39;, 1)
+(2, &#39;A&#39;, 3)
+(2, &#39;A&#39;, 4)
+(2, &#39;B&#39;, 1)
+(2, &#39;B&#39;, 3)
+(2, &#39;B&#39;, 4)
+(2, &#39;S&#39;, 1)
+(2, &#39;S&#39;, 3)
+(2, &#39;S&#39;, 4)
+(3, &#39;A&#39;, 1)
+(3, &#39;A&#39;, 3)
+(3, &#39;A&#39;, 4)
+(3, &#39;B&#39;, 1)
+(3, &#39;B&#39;, 3)
+(3, &#39;B&#39;, 4)
+(3, &#39;S&#39;, 1)
+(3, &#39;S&#39;, 3)
+(3, &#39;S&#39;, 4)
+</code></pre>
 <h4 id="2-permutations-iterable-r"><a href="#2-permutations-iterable-r" class="headerlink" title="2. permutations(iterable [, r])"></a>2. permutations(iterable [, r])</h4><pre><code>@desc: 生成一个排列
 @params: iterable 可迭代对象
          [r] 生成长度，默认为迭代对象长度</code></pre><p>example:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">32</span>]: <span class="keyword">from</span> itertools <span class="keyword">import</span> permutations                                                         </span><br><span class="line"></span><br><span class="line">In [<span class="number">33</span>]: <span class="keyword">for</span> s <span class="keyword">in</span> permutations(<span class="string">'ABC'</span>, <span class="number">2</span>): </span><br><span class="line">    ...:     print(s) </span><br><span class="line">    ...:                                                                                            </span><br><span class="line">(<span class="string">'A'</span>, <span class="string">'B'</span>)</span><br><span class="line">(<span class="string">'A'</span>, <span class="string">'C'</span>)</span><br><span class="line">(<span class="string">'B'</span>, <span class="string">'A'</span>)</span><br><span class="line">(<span class="string">'B'</span>, <span class="string">'C'</span>)</span><br><span class="line">(<span class="string">'C'</span>, <span class="string">'A'</span>)</span><br><span class="line">(<span class="string">'C'</span>, <span class="string">'B'</span>)</span><br></pre></td></tr></table></figure>
+<pre><code class="python">In [32]: from itertools import permutations                                                         
 
+In [33]: for s in permutations(&#39;ABC&#39;, 2): 
+    ...:     print(s) 
+    ...:                                                                                            
+(&#39;A&#39;, &#39;B&#39;)
+(&#39;A&#39;, &#39;C&#39;)
+(&#39;B&#39;, &#39;A&#39;)
+(&#39;B&#39;, &#39;C&#39;)
+(&#39;C&#39;, &#39;A&#39;)
+(&#39;C&#39;, &#39;B&#39;)</code></pre>
 <h4 id="3-combinations-iterable-r"><a href="#3-combinations-iterable-r" class="headerlink" title="3. combinations(iterable, r)"></a>3. combinations(iterable, r)</h4><pre><code>@desc: 序列的组合
 @params: iterable 可迭代对象
          r 组合元素长度</code></pre><p>example:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">34</span>]: <span class="keyword">from</span> itertools <span class="keyword">import</span> combinations                                                         </span><br><span class="line"></span><br><span class="line">In [<span class="number">35</span>]: list(combinations(<span class="string">'ABS'</span>, <span class="number">2</span>))                                                               </span><br><span class="line">Out[<span class="number">35</span>]: [(<span class="string">'A'</span>, <span class="string">'B'</span>), (<span class="string">'A'</span>, <span class="string">'S'</span>), (<span class="string">'B'</span>, <span class="string">'S'</span>)]</span><br></pre></td></tr></table></figure>
+<pre><code class="python">In [34]: from itertools import combinations                                                         
 
+In [35]: list(combinations(&#39;ABS&#39;, 2))                                                               
+Out[35]: [(&#39;A&#39;, &#39;B&#39;), (&#39;A&#39;, &#39;S&#39;), (&#39;B&#39;, &#39;S&#39;)]</code></pre>
 <h4 id="4-combinations-with-replacement-iterable-r"><a href="#4-combinations-with-replacement-iterable-r" class="headerlink" title="4. combinations_with_replacement(iterable, r)"></a>4. combinations_with_replacement(iterable, r)</h4><pre><code>@desc: 同combinations，不同的是包含了自身元素</code></pre><p>example:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">36</span>]: <span class="keyword">from</span> itertools <span class="keyword">import</span> combinations_with_replacement                                        </span><br><span class="line"></span><br><span class="line">In [<span class="number">37</span>]: list(combinations_with_replacement(<span class="string">'ABS'</span>, <span class="number">2</span>))                                              </span><br><span class="line">Out[<span class="number">37</span>]: [(<span class="string">'A'</span>, <span class="string">'A'</span>), (<span class="string">'A'</span>, <span class="string">'B'</span>), (<span class="string">'A'</span>, <span class="string">'S'</span>), (<span class="string">'B'</span>, <span class="string">'B'</span>), (<span class="string">'B'</span>, <span class="string">'S'</span>), (<span class="string">'S'</span>, <span class="string">'S'</span>)]</span><br></pre></td></tr></table></figure>
+<pre><code class="python">In [36]: from itertools import combinations_with_replacement                                        
 
+In [37]: list(combinations_with_replacement(&#39;ABS&#39;, 2))                                              
+Out[37]: [(&#39;A&#39;, &#39;A&#39;), (&#39;A&#39;, &#39;B&#39;), (&#39;A&#39;, &#39;S&#39;), (&#39;B&#39;, &#39;B&#39;), (&#39;B&#39;, &#39;S&#39;), (&#39;S&#39;, &#39;S&#39;)]</code></pre>
 
-        
-            <div class="donate-container">
-    <div class="donate-button">
-        <button id="donate-button">赞赏</button>
-    </div>
-    <div class="donate-img-container hide" id="donate-img-container">
-        <img id="donate-img" src="/img/donate.jpg" data-src="/img/donate.jpg">
-        <p>  </p>
-    </div>
-</div>
-        
-        <br />
-        <div id="comment-container">
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='/statics/chengdu.mp3'></li>
+                        
+                    
+                </ul>
+            
+            
+            
+                <div id="vcomments"></div>
+            
         </div>
-        <div id="disqus_thread"></div>
-
-        <div id="lv-container">
+        <div class="sidebar">
+            <div class="box animated fadeInRight">
+                <div class="subbox">
+                    <img src="https://res.cloudinary.com/tridiamond/image/upload/v1571154379/TriDiamondLogoCircleLighting_llbad2.png" height=300 width=300></img>
+                    <p>ko_whoy</p>
+                    <span>Don`t worry, be happy</span>
+                    <dl>
+                        <dd><a href="https://github.com/kowhoy" target="_blank"><span class=" iconfont icon-github"></span></a></dd>
+                        <dd><a href="https://twitter.com/kowhoy" target="_blank"><span class=" iconfont icon-twitter"></span></a></dd>
+                        <dd><a href="https://stackoverflow.com/users" target="_blank"><span class=" iconfont icon-stack-overflow"></span></a></dd>
+                    </dl>
+                </div>
+                <ul>
+                    <li><a href="/">6 <p>Articles</p></a></li>
+                    <li><a href="/categories">1 <p>Categories</p></a></li>
+                    <li><a href="/tags">7 <p>Tags</p></a></li>
+                </ul>
+            </div>
+            
         </div>
-
-    </div>
-</div>
-
     </div>
 </div>
 
 
-<footer class="footer">
-    <ul class="list-inline text-center">
-        
-        
-
-        
-
-        
-
-        
-
-        
-
-    </ul>
-    
-    <p>
-        <span id="busuanzi_container_site_pv">
-            <span id="busuanzi_value_site_pv"></span>PV
+    </div>
+</div>
+    <div id="back-to-top" class="animated fadeIn faster">
+        <div class="flow"></div>
+        <span class="percentage animated fadeIn faster">0%</span>
+        <span class="iconfont icon-top02 animated fadeIn faster"></span>
+    </div>
+</body>
+<footer>
+    <p class="copyright" id="copyright">
+        &copy; 2019
+        <span class="gradient-text">
+            ko_whoy
+        </span>.
+        Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
+        Theme
+        <span class="gradient-text">
+            <a href="https://github.com/TriDiamond/hexo-theme-obsidian" title="Obsidian" target="_blank" rel="noopener">Obsidian</a>
+            <small><a href="https://github.com/TriDiamond/hexo-theme-obsidian/blob/master/CHANGELOG.md" title="1.3.1" target="_blank" rel="noopener">1.3.1</a></small>
         </span>
-        <span id="busuanzi_container_site_uv">
-            <span id="busuanzi_value_site_uv"></span>UV
-        </span>
-        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+    </p>
 </footer>
 
+<script src="//cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/obsidian.js"></script>
+<script src="/js/jquery.truncate.js"></script>
+<script src="//cdn.bootcss.com/typed.js/2.0.10/typed.min.js"></script>
+<script src="//cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script>
+
+
+    <script src="/js/busuanzi.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            if ($('span[id^="busuanzi_"]').length) {
+                initialBusuanzi();
+            }
+        });
+    </script>
+
+
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.css">
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/default-skin/default-skin.min.css">
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.js"></script>
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 
-</body>
+
+
+
+    <!-- Highlight.js -->
+    <link rel="stylesheet" href="/css/dracula.css">
+    <script src="//cdn.bootcss.com/highlight.js/9.15.10/highlight.min.js">
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            document.querySelectorAll('pre code').forEach((block) => {
+                hljs.highlightBlock(block);
+            });
+        });
+    </script>
+
 
 <script>
-    // We expose some of the variables needed by the front end
-    window.hexo_search_path = ""
-    window.hexo_root = "/"
-    window.isPost = true
+    function initialTyped () {
+        var typedTextEl = $('.typed-text');
+        if (typedTextEl && typedTextEl.length > 0) {
+            var typed = new Typed('.typed-text', {
+                strings: ["Don`t worry, be happy", ""],
+                typeSpeed: 90,
+                loop: true,
+                loopCount: Infinity,
+                backSpeed: 20,
+            });
+        }
+    }
+
+    if ($('.article-header') && $('.article-header').length) {
+        $(document).ready(function () {
+            initialTyped();
+        });
+    }
 </script>
-<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
-<script src="/js/index.js"></script>
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 
+    <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+    <script>
 
+        var valine = new Valine();
+
+        function initValine(path) {
+            if (!path) path = window.location.pathname;
+            let language = 'zh';
+            if (!language) {
+                language = 'en';
+            } else {
+                language = language.toLowerCase();
+            }
+            valine.init({
+                el: '#vcomments',
+                appId: '',
+                appKey: '',
+                notify: 'false',
+                verify: 'false',
+                avatar: 'mp',
+                placeholder: 'Leave your throughs behind~',
+                visitor: 'true',
+                path: path,
+                lang: language
+            });
+        }
+
+        $(document).ready(function () {
+            initValine();
+        });
+    </script>
 
 </html>
