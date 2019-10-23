@@ -5,16 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>hadoop-hive-wordcount示例 - ko_whoy</title>
+    <title>pandas的datetime64[ns]fillna的异常 - ko_whoy</title>
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate">
     <meta name="keywords" content="ko_whoy,"> 
-    <meta name="description" content="一、MapReduce 方式的wordcount
-思路： 使用python代码构建map 和 reduce 两部分，使用hadoop进行执行
-
-准备数据
-~/mapreduce_demo/datas,"> 
+    <meta name="description" content="情况说明: pandas的一列类型为datetime64[ns]的列, fillna以后, 数据产生差异，由 2019-10-23 变成 2019-10-23 00:00:00
+In [25]: t,"> 
     <meta name="author" content="ko_whoy"> 
     <link rel="alternative" href="atom.xml" title="ko_whoy" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -34,7 +31,7 @@
     <div class="bar" style="width: 0;"></div>
     <a id="home-icon" class="image-icon icon-home iconfont" href="javascript:;" data-url="https://kowhoy.github.io"></a>
     <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
-    <h3 class="subtitle">hadoop-hive-wordcount示例</h3>
+    <h3 class="subtitle">pandas的datetime64[ns]fillna的异常</h3>
     <div class="social">
 <!--        <div class="like-icon">-->
 <!--            <a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
@@ -63,21 +60,21 @@
                 
                     <a href="javascript:;"><b>「 </b>Article<b> 」</b></a>
                 
-                September 30, 2019
+                October 23, 2019
             </p>
-            <h3 class="post-title animated fadeInDown"><a href="/2019/09/30/hadoop-hive-wordcount示例/" title="hadoop-hive-wordcount示例">hadoop-hive-wordcount示例</a></h3>
+            <h3 class="post-title animated fadeInDown"><a href="/2019/10/23/pandas的datetime64-ns-fillna的异常/" title="pandas的datetime64[ns]fillna的异常">pandas的datetime64[ns]fillna的异常</a></h3>
             
                 <p class="post-count animated fadeInDown">
                     
                         <span>
                         <b class="iconfont icon-text2"></b> <i>Words count</i>
-                        4k
+                        1.8k
                     </span>
                     
                     
                         <span>
                         <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
-                        4 mins.
+                        2 mins.
                     </span>
                     
                     
@@ -85,7 +82,7 @@
                 </p>
             
             
-                <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/hadoop/">hadoop</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/hive/">hive</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/大数据/">大数据</a></li></ul>
+                <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/python/">python</a></li></ul>
             
         </div>
     </div>
@@ -106,104 +103,37 @@
 <div class="article">
     <div class='main'>
         <div class="content markdown animated fadeIn slower">
-            <h3 id="一、MapReduce-方式的wordcount"><a href="#一、MapReduce-方式的wordcount" class="headerlink" title="一、MapReduce 方式的wordcount"></a>一、MapReduce 方式的wordcount</h3><blockquote>
-<p>思路： 使用python代码构建map 和 reduce 两部分，使用hadoop进行执行</p>
-</blockquote>
-<h4 id="准备数据"><a href="#准备数据" class="headerlink" title="准备数据"></a>准备数据</h4><ul>
-<li><p>~/mapreduce_demo/datas/dt_01.txt</p>
-<blockquote>
-<p>wd wd tr tr dt rd dt</p>
-</blockquote>
-</li>
-<li><p>~/mapreduce_demo/datas/dt_02.txt</p>
-<blockquote>
-<p>ev ev ev </p>
-</blockquote>
-<blockquote>
-<p>sds ec ve ec</p>
-</blockquote>
-<blockquote>
-<p>dse de de </p>
-</blockquote>
-</li>
-</ul>
-<h4 id="放入hdfs"><a href="#放入hdfs" class="headerlink" title="放入hdfs"></a>放入hdfs</h4><pre><code class="shell">hadoop fs -copyFromLocal ~/mapreduce_demo/datas hdfs_in</code></pre>
-<h4 id="mapreduce-demo-mapper-py文件"><a href="#mapreduce-demo-mapper-py文件" class="headerlink" title="~/mapreduce_demo/mapper.py文件"></a>~/mapreduce_demo/mapper.py文件</h4><pre><code class="python">    import sys
+            <p>情况说明: pandas的一列类型为datetime64[ns]的列, fillna以后, 数据产生差异，由 2019-10-23 变成 2019-10-23 00:00:00</p>
+<pre><code class="python">In [25]: t1 = DataFrame({&quot;日期&quot;:[datetime.datetime(2019, 1, 1), None]})                                                                                                          
 
-    for line in sys.stdin:
-        line = line.strip()
-        words = line.split()
-        for word in words:
-            print(&quot;%s\t%s&quot;%(word, 1))</code></pre>
-<h4 id="mapreduce-demo-reducer-py-文件"><a href="#mapreduce-demo-reducer-py-文件" class="headerlink" title="~/mapreduce_demo/reducer.py 文件"></a>~/mapreduce_demo/reducer.py 文件</h4><pre><code class="python">    from operator import itemgetter
-    import sys
+In [26]: t1                                                                                                                                                                      
+Out[26]: 
+          日期
+0 2019-01-01
+1        NaT
 
-    current_word = None
-    current_count = 0
-    word = None
+In [27]: t1.fillna(0, inplace=True)                                                                                                                                              
 
-    for line in sys.stdin:
-        line = line.strip()
-        word, count = line.split(&#39;\t&#39;, 1)
+In [28]: t1                                                                                                                                                                      
+Out[28]: 
+                    日期
+0  2019-01-01 00:00:00
+1                    0
+</code></pre>
+<p>如果没有空数据，就不会出现</p>
+<pre><code class="python">In [29]: t2 = DataFrame({&quot;日期&quot;:[datetime.datetime(2019, 1, 1)]})                                                                                                                
 
-        try:
-            count = int(count)
-        except ValueError:
-            coutinue
+In [30]: t2                                                                                                                                                                      
+Out[30]: 
+          日期
+0 2019-01-01
 
-        if current_word == word:
-            current_count += count
-        else:
-        if current_word:
-            print(&quot;%s\t%s&quot;%(cureent_word, current_count))
-        current_count = count
-        current_word = word
+In [31]: t2.fillna(0, inplace=True)                                                                                                                                              
 
-    if word == current_word:
-        print(&quot;%s\t%s&quot;%(current_word, current_count))</code></pre>
-<p>⚠️：hadoop会将map之后的数据排序之后在reducer 所以上面代码有个隐藏逻辑【排序】</p>
-<h4 id="hadoop-任务"><a href="#hadoop-任务" class="headerlink" title="hadoop 任务"></a>hadoop 任务</h4><pre><code class="shell">cd $HADOOP_HOME/share/hadoop/tools/lib
-
-hadoop jar ./hadoop-streaming-*.jar -file ~/mapreduce_demo/mapper.py -mapper ~/mapreduce_demo/mapper.py -file /~/mapreduce_demo/reduce.py -reducer ~/mapreduce_demo/reduce.py -input /user/hdfs_in/ -output /user/hdfs_out</code></pre>
-<h4 id="查看统计结果"><a href="#查看统计结果" class="headerlink" title="查看统计结果"></a>查看统计结果</h4><pre><code class="shell">hadoop fs -cat /user/hdfs_out/part-00000</code></pre>
-<h3 id="二、hive-方式的wordcount"><a href="#二、hive-方式的wordcount" class="headerlink" title="二、hive 方式的wordcount"></a>二、hive 方式的wordcount</h3><blockquote>
-<p>思路：首先在mysql中创建数据,通过sqoop将数据同步到hive中，使用hiveSQL统计</p>
-</blockquote>
-<h4 id="mysql数据"><a href="#mysql数据" class="headerlink" title="mysql数据"></a>mysql数据</h4><pre><code class="sql">select * from word_count_demo;
-
-+------+
-| word |
-+------+
-| de   |
-| de   |
-| a    |
-| cc   |
-| dd   |
-| a    |
-| dd   |
-+------+
-7 rows in set (0.00 sec)</code></pre>
-<h4 id="hive同步"><a href="#hive同步" class="headerlink" title="hive同步"></a>hive同步</h4><pre><code class="shell">sqoop import --connect &quot;jdbc:mysql://localhost:3306/hive_demo?zeroDateTimeBeHavior=CONVERT_TO_NULL&quot; --username hive -P --table word_count_demo --hive-import -m 1</code></pre>
-<h4 id="hive数据"><a href="#hive数据" class="headerlink" title="hive数据"></a>hive数据</h4><pre><code class="sql">    select * from word_count_demo;
-
-OK
-de
-de
-a
-cc
-dd
-a
-dd
-Time taken: 1.724 seconds, Fetched: 7 row(s)</code></pre>
-<h4 id="hive统计"><a href="#hive统计" class="headerlink" title="hive统计"></a>hive统计</h4><pre><code class="sql">    select count(*) as num, word from word_count_demo group by word;
-
-Total MapReduce CPU Time Spent: 0 msec
-OK
-2    a
-1    cc
-2    dd
-2    de
-Time taken: 20.697 seconds, Fetched: 4 row(s)</code></pre>
+In [32]: t2                                                                                                                                                                      
+Out[32]: 
+          日期
+0 2019-01-01</code></pre>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
