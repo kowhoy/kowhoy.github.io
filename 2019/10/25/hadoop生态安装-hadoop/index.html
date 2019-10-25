@@ -5,16 +5,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>hadoop-hive-wordcount示例 - ko_whoy</title>
+    <title>hadoop生态安装-hadoop - ko_whoy</title>
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate">
     <meta name="keywords" content="ko_whoy,"> 
-    <meta name="description" content="一、MapReduce 方式的wordcount
-思路： 使用python代码构建map 和 reduce 两部分，使用hadoop进行执行
+    <meta name="description" content="本次的hadoop生态是安装部署在阿里云的centos上的
+在服务器上创建一个新用户ssh onestarko@101.111.111.11
 
-准备数据
-~/mapreduce_demo/datas,"> 
+adduser onestarko
+passwd on,"> 
     <meta name="author" content="ko_whoy"> 
     <link rel="alternative" href="atom.xml" title="ko_whoy" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -34,7 +34,7 @@
     <div class="bar" style="width: 0;"></div>
     <a id="home-icon" class="image-icon icon-home iconfont" href="javascript:;" data-url="https://kowhoy.github.io"></a>
     <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
-    <h3 class="subtitle">hadoop-hive-wordcount示例</h3>
+    <h3 class="subtitle">hadoop生态安装-hadoop</h3>
     <div class="social">
 <!--        <div class="like-icon">-->
 <!--            <a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
@@ -63,21 +63,21 @@
                 
                     <a href="javascript:;"><b>「 </b>Article<b> 」</b></a>
                 
-                September 30, 2019
+                October 25, 2019
             </p>
-            <h3 class="post-title animated fadeInDown"><a href="/2019/09/30/hadoop-hive-wordcount示例/" title="hadoop-hive-wordcount示例">hadoop-hive-wordcount示例</a></h3>
+            <h3 class="post-title animated fadeInDown"><a href="/2019/10/25/hadoop生态安装-hadoop/" title="hadoop生态安装-hadoop">hadoop生态安装-hadoop</a></h3>
             
                 <p class="post-count animated fadeInDown">
                     
                         <span>
                         <b class="iconfont icon-text2"></b> <i>Words count</i>
-                        4k
+                        3.4k
                     </span>
                     
                     
                         <span>
                         <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
-                        4 mins.
+                        3 mins.
                     </span>
                     
                     
@@ -85,7 +85,7 @@
                 </p>
             
             
-                <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/hadoop/">hadoop</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/hive/">hive</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/大数据/">大数据</a></li></ul>
+                <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/hadoop/">hadoop</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/大数据/">大数据</a></li></ul>
             
         </div>
     </div>
@@ -106,104 +106,112 @@
 <div class="article">
     <div class='main'>
         <div class="content markdown animated fadeIn slower">
-            <h3 id="一、MapReduce-方式的wordcount"><a href="#一、MapReduce-方式的wordcount" class="headerlink" title="一、MapReduce 方式的wordcount"></a>一、MapReduce 方式的wordcount</h3><blockquote>
-<p>思路： 使用python代码构建map 和 reduce 两部分，使用hadoop进行执行</p>
-</blockquote>
-<h4 id="准备数据"><a href="#准备数据" class="headerlink" title="准备数据"></a>准备数据</h4><ul>
-<li><p>~/mapreduce_demo/datas/dt_01.txt</p>
-<blockquote>
-<p>wd wd tr tr dt rd dt</p>
-</blockquote>
-</li>
-<li><p>~/mapreduce_demo/datas/dt_02.txt</p>
-<blockquote>
-<p>ev ev ev </p>
-</blockquote>
-<blockquote>
-<p>sds ec ve ec</p>
-</blockquote>
-<blockquote>
-<p>dse de de </p>
-</blockquote>
-</li>
-</ul>
-<h4 id="放入hdfs"><a href="#放入hdfs" class="headerlink" title="放入hdfs"></a>放入hdfs</h4><pre><code class="shell">hadoop fs -copyFromLocal ~/mapreduce_demo/datas hdfs_in</code></pre>
-<h4 id="mapreduce-demo-mapper-py文件"><a href="#mapreduce-demo-mapper-py文件" class="headerlink" title="~/mapreduce_demo/mapper.py文件"></a>~/mapreduce_demo/mapper.py文件</h4><pre><code class="python">    import sys
+            <p>本次的hadoop生态是安装部署在阿里云的centos上的</p>
+<h4 id="在服务器上创建一个新用户"><a href="#在服务器上创建一个新用户" class="headerlink" title="在服务器上创建一个新用户"></a>在服务器上创建一个新用户</h4><pre><code class="shell">ssh onestarko@101.111.111.11
 
-    for line in sys.stdin:
-        line = line.strip()
-        words = line.split()
-        for word in words:
-            print(&quot;%s\t%s&quot;%(word, 1))</code></pre>
-<h4 id="mapreduce-demo-reducer-py-文件"><a href="#mapreduce-demo-reducer-py-文件" class="headerlink" title="~/mapreduce_demo/reducer.py 文件"></a>~/mapreduce_demo/reducer.py 文件</h4><pre><code class="python">    from operator import itemgetter
-    import sys
+adduser onestarko
+passwd onestarko #设置密码</code></pre>
+<p>用户添加sudo权限</p>
+<pre><code class="shell">#1，切换到root用户
+su
+#2. 查看sudoers位置, 正常应该是 /etc/suders
+whereis sudoers
+#3. 添加编辑权限
+chmod -v u+w /etc/sudoers
+#4. vim /etc/sudoers 在root ALL=(ALL) ALL 下增加一行
+username ALL=(ALL) ALL
+#5. 保存，恢复文件权限
+chmod -v u-w /etc/sudoers</code></pre>
+<h4 id="在用户根目录下创建文件夹"><a href="#在用户根目录下创建文件夹" class="headerlink" title="在用户根目录下创建文件夹"></a>在用户根目录下创建文件夹</h4><pre><code class="shell">cd ~
+mkdir software 
+mkdir app
+mkdir data
+mkdir source</code></pre>
+<h4 id="下载hadoop压缩包"><a href="#下载hadoop压缩包" class="headerlink" title="下载hadoop压缩包"></a>下载hadoop压缩包</h4><p>使用是hadoop-2.6.0-cdh5.7.0版本</p>
+<pre><code class="shell">cd software
 
-    current_word = None
-    current_count = 0
-    word = None
+wget wget http://archive.cloudera.com/cdh5/cdh/5/hadoop-2.6.0-cdh5.7.0.tar.gz</code></pre>
+<h4 id="安装java环境"><a href="#安装java环境" class="headerlink" title="安装java环境"></a>安装java环境</h4><p>安装的是1.7版本，由于官网下载需要有登录验证的过程，所以拿下载连接比较困难，因此，现将安装文件下载到本地，然后再上传到阿里云上。</p>
+<p>登录<code>https://www.oracle.com/technetwork/java/javase/downloads/index.html</code>找下载地址， 在页面最下方，点击Java Archive的download按钮，找到相应版本下载，这里下载的是<code>jdk-7u51-linux-x64.tar.gz</code>。将本地安装文件上传阿里云:</p>
+<pre><code class="shell">scp jdk-7u51-linux-x64.tar.gz onestarko@101.111.11.11:/home/onestarko/software</code></pre>
+<p>在服务器上进行jdk的安装配置</p>
+<pre><code class="shell">cd ~/software
+tar -zxvf jdk-7u51-linux-x64.tar.gz -C ../app
 
-    for line in sys.stdin:
-        line = line.strip()
-        word, count = line.split(&#39;\t&#39;, 1)
+cd ../app/jdk1.7.0_51/bin
+./java -version #验证是否解压正常，有输出版本正常
 
-        try:
-            count = int(count)
-        except ValueError:
-            coutinue
+##配置环境变量
+vim ~/.bash_profile
+##START
+## 在~/.bash_profile增加两行
+JAVA_HOME=/home/onestarko/app/jdk1.7.0_51
+PATH=$PATH:$JAVA_HOME/bin
+## 保存退出
+##END
 
-        if current_word == word:
-            current_count += count
-        else:
-        if current_word:
-            print(&quot;%s\t%s&quot;%(cureent_word, current_count))
-        current_count = count
-        current_word = word
+source ~/.bash_profile
 
-    if word == current_word:
-        print(&quot;%s\t%s&quot;%(current_word, current_count))</code></pre>
-<p>⚠️：hadoop会将map之后的数据排序之后在reducer 所以上面代码有个隐藏逻辑【排序】</p>
-<h4 id="hadoop-任务"><a href="#hadoop-任务" class="headerlink" title="hadoop 任务"></a>hadoop 任务</h4><pre><code class="shell">cd $HADOOP_HOME/share/hadoop/tools/lib
+java -version #有输出版本正常</code></pre>
+<h4 id="机器配置"><a href="#机器配置" class="headerlink" title="机器配置"></a>机器配置</h4><p>ssh免密设置</p>
+<pre><code class="shell">ssh-keygen -t rsa
+#一路回车
 
-hadoop jar ./hadoop-streaming-*.jar -file ~/mapreduce_demo/mapper.py -mapper ~/mapreduce_demo/mapper.py -file /~/mapreduce_demo/reduce.py -reducer ~/mapreduce_demo/reduce.py -input /user/hdfs_in/ -output /user/hdfs_out</code></pre>
-<h4 id="查看统计结果"><a href="#查看统计结果" class="headerlink" title="查看统计结果"></a>查看统计结果</h4><pre><code class="shell">hadoop fs -cat /user/hdfs_out/part-00000</code></pre>
-<h3 id="二、hive-方式的wordcount"><a href="#二、hive-方式的wordcount" class="headerlink" title="二、hive 方式的wordcount"></a>二、hive 方式的wordcount</h3><blockquote>
-<p>思路：首先在mysql中创建数据,通过sqoop将数据同步到hive中，使用hiveSQL统计</p>
-</blockquote>
-<h4 id="mysql数据"><a href="#mysql数据" class="headerlink" title="mysql数据"></a>mysql数据</h4><pre><code class="sql">select * from word_count_demo;
+cp ~/.ssh/id_rsa.pub ~/.ssh/anthorized_keys
 
-+------+
-| word |
-+------+
-| de   |
-| de   |
-| a    |
-| cc   |
-| dd   |
-| a    |
-| dd   |
-+------+
-7 rows in set (0.00 sec)</code></pre>
-<h4 id="hive同步"><a href="#hive同步" class="headerlink" title="hive同步"></a>hive同步</h4><pre><code class="shell">sqoop import --connect &quot;jdbc:mysql://localhost:3306/hive_demo?zeroDateTimeBeHavior=CONVERT_TO_NULL&quot; --username hive -P --table word_count_demo --hive-import -m 1</code></pre>
-<h4 id="hive数据"><a href="#hive数据" class="headerlink" title="hive数据"></a>hive数据</h4><pre><code class="sql">    select * from word_count_demo;
+ssh 机器实例名 or localhost 是否免密</code></pre>
+<h4 id="配置hadoop"><a href="#配置hadoop" class="headerlink" title="配置hadoop"></a>配置hadoop</h4><pre><code class="shell"># 1.解压
+cd ~/software
+tar -zxvf hadoop-2.6.0-cdh5.7.0.tar.gz -C ../app/
 
-OK
-de
-de
-a
-cc
-dd
-a
-dd
-Time taken: 1.724 seconds, Fetched: 7 row(s)</code></pre>
-<h4 id="hive统计"><a href="#hive统计" class="headerlink" title="hive统计"></a>hive统计</h4><pre><code class="sql">    select count(*) as num, word from word_count_demo group by word;
+cd ~/app/hadoop-2.6.0-cdh5.7.0/etc/hadoop
 
-Total MapReduce CPU Time Spent: 0 msec
-OK
-2    a
-1    cc
-2    dd
-2    de
-Time taken: 20.697 seconds, Fetched: 4 row(s)</code></pre>
+# 2.修改 hadoop-env.sh 中的JAVA_HOME
+vim hadoop-env.sh
+export JAVA_HOME=/home/onestarko/app/jdk1.7.0_51
+
+# 3.配置core-site.xml
+mkdir ~/app/tmp  # 创建tmp目录，因为默认的tmp目录每次系统重启会被删除
+
+
+vim core-site.xml
+&lt;configuration&gt;
+        &lt;property&gt;
+                &lt;name&gt;fs.defaultFS&lt;/name&gt;
+                &lt;value&gt;hdfs://onestarko:8020&lt;/value&gt;
+        &lt;/property&gt;
+
+        &lt;property&gt;
+                &lt;name&gt;hadooop.tmp.dir&lt;/name&gt;
+                &lt;value&gt;/home/onestarko/app/tmp&lt;/value&gt;
+        &lt;/property&gt;
+&lt;/configuration&gt;
+
+# 4.配置 hdfs-site.xml
+#文件副本系数
+vim hdfs-site.xml
+&lt;configuration&gt;
+        &lt;property&gt;
+                &lt;name&gt;dfs.replication&lt;/name&gt;
+                &lt;value&gt;1&lt;/value&gt;
+        &lt;/property&gt;
+&lt;/configuration&gt;
+
+# 5.格式化hdfs(只在第一次执行)
+cd ~/app/hadoop-2.6.0-cdh5.7.0/bin
+./hdfs namenode -format 
+
+# 6.启动HDFS
+cd ~/app/hadoop-2.6.0-cdh5.7.0/sbin
+./start-dfs.sh
+
+# 验证是否启动成功
+jps
+14228 DataNode
+14485 Jps
+14113 NameNode
+14382 SecondaryNameNode
+</code></pre>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
