@@ -5,16 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>hadoop生态安装-hadoop - ko_whoy</title>
+    <title>Scala偏函数和偏应用函数 - ko_whoy</title>
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate">
     <meta name="keywords" content="ko_whoy,"> 
-    <meta name="description" content="本次的hadoop生态是安装部署在阿里云的centos上的
-在服务器上创建一个新用户ssh onestarko@101.111.111.11
-
-adduser onestarko
-passwd on,"> 
+    <meta name="description" content="偏函数偏函数(Partial Function)，是一个数学概念，不是函数的一种。Scala中的偏函数是一个Trait,类型为PartialFunction[A, B],接受A类型的参数，返回B类型,"> 
     <meta name="author" content="ko_whoy"> 
     <link rel="alternative" href="atom.xml" title="ko_whoy" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -34,7 +30,7 @@ passwd on,">
     <div class="bar" style="width: 0;"></div>
     <a id="home-icon" class="image-icon icon-home iconfont" href="javascript:;" data-url="https://kowhoy.github.io"></a>
     <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
-    <h3 class="subtitle">hadoop生态安装-hadoop</h3>
+    <h3 class="subtitle">Scala偏函数和偏应用函数</h3>
     <div class="social">
 <!--        <div class="like-icon">-->
 <!--            <a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
@@ -65,19 +61,19 @@ passwd on,">
                 
                 October 25, 2019
             </p>
-            <h3 class="post-title animated fadeInDown"><a href="/2019/10/25/hadoop生态安装-hadoop/" title="hadoop生态安装-hadoop">hadoop生态安装-hadoop</a></h3>
+            <h3 class="post-title animated fadeInDown"><a href="/2019/10/25/Scala偏函数和偏应用函数/" title="Scala偏函数和偏应用函数">Scala偏函数和偏应用函数</a></h3>
             
                 <p class="post-count animated fadeInDown">
                     
                         <span>
                         <b class="iconfont icon-text2"></b> <i>Words count</i>
-                        3.4k
+                        2.2k
                     </span>
                     
                     
                         <span>
                         <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
-                        3 mins.
+                        2 mins.
                     </span>
                     
                     
@@ -85,7 +81,7 @@ passwd on,">
                 </p>
             
             
-                <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/hadoop/">hadoop</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/大数据/">大数据</a></li></ul>
+                <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Scala/">Scala</a></li></ul>
             
         </div>
     </div>
@@ -106,111 +102,66 @@ passwd on,">
 <div class="article">
     <div class='main'>
         <div class="content markdown animated fadeIn slower">
-            <p>本次的hadoop生态是安装部署在阿里云的centos上的</p>
-<h4 id="在服务器上创建一个新用户"><a href="#在服务器上创建一个新用户" class="headerlink" title="在服务器上创建一个新用户"></a>在服务器上创建一个新用户</h4><pre><code class="shell">ssh onestarko@101.111.111.11
+            <h2 id="偏函数"><a href="#偏函数" class="headerlink" title="偏函数"></a>偏函数</h2><p>偏函数(Partial Function)，是一个数学概念，不是函数的一种。<br>Scala中的偏函数是一个Trait,类型为<code>PartialFunction[A, B]</code>,接受A类型的参数，返回B类型的结果。</p>
+<pre><code class="scala">val pf:PartialFunction(Int, String) = {
+    case 1 =&gt; &quot;one&quot;
+    case 2 =&gt; &quot;two&quot;
+    case 3 =&gt; &quot;three&quot;
+    case _ =&gt; &quot;other&quot;
+}
 
-adduser onestarko
-passwd onestarko #设置密码</code></pre>
-<p>用户添加sudo权限</p>
-<pre><code class="shell">#1，切换到root用户
-su
-#2. 查看sudoers位置, 正常应该是 /etc/suders
-whereis sudoers
-#3. 添加编辑权限
-chmod -v u+w /etc/sudoers
-#4. vim /etc/sudoers 在root ALL=(ALL) ALL 下增加一行
-username ALL=(ALL) ALL
-#5. 保存，恢复文件权限
-chmod -v u-w /etc/sudoers</code></pre>
-<h4 id="在用户根目录下创建文件夹"><a href="#在用户根目录下创建文件夹" class="headerlink" title="在用户根目录下创建文件夹"></a>在用户根目录下创建文件夹</h4><pre><code class="shell">cd ~
-mkdir software 
-mkdir app
-mkdir data
-mkdir source</code></pre>
-<h4 id="下载hadoop压缩包"><a href="#下载hadoop压缩包" class="headerlink" title="下载hadoop压缩包"></a>下载hadoop压缩包</h4><p>使用是hadoop-2.6.0-cdh5.7.0版本</p>
-<pre><code class="shell">cd software
+pf(1) // one
+pf(9) // other</code></pre>
+<p>偏函数内部有一些方法，如 <code>isDefinedAt</code>, <code>orElse</code>, <code>andThen</code>, <code>applyOrElse</code></p>
+<ul>
+<li>isDefinedAt<br>作用: 判断参数是否在这个偏函数的处理范围内<br>返回: boolean<br>前提: 参数的类型应该与偏函数类型一致，否则会报错</li>
+</ul>
+<pre><code class="scala">pf.isDefinedAt(100) // Boolean = true</code></pre>
+<p>因为pf中有 <code>case _ =&gt; &quot;other&quot;</code>，所有只要是Int类型均为true，如果去掉这一case，大于3的Int类型均为false</p>
+<ul>
+<li>orElse<br>作用： 将多个偏函数进行拼接，拼成一个偏函数<br>❓ 如果偏函数类型不一致，orElse 不会报错，但是连接之后的数据类型 变成 A with B，并非预计的偏函数 </li>
+</ul>
+<pre><code class="scala">val pf1:PartialFunction[Int, String] = {
+    case 1 =&gt; &quot;one&quot;
+}
 
-wget wget http://archive.cloudera.com/cdh5/cdh/5/hadoop-2.6.0-cdh5.7.0.tar.gz</code></pre>
-<h4 id="安装java环境"><a href="#安装java环境" class="headerlink" title="安装java环境"></a>安装java环境</h4><p>安装的是1.7版本，由于官网下载需要有登录验证的过程，所以拿下载连接比较困难，因此，现将安装文件下载到本地，然后再上传到阿里云上。</p>
-<p>登录<code>https://www.oracle.com/technetwork/java/javase/downloads/index.html</code>找下载地址， 在页面最下方，点击Java Archive的download按钮，找到相应版本下载，这里下载的是<code>jdk-7u51-linux-x64.tar.gz</code>。将本地安装文件上传阿里云:</p>
-<pre><code class="shell">scp jdk-7u51-linux-x64.tar.gz onestarko@101.111.11.11:/home/onestarko/software</code></pre>
-<p>在服务器上进行jdk的安装配置</p>
-<pre><code class="shell">cd ~/software
-tar -zxvf jdk-7u51-linux-x64.tar.gz -C ../app
+val pf2:PartialFunction[Int, String] = {
+    case 2 =&gt; &quot;two&quot;
+}
 
-cd ../app/jdk1.7.0_51/bin
-./java -version #验证是否解压正常，有输出版本正常
+val nwPf = pf1 orElse pf2</code></pre>
+<ul>
+<li>andThen<br>作用: 相当于方法的连续调用, 如 g(f(x))</li>
+</ul>
+<pre><code class="scala">val pf1:PartialFunction[Int, String] = {
+    case num if num == 1 =&gt; &quot;one&quot;
+}
 
-##配置环境变量
-vim ~/.bash_profile
-##START
-## 在~/.bash_profile增加两行
-JAVA_HOME=/home/onestarko/app/jdk1.7.0_51
-PATH=$PATH:$JAVA_HOME/bin
-## 保存退出
-##END
+val pf2:PartialFunction[String, String] = {
+    case str if str eq &quot;one&quot; =&gt; &quot;The num is 1&quot;
+}
 
-source ~/.bash_profile
+val nwPf = pf1 andThen pf2
 
-java -version #有输出版本正常</code></pre>
-<h4 id="机器配置"><a href="#机器配置" class="headerlink" title="机器配置"></a>机器配置</h4><p>ssh免密设置</p>
-<pre><code class="shell">ssh-keygen -t rsa
-#一路回车
+nwPf(1) // The num is 1</code></pre>
+<ul>
+<li>applyOrElse<br>作用: 接受两个参数，如果第一个参数匹配，返回匹配值，否则调用第二个参数(回调函数)</li>
+</ul>
+<pre><code class="scala">val onePf.PartialFunction[Int, String] = {
+    case num if num == 1 =&gt; &quot;The num is 1&quot;
+}
 
-cp ~/.ssh/id_rsa.pub ~/.ssh/anthorized_keys
+onePf.applyOrElse(1, {num:Int =&gt; &quot;Not 1&quot;}) // The num is 1
+onePf.applyOrElse(2, {num:Int =&gt; &quot;Not 1&quot;}) // Not 1</code></pre>
+<hr>
+<h2 id="偏应用函数"><a href="#偏应用函数" class="headerlink" title="偏应用函数"></a>偏应用函数</h2><p>偏应用函数(Partial Applied Function)也叫 部分应用函数, 和偏函数没有关系。<br>是指： 一个函数有N个参数,现在只提供k个参数(k &lt; N), 就得到了部分应用函数</p>
+<pre><code class="scala">def add(x:Int, y:Int, z:Int) = x+y+z
 
-ssh 机器实例名 or localhost 是否免密</code></pre>
-<h4 id="配置hadoop"><a href="#配置hadoop" class="headerlink" title="配置hadoop"></a>配置hadoop</h4><pre><code class="shell"># 1.解压
-cd ~/software
-tar -zxvf hadoop-2.6.0-cdh5.7.0.tar.gz -C ../app/
+def addx(1, _:Int, _:Int)
 
-cd ~/app/hadoop-2.6.0-cdh5.7.0/etc/hadoop
+def addy(_:Int, 2, _:Int)
 
-# 2.修改 hadoop-env.sh 中的JAVA_HOME
-vim hadoop-env.sh
-export JAVA_HOME=/home/onestarko/app/jdk1.7.0_51
-
-# 3.配置core-site.xml
-mkdir ~/app/tmp  # 创建tmp目录，因为默认的tmp目录每次系统重启会被删除
-
-
-vim core-site.xml
-&lt;configuration&gt;
-        &lt;property&gt;
-                &lt;name&gt;fs.defaultFS&lt;/name&gt;
-                &lt;value&gt;hdfs://onestarko:8020&lt;/value&gt;
-        &lt;/property&gt;
-
-        &lt;property&gt;
-                &lt;name&gt;hadooop.tmp.dir&lt;/name&gt;
-                &lt;value&gt;/home/onestarko/app/tmp&lt;/value&gt;
-        &lt;/property&gt;
-&lt;/configuration&gt;
-
-# 4.配置 hdfs-site.xml
-#文件副本系数
-vim hdfs-site.xml
-&lt;configuration&gt;
-        &lt;property&gt;
-                &lt;name&gt;dfs.replication&lt;/name&gt;
-                &lt;value&gt;1&lt;/value&gt;
-        &lt;/property&gt;
-&lt;/configuration&gt;
-
-# 5.格式化hdfs(只在第一次执行)
-cd ~/app/hadoop-2.6.0-cdh5.7.0/bin
-./hdfs namenode -format 
-
-# 6.启动HDFS
-cd ~/app/hadoop-2.6.0-cdh5.7.0/sbin
-./start-dfs.sh
-
-# 验证是否启动成功
-jps
-14228 DataNode
-14485 Jps
-14113 NameNode
-14382 SecondaryNameNode
+def addxaddy(1, 11, _:Int)
 </code></pre>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->

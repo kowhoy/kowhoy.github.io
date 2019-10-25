@@ -5,12 +5,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Archive</title>
+    <title>Scala传值函数和传名函数 - ko_whoy</title>
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate">
     <meta name="keywords" content="ko_whoy,"> 
-    
+    <meta name="description" content="Scala传值函数和传名函数Scala解释器在解析函数参数(function arguments)有两种方式:
+
+传值调用(call-by-value)先计算参数表达式的值，再应用到函数内部
+传名字,"> 
     <meta name="author" content="ko_whoy"> 
     <link rel="alternative" href="atom.xml" title="ko_whoy" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -24,87 +27,162 @@
 <body class="loading">
     <span id="config-title" style="display:none">ko_whoy</span>
     <div id="loader"></div>
-    <div id="single" class="page">
-    <div id="top">
-        <a class="iconfont icon-left image-icon" href="javascript:history.back()"></a>
+    <div id="single">
+    <div class="scrollbar gradient-bg-rev"></div>
+<div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a id="home-icon" class="image-icon icon-home iconfont" href="javascript:;" data-url="https://kowhoy.github.io"></a>
+    <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
+    <h3 class="subtitle">Scala传值函数和传名函数</h3>
+    <div class="social">
+<!--        <div class="like-icon">-->
+<!--            <a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+<!--        </div>-->
+<!--        <div>-->
+<!--            <div class="share">-->
+<!--                <a title="Get qrcode" id="qr-icon" href="javascript:;" class="iconfont icon-QRcode-o"></a>-->
+<!--            </div>-->
+<!--            <div id="qr"></div>-->
+<!--        </div>-->
     </div>
-    <div class="dark-obsidian section">
-        <div class="article animated fadeIn">
-            <div class="main">
-                <div class="content animated fadeIn">
-                    <div class="timeline">
-                      <h2 class="timeline-title">归档: 10篇</h2>
-                      
-                      
-                        
-                          <h3 class="timeline-subtitle">2019</h3>
-                        
-                        <div class="timeline-item">
-                          <time>2019-10-25</time>
-                          <a target="_self" href="/2019/10/25/Scala函数柯里化-Currying/">Scala函数柯里化(Currying)</a>
-                        </div>
-                      
-                        
-                        <div class="timeline-item">
-                          <time>2019-10-25</time>
-                          <a target="_self" href="/2019/10/25/Scala偏函数和偏应用函数/">Scala偏函数和偏应用函数</a>
-                        </div>
-                      
-                        
-                        <div class="timeline-item">
-                          <time>2019-10-25</time>
-                          <a target="_self" href="/2019/10/25/Scala传值函数和传名函数/">Scala传值函数和传名函数</a>
-                        </div>
-                      
-                        
-                        <div class="timeline-item">
-                          <time>2019-10-25</time>
-                          <a target="_self" href="/2019/10/25/hadoop生态安装-hadoop/">hadoop生态安装-hadoop</a>
-                        </div>
-                      
-                        
-                        <div class="timeline-item">
-                          <time>2019-10-23</time>
-                          <a target="_self" href="/2019/10/23/pandas的datetime64-ns-fillna的异常/">pandas的datetime64[ns]fillna的异常</a>
-                        </div>
-                      
-                        
-                        <div class="timeline-item">
-                          <time>2019-10-22</time>
-                          <a target="_self" href="/2019/10/22/scala基础笔记/">scala基础笔记</a>
-                        </div>
-                      
-                        
-                        <div class="timeline-item">
-                          <time>2019-10-18</time>
-                          <a target="_self" href="/2019/10/18/PySpark-1/">PySpark_1</a>
-                        </div>
-                      
-                        
-                        <div class="timeline-item">
-                          <time>2019-10-08</time>
-                          <a target="_self" href="/2019/10/08/NumPy-一-Ndarray创建/">NumPy(一):Ndarray创建</a>
-                        </div>
-                      
-                        
-                        <div class="timeline-item">
-                          <time>2019-09-30</time>
-                          <a target="_self" href="/2019/09/30/hadoop-hive-wordcount示例/">hadoop-hive-wordcount示例</a>
-                        </div>
-                      
-                        
-                        <div class="timeline-item">
-                          <time>2019-09-30</time>
-                          <a target="_self" href="/2019/09/30/itertools模块/">itertools模块</a>
-                        </div>
-                      
-                    </div>
-                </div>
+</div>
+
+    <div class="section">
+        <div class= article-header-wrapper>
+    <div class="article-header">
+        <div class="article-cover animated fadeIn" style="
+            animation-delay: 600ms;
+            animation-duration: 1.2s;
+            background-image: 
+                radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+                url(/img/cover.jpg);">
+        </div>
+        <div class="else">
+            <p class="animated fadeInDown">
+                
+                    <a href="javascript:;"><b>「 </b>Article<b> 」</b></a>
+                
+                October 25, 2019
+            </p>
+            <h3 class="post-title animated fadeInDown"><a href="/2019/10/25/Scala传值函数和传名函数/" title="Scala传值函数和传名函数">Scala传值函数和传名函数</a></h3>
+            
+                <p class="post-count animated fadeInDown">
+                    
+                        <span>
+                        <b class="iconfont icon-text2"></b> <i>Words count</i>
+                        830
+                    </span>
+                    
+                    
+                        <span>
+                        <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
+                        1 mins.
+                    </span>
+                    
+                    
+                    
+                </p>
+            
+            
+                <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Scala/">Scala</a></li></ul>
+            
+        </div>
+    </div>
+</div>
+
+<div class="screen-gradient-after">
+    <div class="screen-gradient-content">
+        <div class="screen-gradient-content-inside">
+            <div class="bold-underline-links screen-gradient-sponsor">
+                <p>
+                    <span></span>  
+                </p>
             </div>
         </div>
     </div>
 </div>
 
+<div class="article">
+    <div class='main'>
+        <div class="content markdown animated fadeIn slower">
+            <h1 id="Scala传值函数和传名函数"><a href="#Scala传值函数和传名函数" class="headerlink" title="Scala传值函数和传名函数"></a>Scala传值函数和传名函数</h1><p>Scala解释器在解析<code>函数参数(function arguments)</code>有两种方式:</p>
+<ol>
+<li>传值调用(call-by-value)<br>先计算参数表达式的值，再应用到函数内部</li>
+<li>传名字调用(call-by-name)<br>将未计算的表达式直接应用到函数内部</li>
+</ol>
+<p>两种函数的区别</p>
+<ol>
+<li>传值调用<br>这种方式，在进入函数体之前就已经将表达式进了计算，在函数内部如果多次使用也不会重复计算，提高了效率</li>
+<li>传名调用<br>如果函数体内部没有使用到该参数，就不会进行计算，这样看效率会更高</li>
+</ol>
+<p>书写方式</p>
+<pre><code class="scala">def time() = {
+    println(&quot;获取时间&quot;)
+    System.nanoTime
+}
+
+// 传值调用
+def delayed(t:Long) = {
+    println(&quot;在函数体内&quot;)
+    println(&quot;参数&quot; + t)
+}
+
+// 在函数体内
+// 获取时间
+// 参数12183005573132
+
+// 传递调用
+def delayed2(t: =&gt; Long) = {
+    println(&quot;在函数体内&quot;)
+    println(&quot;参数&quot; + t)
+}
+
+// 获取时间
+// 在函数体内
+// 参数12192479112771</code></pre>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='/statics/chengdu.mp3'></li>
+                        
+                    
+                </ul>
+            
+            
+            
+        </div>
+        <div class="sidebar">
+            <div class="box animated fadeInRight">
+                <div class="subbox">
+                    <img src="https://res.cloudinary.com/tridiamond/image/upload/v1571154379/TriDiamondLogoCircleLighting_llbad2.png" height=300 width=300></img>
+                    <p>ko_whoy</p>
+                    <span>Don`t worry, be happy</span>
+                    <dl>
+                        <dd><a href="https://github.com/kowhoy" target="_blank"><span class=" iconfont icon-github"></span></a></dd>
+                        <dd><a href="https://twitter.com/kowhoy" target="_blank"><span class=" iconfont icon-twitter"></span></a></dd>
+                        <dd><a href="https://stackoverflow.com/users" target="_blank"><span class=" iconfont icon-stack-overflow"></span></a></dd>
+                    </dl>
+                </div>
+                <ul>
+                    <li><a href="/">10 <p>Articles</p></a></li>
+                    <li><a href="/categories">1 <p>Categories</p></a></li>
+                    <li><a href="/tags">8 <p>Tags</p></a></li>
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+    </div>
+</div>
     <div id="back-to-top" class="animated fadeIn faster">
         <div class="flow"></div>
         <span class="percentage animated fadeIn faster">0%</span>
