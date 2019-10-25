@@ -116,7 +116,7 @@ val ss = SparkSession.builder.master(&quot;local&quot;).appName(&quot;testDemo&q
 
 filePath = &quot;~/Desktop/tmp/highway.txt&quot;
 
-val rdd = sc.textFile(filePath)
+val rdd = ss.read.textFile(filePath)
 
 //删除第一行数据
 val data = rdd.filter(_.split(&quot;,&quot;)(0) != &quot;FID&quot;)
