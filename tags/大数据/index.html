@@ -64,13 +64,13 @@
             
             October 25, 2019
         </p>
-        <h3 class="post-title animated fadeInDown"><a href="/2019/10/25/hadoop生态安装-hadoop/" title="hadoop生态安装-hadoop" class="posttitle">hadoop生态安装-hadoop</a></h3>
+        <h3 class="post-title animated fadeInDown"><a href="/2019/10/25/Scala操作Spark示例/" title="Scala操作Spark示例" class="posttitle">Scala操作Spark示例</a></h3>
         
             <p class="post-count animated fadeInDown">
                 
                     <span>
                         <b class="iconfont icon-text2"></b> <i>Words count</i>
-                        3.4k
+                        3.5k
                     </span>
                 
                 
@@ -83,17 +83,17 @@
             </p>
         
         
-            <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/hadoop/">hadoop</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/大数据/">大数据</a></li></ul>
+            <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Scala/">Scala</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Spark/">Spark</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/大数据/">大数据</a></li></ul>
         
         <div class="md-content animated fadeIn">
             
-                <p>本次的hadoop生态是安装部署在阿里云的centos上的</p>
-<h4 id="在服务器上创建一个新用户"><a href="#在服务器上创建一个新用户" class="headerlink" title="在服务器上创建一个新用户"></a>在服务器上创建一个新用户</h4><pre><code class="shell">ssh onestarko@101.111.111.11
-
-adduser onestarko
-passwd onestarko...</code></pre>
+                <p>启动spark-shell</p>
+<pre><code class="shell">cd /usr/local/spark-2.4.3/bin
+./spark-shell</code></pre>
+<p>使用的是高速公路出入口数据</p>
+<pre><code class="scala">import org.apache.spark.sql....</code></pre>
             
-            <span class="read-more gradient-text"><a href="/2019/10/25/hadoop生态安装-hadoop/" title="Read article" class="posttitle">Read article</a></span>
+            <span class="read-more gradient-text"><a href="/2019/10/25/Scala操作Spark示例/" title="Read article" class="posttitle">Read article</a></span>
         </div>
     </div>
     
@@ -113,6 +113,63 @@ passwd onestarko...</code></pre>
 
     <div id="primary">
         
+<div class="post" id="post">
+    <div class="post-cover" style="
+            background-image:
+            radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+            url(/img/welcome-cover.jpg);">
+    </div>
+    <div class="else">
+        <p class="animated fadeInDown">
+            
+                <a href="javascript:;"><b>「 </b>Article<b> 」</b></a>
+            
+            October 25, 2019
+        </p>
+        <h3 class="post-title animated fadeInDown"><a href="/2019/10/25/hadoop生态安装-hadoop/" title="hadoop生态安装-hadoop" class="posttitle">hadoop生态安装-hadoop</a></h3>
+        
+            <p class="post-count animated fadeInDown">
+                
+                    <span>
+                        <b class="iconfont icon-text2"></b> <i>Words count</i>
+                        3.4k
+                    </span>
+                
+                
+                    <span>
+                        <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
+                        3 mins.
+                    </span>
+                
+                
+            </p>
+            
+                <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/hadoop/">hadoop</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/大数据/">大数据</a></li></ul>
+            
+        
+        <div class="md-content animated fadeIn">
+            
+                <p>本次的hadoop生态是安装部署在阿里云的centos上的</p>
+<h4 id="在服务器上创建一个新用户"><a href="#在服务器上创建一个新用户" class="headerlink" title="在服务器上创建一个新用户"></a>在服务器上创建一个新用户</h4><pre><code class="shell">ssh onestarko@101.111.111.11
+
+adduser onestarko
+passwd onestarko #设置密码</code></pre>
+<p>用户添加sudo权限</p>
+<pre><code class="shell">#1，切换到root用户
+su
+#2. 查看sudoers位置, 正常应该是 /etc/suders
+whereis sudoers
+#3. 添加编辑权限
+chmod -v u+w /etc/sudoers
+#4. vim /etc/sudoers 在root...</code></pre>
+            
+            <span class="read-more gradient-text"><a href="/2019/10/25/hadoop生态安装-hadoop/" title="Read article" class="posttitle">Read article</a></span>
+        </div>
+    </div>
+</div>
+
+
+
 <div class="post" id="post">
     <div class="post-cover" style="
             background-image:

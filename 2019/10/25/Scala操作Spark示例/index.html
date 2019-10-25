@@ -5,12 +5,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Scala偏函数和偏应用函数 - ko_whoy</title>
+    <title>Scala操作Spark示例 - ko_whoy</title>
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate">
     <meta name="keywords" content="ko_whoy,"> 
-    <meta name="description" content="偏函数偏函数(Partial Function)，是一个数学概念，不是函数的一种。Scala中的偏函数是一个Trait,类型为PartialFunction[A, B],接受A类型的参数，返回B类型,"> 
+    <meta name="description" content="启动spark-shell
+cd /usr/local/spark-2.4.3/bin
+./spark-shell
+使用的是高速公路出入口数据
+import org.apache.spark.sql,"> 
     <meta name="author" content="ko_whoy"> 
     <link rel="alternative" href="atom.xml" title="ko_whoy" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -30,7 +34,7 @@
     <div class="bar" style="width: 0;"></div>
     <a id="home-icon" class="image-icon icon-home iconfont" href="javascript:;" data-url="https://kowhoy.github.io"></a>
     <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
-    <h3 class="subtitle">Scala偏函数和偏应用函数</h3>
+    <h3 class="subtitle">Scala操作Spark示例</h3>
     <div class="social">
 <!--        <div class="like-icon">-->
 <!--            <a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
@@ -61,19 +65,19 @@
                 
                 October 25, 2019
             </p>
-            <h3 class="post-title animated fadeInDown"><a href="/2019/10/25/Scala偏函数和偏应用函数/" title="Scala偏函数和偏应用函数">Scala偏函数和偏应用函数</a></h3>
+            <h3 class="post-title animated fadeInDown"><a href="/2019/10/25/Scala操作Spark示例/" title="Scala操作Spark示例">Scala操作Spark示例</a></h3>
             
                 <p class="post-count animated fadeInDown">
                     
                         <span>
                         <b class="iconfont icon-text2"></b> <i>Words count</i>
-                        2.2k
+                        3.5k
                     </span>
                     
                     
                         <span>
                         <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
-                        2 mins.
+                        3 mins.
                     </span>
                     
                     
@@ -81,7 +85,7 @@
                 </p>
             
             
-                <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Scala/">Scala</a></li></ul>
+                <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Scala/">Scala</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Spark/">Spark</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/大数据/">大数据</a></li></ul>
             
         </div>
     </div>
@@ -102,66 +106,103 @@
 <div class="article">
     <div class='main'>
         <div class="content markdown animated fadeIn slower">
-            <h2 id="偏函数"><a href="#偏函数" class="headerlink" title="偏函数"></a>偏函数</h2><p>偏函数(Partial Function)，是一个数学概念，不是函数的一种。<br>Scala中的偏函数是一个Trait,类型为<code>PartialFunction[A, B]</code>,接受A类型的参数，返回B类型的结果。</p>
-<pre><code class="scala">val pf:PartialFunction(Int, String) = {
-    case 1 =&gt; &quot;one&quot;
-    case 2 =&gt; &quot;two&quot;
-    case 3 =&gt; &quot;three&quot;
-    case _ =&gt; &quot;other&quot;
-}
+            <p>启动spark-shell</p>
+<pre><code class="shell">cd /usr/local/spark-2.4.3/bin
+./spark-shell</code></pre>
+<p>使用的是高速公路出入口数据</p>
+<pre><code class="scala">import org.apache.spark.sql.SparkSession
 
-pf(1) // one
-pf(9) // other</code></pre>
-<p>偏函数内部有一些方法，如 <code>isDefinedAt</code>, <code>orElse</code>, <code>andThen</code>, <code>applyOrElse</code></p>
-<ul>
-<li>isDefinedAt<br>作用: 判断参数是否在这个偏函数的处理范围内<br>返回: boolean<br>前提: 参数的类型应该与偏函数类型一致，否则会报错</li>
-</ul>
-<pre><code class="scala">pf.isDefinedAt(100) // Boolean = true</code></pre>
-<p>因为pf中有 <code>case _ =&gt; &quot;other&quot;</code>，所有只要是Int类型均为true，如果去掉这一case，大于3的Int类型均为false</p>
-<ul>
-<li>orElse<br>作用： 将多个偏函数进行拼接，拼成一个偏函数<br>❓ 如果偏函数类型不一致，orElse 不会报错，但是连接之后的数据类型 变成 A with B，并非预计的偏函数 </li>
-</ul>
-<pre><code class="scala">val pf1:PartialFunction[Int, String] = {
-    case 1 =&gt; &quot;one&quot;
-}
+val ss = SparkSession.builder.master(&quot;local&quot;).appName(&quot;testDemo&quot;).getOrCreate()
 
-val pf2:PartialFunction[Int, String] = {
-    case 2 =&gt; &quot;two&quot;
-}
+filePath = &quot;~/Desktop/tmp/highway.txt&quot;
 
-val nwPf = pf1 orElse pf2</code></pre>
-<ul>
-<li>andThen<br>作用: 相当于方法的连续调用, 如 g(f(x))</li>
-</ul>
-<pre><code class="scala">val pf1:PartialFunction[Int, String] = {
-    case num if num == 1 =&gt; &quot;one&quot;
-}
+val rdd = sc.textFile(filePath)
 
-val pf2:PartialFunction[String, String] = {
-    case str if str eq &quot;one&quot; =&gt; &quot;The num is 1&quot;
-}
+//删除第一行数据
+val data = rdd.filter(_.split(&quot;,&quot;)(0) != &quot;FID&quot;)
 
-val nwPf = pf1 andThen pf2
+case class Highway(fid:Int, name:String, kind:Int, lon:Float, lat:Float)
 
-nwPf(1) // The num is 1</code></pre>
-<ul>
-<li>applyOrElse<br>作用: 接受两个参数，如果第一个参数匹配，返回匹配值，否则调用第二个参数(回调函数)</li>
-</ul>
-<pre><code class="scala">val onePf.PartialFunction[Int, String] = {
-    case num if num == 1 =&gt; &quot;The num is 1&quot;
-}
+val df = data.map(_.split(&quot;,&quot;)).map(x=&gt;Highway(x(0).toInt, x(1).toString, x(2).toInt, x(3).toFloat, x(4).toFloat)).toDF
 
-onePf.applyOrElse(1, {num:Int =&gt; &quot;Not 1&quot;}) // The num is 1
-onePf.applyOrElse(2, {num:Int =&gt; &quot;Not 1&quot;}) // Not 1</code></pre>
-<hr>
-<h2 id="偏应用函数"><a href="#偏应用函数" class="headerlink" title="偏应用函数"></a>偏应用函数</h2><p>偏应用函数(Partial Applied Function)也叫 部分应用函数, 和偏函数没有关系。<br>是指： 一个函数有N个参数,现在只提供k个参数(k &lt; N), 就得到了部分应用函数</p>
-<pre><code class="scala">def add(x:Int, y:Int, z:Int) = x+y+z
+df.show
 
-def addx(1, _:Int, _:Int)
++---+--------------+----+----------+---------+
+|fid|          name|kind|       lon|      lat|
++---+--------------+----+----------+---------+
+|  0|      东至出口|8301| 117.00496| 30.08415|
+|  1|    太平湖出口|8301| 117.96871|30.322758|
+|  2|          入口|8302| 117.90406|30.392708|
+|  3|          入口|8302|   117.084|  30.4774|
+|  4|          入口|8302| 117.07055|30.570219|
+|  5|          入口|8302| 116.86655|30.793385|
+|  6|      来榜出口|8301| 116.32187|30.852873|
+|  7|      石关出口|8301| 116.31782|31.128403|
+|  8|          入口|8302| 117.48986|30.910587|
+|  9|          入口|8302| 117.67467| 30.86415|
+| 10|    宣城东出口|8301|118.818275|30.951172|
+| 11|          入口|8302| 118.21747| 31.05843|
+| 12|      三山出口|8301| 118.33433|31.153542|
+| 13|      肥东出口|8301| 117.49728|31.878712|
+| 14|经济开发区出口|8301| 118.37219| 31.38892|
+| 15|          入口|8302| 116.61457|30.630539|
+| 16|          入口|8302|116.998375|30.606276|
+| 17|          入口|8302|118.171684|30.067232|
+| 18|      店桥出口|8301| 117.35904|30.998373|
+| 19|      桐城出口|8301|116.996796|31.022083|
++---+--------------+----+----------+---------+
 
-def addy(_:Int, 2, _:Int)
+df.printSchema()
 
-def addxaddy(1, 11, _:Int)
+root
+ |-- fid: integer (nullable = false)
+ |-- name: string (nullable = true)
+ |-- kind: integer (nullable = false)
+ |-- lon: float (nullable = false)
+ |-- lat: float (nullable = false)
+
+ df.cache()
+
+// 以kind为维度统计次数
+
+// 方法一:使用groupBy函数
+df.groupBy(&quot;kind&quot;).count().orderBy($&quot;count&quot;.desc).show()
+
++----+-----+                                                                    
+|kind|count|
++----+-----+
+|8301|11615|
+|8302|10258|
++----+-----+
+
+// 方法二: 使用sql
+
+df.createOrReplaceTempView(&quot;highway&quot;)
+
+ss.sql(&quot;select kind, count(*) as num from highway group by kind order by num desc&quot;).show()
+
++----+-----+
+|kind|  num|
++----+-----+
+|8301|11615|
+|8302|10258|
++----+-----+
+
+
+ val summary = df.describe()
+summary: org.apache.spark.sql.DataFrame = [summary: string, fid: string ... 4 more fields]
+
+summary.show()
++-------+-----------------+------------+------------------+------------------+-----------------+
+|summary|              fid|        name|              kind|               lon|              lat|
++-------+-----------------+------------+------------------+------------------+-----------------+
+|  count|            21873|       21873|             21873|             21873|            21873|
+|   mean|          10936.0|        null|  8301.46898002103|113.86118025643036|32.16994257129792|
+| stddev|6314.335554909954|        null|0.4990482412048125| 6.897239660174894|6.430847299197006|
+|    min|                0|    一品出口|              8301|         80.470375|        18.296991|
+|    max|            21872|Ｘ６１２出口|              8302|         131.12318|        49.616005|
++-------+-----------------+------------+------------------+------------------+-----------------+
+
 </code></pre>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
