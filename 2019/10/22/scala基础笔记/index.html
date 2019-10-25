@@ -809,20 +809,21 @@ t: (String, String) = (A,B)
 scala&gt; t.swap
 res44: (String, String) = (B,A)</code></pre>
 <ul>
-<li>Scala Option<br>Option表示一个值可选(有值或无值都可以)<pre><code class="scala">scala&gt; val m = Map(&quot;key1&quot; -&gt; &quot;value&quot;)
-m: scala.collection.immutable.Map[String,String] = Map(key1 -&gt; value)
-</code></pre>
-</li>
+<li>Scala Option<br>Option表示一个值可选(有值或无值都可以)</li>
 </ul>
-<p>scala&gt; val val1:Option[String] = m.get(“key1”)<br>val1: Option[String] = Some(value)</p>
-<p>scala&gt; val val2:Option[String] = m.get(“key2”)<br>val2: Option[String] = None</p>
-<pre><code>
-使用`getOrElse()`获取元组中存在的元素或者使用默认值
+<pre><code class="scala">scala&gt; val m = Map(&quot;key1&quot; -&gt; &quot;value&quot;)
+m: scala.collection.immutable.Map[String,String] = Map(key1 -&gt; value)
 
-- Scala Iterator (迭代器)
+scala&gt; val val1:Option[String] = m.get(&quot;key1&quot;)
+val1: Option[String] = Some(value)
 
-```scala
-object Test {
+scala&gt; val val2:Option[String] = m.get(&quot;key2&quot;)
+val2: Option[String] = None</code></pre>
+<p>使用<code>getOrElse()</code>获取元组中存在的元素或者使用默认值</p>
+<ul>
+<li>Scala Iterator (迭代器)</li>
+</ul>
+<pre><code class="scala">object Test {
    def main(args: Array[String]) {
       val it = Iterator(&quot;Baidu&quot;, &quot;Google&quot;, &quot;Runoob&quot;, &quot;Taobao&quot;)
 
@@ -830,7 +831,8 @@ object Test {
          println(it.next())
       }
    }
-}</code></pre><h2 id="Part10-Scala类对象"><a href="#Part10-Scala类对象" class="headerlink" title="Part10. Scala类对象"></a>Part10. Scala类对象</h2><pre><code class="scala">class Point(xc:Int, yc:Int) {
+}</code></pre>
+<h2 id="Part10-Scala类对象"><a href="#Part10-Scala类对象" class="headerlink" title="Part10. Scala类对象"></a>Part10. Scala类对象</h2><pre><code class="scala">class Point(xc:Int, yc:Int) {
     var x:Int = xc
     var y:Int = yc
 
