@@ -71,7 +71,7 @@ tar -zx,">
                     
                         <span>
                         <b class="iconfont icon-text2"></b> <i>Words count</i>
-                        1.9k
+                        2k
                     </span>
                     
                     
@@ -141,17 +141,21 @@ tar -zx,">
     &lt;/property&gt;
 
 &lt;/configuration&gt;</code></pre><ol start="5">
-<li>环境变量<br>如果没有配置HAOOP_HOME的环境变量需配置<br>vim ~/.bash_profile<pre><code class="shell">export HADOOP_HOME=/username/app/hadoop-2.6.0-cdh5.7.0
+<li>环境变量<br>如果没有配置HAOOP_HOME的环境变量需配置</li>
+</ol>
+<p>vim ~/.bash_profile</p>
+<pre><code class="shell">export HADOOP_HOME=/username/app/hadoop-2.6.0-cdh5.7.0
 export PATH=$PATH:$HADOOP_HOME/bin
-</code></pre>
+
+export HIVE_CONF_DIR=/username/app/hive-1.1.0-cdh5.7.0/conf
+export HIVE_HOME=/username/app/hive-1.1.0-cdh5.7.0
+export PATH=$PATH:$HIVE_HOME/bin</code></pre>
+<ol start="6">
+<li>初始化数据库<pre><code class="shell">cd ~/app/hive-1.1.0-cdh5.7.0/bin
+./schematool -dbType mysql -initSchema</code></pre>
 </li>
 </ol>
-<p>export HIVE_CONF_DIR=/username/app/hive-1.1.0-cdh5.7.0/conf<br>export HIVE_HOME=/username/app/hive-1.1.0-cdh5.7.0<br>export PATH=$PATH:$HIVE_HOME/bin</p>
-<pre><code>
-6. 初始化数据库
-```shell
-cd ~/app/hive-1.1.0-cdh5.7.0/bin
-./schematool -dbType mysql -initSchema</code></pre>
+
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
                 <source type="audio/mpeg" src="">
