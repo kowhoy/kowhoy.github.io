@@ -64,13 +64,13 @@
             
             October 31, 2019
         </p>
-        <h3 class="post-title animated fadeInDown"><a href="/2019/10/31/scala-implicit/" title="scala_implicit" class="posttitle">scala_implicit</a></h3>
+        <h3 class="post-title animated fadeInDown"><a href="/2019/10/31/hadoop生态安装-hive/" title="hadoop生态安装-hive" class="posttitle">hadoop生态安装-hive</a></h3>
         
             <p class="post-count animated fadeInDown">
                 
                     <span>
                         <b class="iconfont icon-text2"></b> <i>Words count</i>
-                        2.6k
+                        1.9k
                     </span>
                 
                 
@@ -83,17 +83,17 @@
             </p>
         
         
-            <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Scala/">Scala</a></li></ul>
+            <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/hadoop/">hadoop</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/hive/">hive</a></li></ul>
         
         <div class="md-content animated fadeIn">
             
-                <h3 id="scala的-implicit的初步使用"><a href="#scala的-implicit的初步使用" class="headerlink" title="scala的 implicit的初步使用"></a>scala的 implicit的初步使用</h3><ol>
-<li>隐式参数<br>效果跟函数参数使用默认值类似，但是使用更灵活</li>
-</ol>
-<pre><code class="scala">object ImplicitParamsDemo {
-  implicit val name:String...</code></pre>
+                <h3 id="hive安装配置"><a href="#hive安装配置" class="headerlink" title="hive安装配置"></a>hive安装配置</h3><ol>
+<li><p>下载安装包<br><code>http://archive.cloudera.com/cdh5/cdh/5/</code>下载hive-1.1.0-cdh5.7.0.tar.gz</p>
+</li>
+<li><p>解压到指定文件夹</p>
+<pre><code class="shell">tar -zxvf...</code></pre></li></ol>
             
-            <span class="read-more gradient-text"><a href="/2019/10/31/scala-implicit/" title="Read article" class="posttitle">Read article</a></span>
+            <span class="read-more gradient-text"><a href="/2019/10/31/hadoop生态安装-hive/" title="Read article" class="posttitle">Read article</a></span>
         </div>
     </div>
     
@@ -113,6 +113,61 @@
 
     <div id="primary">
         
+<div class="post" id="post">
+    <div class="post-cover" style="
+            background-image:
+            radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+            url(/img/welcome-cover.jpg);">
+    </div>
+    <div class="else">
+        <p class="animated fadeInDown">
+            
+                <a href="javascript:;"><b>「 </b>Article<b> 」</b></a>
+            
+            October 31, 2019
+        </p>
+        <h3 class="post-title animated fadeInDown"><a href="/2019/10/31/scala-implicit/" title="scala_implicit" class="posttitle">scala_implicit</a></h3>
+        
+            <p class="post-count animated fadeInDown">
+                
+                    <span>
+                        <b class="iconfont icon-text2"></b> <i>Words count</i>
+                        2.6k
+                    </span>
+                
+                
+                    <span>
+                        <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
+                        2 mins.
+                    </span>
+                
+                
+            </p>
+            
+                <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Scala/">Scala</a></li></ul>
+            
+        
+        <div class="md-content animated fadeIn">
+            
+                <h3 id="scala的-implicit的初步使用"><a href="#scala的-implicit的初步使用" class="headerlink" title="scala的 implicit的初步使用"></a>scala的 implicit的初步使用</h3><ol>
+<li>隐式参数<br>效果跟函数参数使用默认值类似，但是使用更灵活</li>
+</ol>
+<pre><code class="scala">object ImplicitParamsDemo {
+  implicit val name:String = &quot;default&quot;
+
+  log(&quot;init&quot;)
+
+  def log(msg:String)(implicit name:String):Unit = println(s&quot;[$name] $msg&quot;)
+
+  def process1():Unit ...</code></pre>
+            
+            <span class="read-more gradient-text"><a href="/2019/10/31/scala-implicit/" title="Read article" class="posttitle">Read article</a></span>
+        </div>
+    </div>
+</div>
+
+
+
 <div class="post" id="post">
     <div class="post-cover" style="
             background-image:
@@ -551,57 +606,6 @@ ko_whoy</code></pre>
 <pre><code class="scala">object HelloWorld...</code></pre>
             
             <span class="read-more gradient-text"><a href="/2019/10/22/scala基础笔记/" title="Read article" class="posttitle">Read article</a></span>
-        </div>
-    </div>
-</div>
-
-
-
-<div class="post" id="post">
-    <div class="post-cover" style="
-            background-image:
-            radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
-            url(/img/welcome-cover.jpg);">
-    </div>
-    <div class="else">
-        <p class="animated fadeInDown">
-            
-                <a href="javascript:;"><b>「 </b>Article<b> 」</b></a>
-            
-            October 18, 2019
-        </p>
-        <h3 class="post-title animated fadeInDown"><a href="/2019/10/18/PySpark-1/" title="PySpark_1" class="posttitle">PySpark_1</a></h3>
-        
-            <p class="post-count animated fadeInDown">
-                
-                    <span>
-                        <b class="iconfont icon-text2"></b> <i>Words count</i>
-                        12k
-                    </span>
-                
-                
-                    <span>
-                        <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
-                        11 mins.
-                    </span>
-                
-                
-            </p>
-            
-                <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/PySpark/">PySpark</a></li></ul>
-            
-        
-        <div class="md-content animated fadeIn">
-            
-                <p><code>Spark是开源的分布式查询和处理引擎，具有MapReduce的灵活性和可扩展性，但是速度更快，当数据存储在内存中，速度比hadoop快100倍，存储在磁盘中快10倍。</code></p>
-<ul>
-<li><p>任何Spark应用程序都会分离主节点上的单一驱动进程(可以包含多个作业)，然后将执行进程(包含多个任务)分配到多个工作节点。<br><code>任何工作节点都可以执行来自不同作业的多个任务</code><br></p>
-</li>
-<li><p>弹性分布式数据集(RDD)<br>  弹性分布式数据集是<code>不可变</code>Java虚拟机(JVM)对象的<code>分布式集合</code>，Spark就是围绕RDD构建的。</p>
-<ol>
-<li>RDD的计算可以使用到缓存...</li></ol></li></ul>
-            
-            <span class="read-more gradient-text"><a href="/2019/10/18/PySpark-1/" title="Read article" class="posttitle">Read article</a></span>
         </div>
     </div>
 </div>
