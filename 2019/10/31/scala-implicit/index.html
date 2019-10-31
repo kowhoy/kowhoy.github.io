@@ -5,16 +5,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Scala操作Spark示例 - ko_whoy</title>
+    <title>scala_implicit - ko_whoy</title>
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate">
     <meta name="keywords" content="ko_whoy,"> 
-    <meta name="description" content="启动spark-shell
-cd /usr/local/spark-2.4.3/bin
-./spark-shell
-使用的是高速公路出入口数据
-import org.apache.spark.sql,"> 
+    <meta name="description" content="scala的 implicit的初步使用
+隐式参数效果跟函数参数使用默认值类似，但是使用更灵活
+
+object ImplicitParamsDemo {
+  implicit val name:St,"> 
     <meta name="author" content="ko_whoy"> 
     <link rel="alternative" href="atom.xml" title="ko_whoy" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -34,7 +34,7 @@ import org.apache.spark.sql,">
     <div class="bar" style="width: 0;"></div>
     <a id="home-icon" class="image-icon icon-home iconfont" href="javascript:;" data-url="https://kowhoy.github.io"></a>
     <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
-    <h3 class="subtitle">Scala操作Spark示例</h3>
+    <h3 class="subtitle">scala_implicit</h3>
     <div class="social">
 <!--        <div class="like-icon">-->
 <!--            <a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
@@ -63,21 +63,21 @@ import org.apache.spark.sql,">
                 
                     <a href="javascript:;"><b>「 </b>Article<b> 」</b></a>
                 
-                October 25, 2019
+                October 31, 2019
             </p>
-            <h3 class="post-title animated fadeInDown"><a href="/2019/10/25/Scala操作Spark示例/" title="Scala操作Spark示例">Scala操作Spark示例</a></h3>
+            <h3 class="post-title animated fadeInDown"><a href="/2019/10/31/scala-implicit/" title="scala_implicit">scala_implicit</a></h3>
             
                 <p class="post-count animated fadeInDown">
                     
                         <span>
                         <b class="iconfont icon-text2"></b> <i>Words count</i>
-                        2.8k
+                        2.6k
                     </span>
                     
                     
                         <span>
                         <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
-                        3 mins.
+                        2 mins.
                     </span>
                     
                     
@@ -85,7 +85,7 @@ import org.apache.spark.sql,">
                 </p>
             
             
-                <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Scala/">Scala</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Spark/">Spark</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/大数据/">大数据</a></li></ul>
+                <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Scala/">Scala</a></li></ul>
             
         </div>
     </div>
@@ -106,88 +106,105 @@ import org.apache.spark.sql,">
 <div class="article">
     <div class='main'>
         <div class="content markdown animated fadeIn slower">
-            <p>启动spark-shell</p>
-<pre><code class="shell">cd /usr/local/spark-2.4.3/bin
-./spark-shell</code></pre>
-<p>使用的是高速公路出入口数据</p>
-<pre><code class="scala">import org.apache.spark.sql.SparkSession
+            <h3 id="scala的-implicit的初步使用"><a href="#scala的-implicit的初步使用" class="headerlink" title="scala的 implicit的初步使用"></a>scala的 implicit的初步使用</h3><ol>
+<li>隐式参数<br>效果跟函数参数使用默认值类似，但是使用更灵活</li>
+</ol>
+<pre><code class="scala">object ImplicitParamsDemo {
+  implicit val name:String = &quot;default&quot;
 
-val ss = SparkSession.builder.master(&quot;local&quot;).appName(&quot;testDemo&quot;).getOrCreate()
+  log(&quot;init&quot;)
 
-filePath = &quot;~/Desktop/tmp/highway.txt&quot;
+  def log(msg:String)(implicit name:String):Unit = println(s&quot;[$name] $msg&quot;)
 
-val rdd = ss.read.textFile(filePath)
+  def process1():Unit = {
+    implicit val name:String = &quot;process&quot;
+    log(&quot;doing something&quot;)
+  }
 
-//删除第一行数据
-val data = rdd.filter(_.split(&quot;,&quot;)(0) != &quot;FID&quot;)
+  def process2():Unit = {
+    log(&quot;doing other something&quot;)
+  }
 
-case class Highway(fid:Int, name:String, kind:Int, lon:Float, lat:Float)
+  def main(args:Array[String]):Unit = {
+    implicit val name:String = &quot;main&quot;
+    log(&quot;start1&quot;)
+    process1()
+    log(&quot;start2&quot;)
+    process2()
+    log(&quot;end&quot;)(&quot;custom name&quot;)
+  }
+}</code></pre>
+<p>输出:</p>
+<pre><code>[default] init
+[main] start1
+[process] doing something
+[main] start2
+[default] doing other something
+[custom name] end</code></pre><ol start="2">
+<li>隐式方法</li>
+</ol>
+<pre><code class="scala">import java.time.LocalDate
 
-val df = data.map(_.split(&quot;,&quot;)).map(x=&gt;Highway(x(0).toInt, x(1).toString, x(2).toInt, x(3).toFloat, x(4).toFloat)).toDF
+class DateHelper(offset:Int) {
+  def days(when:String):LocalDate = {
+    val today = LocalDate.now
 
-df.show
+    when match {
+      case &quot;ago&quot; =&gt; today.minusDays(offset)
+      case &quot;from_now&quot; =&gt; today.plusDays(offset)
+      case _ =&gt; today
+    }
+  }
+}
 
-+---+--------------+----+----------+---------+
-|fid|          name|kind|       lon|      lat|
-+---+--------------+----+----------+---------+
-|  0|      东至出口|8301| 117.00496| 30.08415|
-|  1|    太平湖出口|8301| 117.96871|30.322758|
-|  2|          入口|8302| 117.90406|30.392708|
-|  3|          入口|8302|   117.084|  30.4774|
-+---+--------------+----+----------+---------+
+object DateHelper {
+  val ago = &quot;ago&quot;
+  val from_now = &quot;from_now&quot;
 
-df.printSchema()
+  implicit def convertInt2DateHelper(offset:Int):DateHelper = new DateHelper(offset)
+}
 
-root
- |-- fid: integer (nullable = false)
- |-- name: string (nullable = true)
- |-- kind: integer (nullable = false)
- |-- lon: float (nullable = false)
- |-- lat: float (nullable = false)
+object DaysDSL extends App {
+  import DateHelper._
 
- df.cache()
+  println(2 days ago)
+  println(5 days from_now)
+  println(convertInt2DateHelper(2).days(&quot;ago&quot;))
+  println(convertInt2DateHelper(5) days from_now)
+}</code></pre>
+<p>输出:</p>
+<pre><code>2019-10-29
+2019-11-05
+2019-10-29
+2019-11-05</code></pre><ol start="3">
+<li>隐式类</li>
+</ol>
+<pre><code class="scala">import java.time.LocalDate
 
-// 以kind为维度统计次数
+object DateUnit {
+  val ago = &quot;ago&quot;
+  val from_now = &quot;from_now&quot;
 
-// 方法一:使用groupBy函数
-df.groupBy(&quot;kind&quot;).count().orderBy($&quot;count&quot;.desc).show()
+  implicit class DateHelpImplicitClass(offset:Int) {
+    def days(when:String):LocalDate = {
+      val today = LocalDate.now
+      when match {
+        case &quot;ago&quot; =&gt; today.minusDays(offset)
+        case &quot;from_now&quot; =&gt; today.plusDays(offset)
+        case _ =&gt; today
+      }
+    }
+  }
+}
 
-+----+-----+                                                                    
-|kind|count|
-+----+-----+
-|8301|11615|
-|8302|10258|
-+----+-----+
+object DaysDSL2 extends App {
+  import DateUnit._
 
-// 方法二: 使用sql
-
-df.createOrReplaceTempView(&quot;highway&quot;)
-
-ss.sql(&quot;select kind, count(*) as num from highway group by kind order by num desc&quot;).show()
-
-+----+-----+
-|kind|  num|
-+----+-----+
-|8301|11615|
-|8302|10258|
-+----+-----+
-
-
- val summary = df.describe()
-summary: org.apache.spark.sql.DataFrame = [summary: string, fid: string ... 4 more fields]
-
-summary.show()
-+-------+-----------------+------------+------------------+------------------+-----------------+
-|summary|              fid|        name|              kind|               lon|              lat|
-+-------+-----------------+------------+------------------+------------------+-----------------+
-|  count|            21873|       21873|             21873|             21873|            21873|
-|   mean|          10936.0|        null|  8301.46898002103|113.86118025643036|32.16994257129792|
-| stddev|6314.335554909954|        null|0.4990482412048125| 6.897239660174894|6.430847299197006|
-|    min|                0|    一品出口|              8301|         80.470375|        18.296991|
-|    max|            21872|Ｘ６１２出口|              8302|         131.12318|        49.616005|
-+-------+-----------------+------------+------------------+------------------+-----------------+
-
-</code></pre>
+  println(2 days ago)
+  println(5 days from_now)
+  println(DateHelpImplicitClass(2).days(&quot;ago&quot;))
+  println(DateHelpImplicitClass(5) days &quot;from_now&quot;)
+}</code></pre>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
