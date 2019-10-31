@@ -123,56 +123,42 @@ scala&gt; val new_str_2 = str.filter(_ != &quot;a&quot;)
        warning: comparing values of types Char and String using `!=` will always yield true
 new_str_2: String = wojiushiwoa</code></pre>
 <ol start="2">
-<li><code>drop()</code> 和 <code>take()</code><pre><code class="scala">val str = &quot;wojiushiwo&quot;
+<li><code>drop()</code> 和 <code>take()</code></li>
+</ol>
+<pre><code class="scala">val str = &quot;wojiushiwo&quot;
+
+val droped_str = str.drop(2)
+droped_str: String = jiushiwo
+
+val taked_str = droped_str.take(3)
+taked_str: String = jiu
+
+&quot;woJiushiWo&quot;.drop(1).take(8).capitalize
+// String = OJiushiW</code></pre>
+<p>⚠️：scala 和 python 中的captialize有区别，python中是将首字母大写，其余字母统一小写，scala中只是将首字母大写。</p>
+<ol start="3">
+<li>字符串的比较<br>scala中使用<code>==</code>进行比较字符串是否相同，在比较之前，会先进行比较两方是否为null，所有将字符串与null进行比较是不会出错的。<pre><code class="scala">scala&gt; val s1 = &quot;hey&quot;
+s1: String = hey
 </code></pre>
 </li>
 </ol>
-<p>val droped_str = str.drop(2)<br>droped_str: String = jiushiwo</p>
-<p>val taked_str = droped_str.take(3)<br>taked_str: String = jiu</p>
-<p>“woJiushiWo”.drop(1).take(8).capitalize<br>// String = OJiushiW</p>
-<pre><code>⚠️：scala 和 python 中的captialize有区别，python中是将首字母大写，其余字母统一小写，scala中只是将首字母大写。
+<p>scala&gt; val s2 = “hey”<br>s2: String = hey</p>
+<p>scala&gt; val s3 = “Hey”<br>s3: String = Hey</p>
+<p>scala&gt; val s4 = null<br>s4: Null = null</p>
+<p>scala&gt; s1 == s2<br>res1: Boolean = true</p>
+<p>scala&gt; s1 == s4<br>res2: Boolean = false</p>
+<p>scala&gt; s1.toUpperCase == s3.toUpperCase<br>res3: Boolean = true</p>
+<p>scala&gt; s1.equalsIgnoreCase(s3)<br>res4: Boolean = true</p>
+<p>scala&gt; s1.toUpperCase == s4.toUpperCase<br>                            ^<br>       error: value toUpperCase is not a member of Null</p>
+<p>scala&gt; s4.equalsIgnoreCase(s1)<br>          ^<br>       error: value equalsIgnoreCase is not a member of Null</p>
+<p>scala&gt; s1.equalsIgnoreCase(s4)<br>res7: Boolean = false</p>
+<pre><code>
+4. 多行字符串及`stripMargin()`的使用
+scala的多行字符串很很多其他语言一致，使用`&quot;&quot;&quot;....&quot;&quot;&quot;`三个双引号包裹，`stripMargin`是为了解决多行双引号的对齐问题，可以在多行字符串行首加入默认的`|`作为连接符
 
-3. 字符串的比较
-scala中使用`==`进行比较字符串是否相同，在比较之前，会先进行比较两方是否为null，所有将字符串与null进行比较是不会出错的。
+示例:
 ```scala
-scala&gt; val s1 = &quot;hey&quot;
-s1: String = hey
-
-scala&gt; val s2 = &quot;hey&quot;
-s2: String = hey
-
-scala&gt; val s3 = &quot;Hey&quot;
-s3: String = Hey
-
-scala&gt; val s4 = null
-s4: Null = null
-
-scala&gt; s1 == s2
-res1: Boolean = true
-
-scala&gt; s1 == s4
-res2: Boolean = false
-
-scala&gt; s1.toUpperCase == s3.toUpperCase
-res3: Boolean = true
-
-scala&gt; s1.equalsIgnoreCase(s3)
-res4: Boolean = true
-
-scala&gt; s1.toUpperCase == s4.toUpperCase
-                            ^
-       error: value toUpperCase is not a member of Null
-
-scala&gt; s4.equalsIgnoreCase(s1)
-          ^
-       error: value equalsIgnoreCase is not a member of Null
-
-scala&gt; s1.equalsIgnoreCase(s4)
-res7: Boolean = false</code></pre><ol start="4">
-<li>多行字符串及<code>stripMargin()</code>的使用<br>scala的多行字符串很很多其他语言一致，使用<code>&quot;&quot;&quot;....&quot;&quot;&quot;</code>三个双引号包裹，<code>stripMargin</code>是为了解决多行双引号的对齐问题，可以在多行字符串行首加入默认的<code>|</code>作为连接符</li>
-</ol>
-<p>示例:</p>
-<pre><code class="scala">scala&gt; val sql_str = &quot;&quot;&quot;
+scala&gt; val sql_str = &quot;&quot;&quot;
      |  |select count(*)
      | |from order
      |   |where 1=1
@@ -198,8 +184,7 @@ res11: String =
 select count(*)
 from order
 where 1=1
-&quot;</code></pre>
-<p>可以使用 replaceAll(“\n”, “ “) 将多行字符串转化为一行</p>
+&quot;</code></pre><p>可以使用 replaceAll(“\n”, “ “) 将多行字符串转化为一行</p>
 <pre><code class="scala">sql_str.stripMargin.replaceAll(&quot;\n&quot;, &quot; &quot;)
 res12: String = &quot; select count(*) from order where 1=1 &quot;</code></pre>
 <ol start="5">
