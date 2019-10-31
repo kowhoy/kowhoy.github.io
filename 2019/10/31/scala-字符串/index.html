@@ -72,7 +72,7 @@ scala&amp;g,">
                     
                         <span>
                         <b class="iconfont icon-text2"></b> <i>Words count</i>
-                        5.6k
+                        5.7k
                     </span>
                     
                     
@@ -137,28 +137,47 @@ taked_str: String = jiu
 // String = OJiushiW</code></pre>
 <p>⚠️：scala 和 python 中的captialize有区别，python中是将首字母大写，其余字母统一小写，scala中只是将首字母大写。</p>
 <ol start="3">
-<li>字符串的比较<br>scala中使用<code>==</code>进行比较字符串是否相同，在比较之前，会先进行比较两方是否为null，所有将字符串与null进行比较是不会出错的。<pre><code class="scala">scala&gt; val s1 = &quot;hey&quot;
-s1: String = hey
-</code></pre>
-</li>
+<li>字符串的比较<br>scala中使用<code>==</code>进行比较字符串是否相同，在比较之前，会先进行比较两方是否为null，所有将字符串与null进行比较是不会出错的。</li>
 </ol>
-<p>scala&gt; val s2 = “hey”<br>s2: String = hey</p>
-<p>scala&gt; val s3 = “Hey”<br>s3: String = Hey</p>
-<p>scala&gt; val s4 = null<br>s4: Null = null</p>
-<p>scala&gt; s1 == s2<br>res1: Boolean = true</p>
-<p>scala&gt; s1 == s4<br>res2: Boolean = false</p>
-<p>scala&gt; s1.toUpperCase == s3.toUpperCase<br>res3: Boolean = true</p>
-<p>scala&gt; s1.equalsIgnoreCase(s3)<br>res4: Boolean = true</p>
-<p>scala&gt; s1.toUpperCase == s4.toUpperCase<br>                            ^<br>       error: value toUpperCase is not a member of Null</p>
-<p>scala&gt; s4.equalsIgnoreCase(s1)<br>          ^<br>       error: value equalsIgnoreCase is not a member of Null</p>
-<p>scala&gt; s1.equalsIgnoreCase(s4)<br>res7: Boolean = false</p>
-<pre><code>
-4. 多行字符串及`stripMargin()`的使用
-scala的多行字符串很很多其他语言一致，使用`&quot;&quot;&quot;....&quot;&quot;&quot;`三个双引号包裹，`stripMargin`是为了解决多行双引号的对齐问题，可以在多行字符串行首加入默认的`|`作为连接符
+<pre><code class="scala">scala&gt; val s1 = &quot;hey&quot;
+s1: String = hey
 
-示例:
-```scala
-scala&gt; val sql_str = &quot;&quot;&quot;
+scala&gt; val s2 = &quot;hey&quot;
+s2: String = hey
+
+scala&gt; val s3 = &quot;Hey&quot;
+s3: String = Hey
+
+scala&gt; val s4 = null
+s4: Null = null
+
+scala&gt; s1 == s2
+res1: Boolean = true
+
+scala&gt; s1 == s4
+res2: Boolean = false
+
+scala&gt; s1.toUpperCase == s3.toUpperCase
+res3: Boolean = true
+
+scala&gt; s1.equalsIgnoreCase(s3)
+res4: Boolean = true
+
+scala&gt; s1.toUpperCase == s4.toUpperCase
+                            ^
+       error: value toUpperCase is not a member of Null
+
+scala&gt; s4.equalsIgnoreCase(s1)
+          ^
+       error: value equalsIgnoreCase is not a member of Null
+
+scala&gt; s1.equalsIgnoreCase(s4)
+res7: Boolean = false</code></pre>
+<ol start="4">
+<li>多行字符串及<code>stripMargin()</code>的使用<br>scala的多行字符串很很多其他语言一致，使用<code>&quot;&quot;&quot;....&quot;&quot;&quot;</code>三个双引号包裹，<code>stripMargin</code>是为了解决多行双引号的对齐问题，可以在多行字符串行首加入默认的<code>|</code>作为连接符</li>
+</ol>
+<p>示例:</p>
+<pre><code class="scala">scala&gt; val sql_str = &quot;&quot;&quot;
      |  |select count(*)
      | |from order
      |   |where 1=1
@@ -184,28 +203,42 @@ res11: String =
 select count(*)
 from order
 where 1=1
-&quot;</code></pre><p>可以使用 replaceAll(“\n”, “ “) 将多行字符串转化为一行</p>
+&quot;</code></pre>
+<p>可以使用 replaceAll(“\n”, “ “) 将多行字符串转化为一行</p>
 <pre><code class="scala">sql_str.stripMargin.replaceAll(&quot;\n&quot;, &quot; &quot;)
 res12: String = &quot; select count(*) from order where 1=1 &quot;</code></pre>
 <ol start="5">
-<li>字符串分割<br>⚠️：需要对空字符的处理<pre><code class="scala">scala&gt; val s = &quot;eggs, milk, butter, Coco Puffs&quot;
-s: String = eggs, milk, butter, Coco Puffs
-</code></pre>
-</li>
+<li>字符串分割<br>⚠️：需要对空字符的处理</li>
 </ol>
-<p>scala&gt; val a = s.split(“,”)<br>a: Array[String] = Array(eggs, “ milk”, “ butter”, “ Coco Puffs”)</p>
-<p>scala&gt; val a = s.split(‘,’)<br>a: Array[String] = Array(eggs, “ milk”, “ butter”, “ Coco Puffs”)</p>
-<p>scala&gt; a.foreach(println)<br>eggs<br> milk<br> butter<br> Coco Puffs</p>
-<p>scala&gt; val b = s.split(‘,’).map(_.trim)<br>b: Array[String] = Array(eggs, milk, butter, Coco Puffs)</p>
-<p>scala&gt; b.foreach(println)<br>eggs<br>milk<br>butter<br>Coco Puffs</p>
-<pre><code>scala中split方法，对于不同类型(char/String)类型的参数，使用的是不同的方法，但是对结果没有影响。
+<pre><code class="scala">scala&gt; val s = &quot;eggs, milk, butter, Coco Puffs&quot;
+s: String = eggs, milk, butter, Coco Puffs
 
-6. 变量替换
-在字符串前面加`s` 变量名称前面加`$`可进行变量替换
+scala&gt; val a = s.split(&quot;,&quot;)
+a: Array[String] = Array(eggs, &quot; milk&quot;, &quot; butter&quot;, &quot; Coco Puffs&quot;)
 
-示例：
-```scala
-scala&gt; val name = &quot;koko&quot;
+scala&gt; val a = s.split(&#39;,&#39;)
+a: Array[String] = Array(eggs, &quot; milk&quot;, &quot; butter&quot;, &quot; Coco Puffs&quot;)
+
+scala&gt; a.foreach(println)
+eggs
+ milk
+ butter
+ Coco Puffs
+
+scala&gt; val b = s.split(&#39;,&#39;).map(_.trim)
+b: Array[String] = Array(eggs, milk, butter, Coco Puffs)
+
+scala&gt; b.foreach(println)
+eggs
+milk
+butter
+Coco Puffs</code></pre>
+<p>scala中split方法，对于不同类型(char/String)类型的参数，使用的是不同的方法，但是对结果没有影响。</p>
+<ol start="6">
+<li>变量替换<br>在字符串前面加<code>s</code> 变量名称前面加<code>$</code>可进行变量替换</li>
+</ol>
+<p>示例：</p>
+<pre><code class="scala">scala&gt; val name = &quot;koko&quot;
 name: String = koko
 
 scala&gt; val age = &quot;21&quot;
@@ -215,7 +248,8 @@ scala&gt; val weight = &quot;62&quot;
 weight: String = 62
 
 scala&gt; s&quot;$name is $age years old, and weights $weight kg&quot;
-res15: String = koko is 21 years old, and weights 62 kg</code></pre><p>表达式使用 <code>${}</code></p>
+res15: String = koko is 21 years old, and weights 62 kg</code></pre>
+<p>表达式使用 <code>${}</code></p>
 <p>示例:</p>
 <pre><code class="scala">scala&gt; s&quot;Age next year: ${age.toInt + 1}&quot;
 res17: String = Age next year: 22</code></pre>
