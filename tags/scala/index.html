@@ -62,38 +62,39 @@
             
                 <a href="javascript:;"><b>「 </b>Article<b> 」</b></a>
             
-            October 25, 2019
+            October 31, 2019
         </p>
-        <h3 class="post-title animated fadeInDown"><a href="/2019/10/25/Scala操作Spark示例/" title="Scala操作Spark示例" class="posttitle">Scala操作Spark示例</a></h3>
+        <h3 class="post-title animated fadeInDown"><a href="/2019/10/31/scala-字符串/" title="scala_字符串" class="posttitle">scala_字符串</a></h3>
         
             <p class="post-count animated fadeInDown">
                 
                     <span>
                         <b class="iconfont icon-text2"></b> <i>Words count</i>
-                        2.8k
+                        5.6k
                     </span>
                 
                 
                     <span>
                         <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
-                        3 mins.
+                        5 mins.
                     </span>
                 
                 
             </p>
         
         
-            <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Scala/">Scala</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Spark/">Spark</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/大数据/">大数据</a></li></ul>
+            <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Scala/">Scala</a></li></ul>
         
         <div class="md-content animated fadeIn">
             
-                <p>启动spark-shell</p>
-<pre><code class="shell">cd /usr/local/spark-2.4.3/bin
-./spark-shell</code></pre>
-<p>使用的是高速公路出入口数据</p>
-<pre><code class="scala">import org.apache.spark.sql....</code></pre>
+                <h3 id="Scala字符串"><a href="#Scala字符串" class="headerlink" title="Scala字符串"></a>Scala字符串</h3><ol>
+<li>单双引号的区别<br>双引号的类型为String, 单引号的类型为Char</li>
+</ol>
+<p>示例：</p>
+<p>在对字符串进行<code>filter</code>操作，应使用单引号，使用双引号会warning，且结果非预期</p>
+<pre><code class="scala">scala&gt...</code></pre>
             
-            <span class="read-more gradient-text"><a href="/2019/10/25/Scala操作Spark示例/" title="Read article" class="posttitle">Read article</a></span>
+            <span class="read-more gradient-text"><a href="/2019/10/31/scala-字符串/" title="Read article" class="posttitle">Read article</a></span>
         </div>
     </div>
     
@@ -113,6 +114,59 @@
 
     <div id="primary">
         
+<div class="post" id="post">
+    <div class="post-cover" style="
+            background-image:
+            radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+            url(/img/welcome-cover.jpg);">
+    </div>
+    <div class="else">
+        <p class="animated fadeInDown">
+            
+                <a href="javascript:;"><b>「 </b>Article<b> 」</b></a>
+            
+            October 25, 2019
+        </p>
+        <h3 class="post-title animated fadeInDown"><a href="/2019/10/25/Scala操作Spark示例/" title="Scala操作Spark示例" class="posttitle">Scala操作Spark示例</a></h3>
+        
+            <p class="post-count animated fadeInDown">
+                
+                    <span>
+                        <b class="iconfont icon-text2"></b> <i>Words count</i>
+                        2.8k
+                    </span>
+                
+                
+                    <span>
+                        <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
+                        3 mins.
+                    </span>
+                
+                
+            </p>
+            
+                <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Scala/">Scala</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Spark/">Spark</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/大数据/">大数据</a></li></ul>
+            
+        
+        <div class="md-content animated fadeIn">
+            
+                <p>启动spark-shell</p>
+<pre><code class="shell">cd /usr/local/spark-2.4.3/bin
+./spark-shell</code></pre>
+<p>使用的是高速公路出入口数据</p>
+<pre><code class="scala">import org.apache.spark.sql.SparkSession
+
+val ss = SparkSession.builder.master(&quot;local&quot;).appName(&quot;testDemo&quot;).getOrCreate()
+
+filePath = &quot;~/Desktop/tmp/highway...</code></pre>
+            
+            <span class="read-more gradient-text"><a href="/2019/10/25/Scala操作Spark示例/" title="Read article" class="posttitle">Read article</a></span>
+        </div>
+    </div>
+</div>
+
+
+
 <div class="post" id="post">
     <div class="post-cover" style="
             background-image:

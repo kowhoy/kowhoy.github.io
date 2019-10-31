@@ -5,12 +5,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Scala偏函数和偏应用函数 - ko_whoy</title>
+    <title>scala_字符串 - ko_whoy</title>
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate">
     <meta name="keywords" content="ko_whoy,"> 
-    <meta name="description" content="偏函数偏函数(Partial Function)，是一个数学概念，不是函数的一种。Scala中的偏函数是一个Trait,类型为PartialFunction[A, B],接受A类型的参数，返回B类型,"> 
+    <meta name="description" content="Scala字符串
+单双引号的区别双引号的类型为String, 单引号的类型为Char
+
+示例：
+在对字符串进行filter操作，应使用单引号，使用双引号会warning，且结果非预期
+scala&amp;g,"> 
     <meta name="author" content="ko_whoy"> 
     <link rel="alternative" href="atom.xml" title="ko_whoy" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -30,7 +35,7 @@
     <div class="bar" style="width: 0;"></div>
     <a id="home-icon" class="image-icon icon-home iconfont" href="javascript:;" data-url="https://kowhoy.github.io"></a>
     <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
-    <h3 class="subtitle">Scala偏函数和偏应用函数</h3>
+    <h3 class="subtitle">scala_字符串</h3>
     <div class="social">
 <!--        <div class="like-icon">-->
 <!--            <a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
@@ -59,21 +64,21 @@
                 
                     <a href="javascript:;"><b>「 </b>Article<b> 」</b></a>
                 
-                October 25, 2019
+                October 31, 2019
             </p>
-            <h3 class="post-title animated fadeInDown"><a href="/2019/10/25/Scala偏函数和偏应用函数/" title="Scala偏函数和偏应用函数">Scala偏函数和偏应用函数</a></h3>
+            <h3 class="post-title animated fadeInDown"><a href="/2019/10/31/scala-字符串/" title="scala_字符串">scala_字符串</a></h3>
             
                 <p class="post-count animated fadeInDown">
                     
                         <span>
                         <b class="iconfont icon-text2"></b> <i>Words count</i>
-                        2.2k
+                        5.6k
                     </span>
                     
                     
                         <span>
                         <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
-                        2 mins.
+                        5 mins.
                     </span>
                     
                     
@@ -102,67 +107,182 @@
 <div class="article">
     <div class='main'>
         <div class="content markdown animated fadeIn slower">
-            <h2 id="偏函数"><a href="#偏函数" class="headerlink" title="偏函数"></a>偏函数</h2><p>偏函数(Partial Function)，是一个数学概念，不是函数的一种。<br>Scala中的偏函数是一个Trait,类型为<code>PartialFunction[A, B]</code>,接受A类型的参数，返回B类型的结果。</p>
-<pre><code class="scala">val pf:PartialFunction(Int, String) = {
-    case 1 =&gt; &quot;one&quot;
-    case 2 =&gt; &quot;two&quot;
-    case 3 =&gt; &quot;three&quot;
-    case _ =&gt; &quot;other&quot;
-}
+            <h3 id="Scala字符串"><a href="#Scala字符串" class="headerlink" title="Scala字符串"></a>Scala字符串</h3><ol>
+<li>单双引号的区别<br>双引号的类型为String, 单引号的类型为Char</li>
+</ol>
+<p>示例：</p>
+<p>在对字符串进行<code>filter</code>操作，应使用单引号，使用双引号会warning，且结果非预期</p>
+<pre><code class="scala">scala&gt; val str = &quot;wojiushiwoa&quot;
+str: String = wojiushiwoa
 
-pf(1) // one
-pf(9) // other</code></pre>
-<p>偏函数内部有一些方法，如 <code>isDefinedAt</code>, <code>orElse</code>, <code>andThen</code>, <code>applyOrElse</code></p>
-<ul>
-<li>isDefinedAt<br>作用: 判断参数是否在这个偏函数的处理范围内<br>返回: boolean<br>前提: 参数的类型应该与偏函数类型一致，否则会报错</li>
-</ul>
-<pre><code class="scala">pf.isDefinedAt(100) // Boolean = true</code></pre>
-<p>因为pf中有 <code>case _ =&gt; &quot;other&quot;</code>，所有只要是Int类型均为true，如果去掉这一case，大于3的Int类型均为false</p>
-<ul>
-<li>orElse<br>作用： 将多个偏函数进行拼接，拼成一个偏函数<br>❓ 如果偏函数类型不一致，orElse 不会报错，但是连接之后的数据类型 变成 A with B，并非预计的偏函数 </li>
-</ul>
-<pre><code class="scala">val pf1:PartialFunction[Int, String] = {
-    case 1 =&gt; &quot;one&quot;
-}
+scala&gt; val new_str = str.filter(_ != &#39;a&#39;)
+new_str: String = wojiushiwo
 
-val pf2:PartialFunction[Int, String] = {
-    case 2 =&gt; &quot;two&quot;
-}
-
-val nwPf = pf1 orElse pf2</code></pre>
-<ul>
-<li>andThen<br>作用: 相当于方法的连续调用, 如 g(f(x))</li>
-</ul>
-<pre><code class="scala">val pf1:PartialFunction[Int, String] = {
-    case num if num == 1 =&gt; &quot;one&quot;
-}
-
-val pf2:PartialFunction[String, String] = {
-    case str if str eq &quot;one&quot; =&gt; &quot;The num is 1&quot;
-}
-
-val nwPf = pf1 andThen pf2
-
-nwPf(1) // The num is 1</code></pre>
-<ul>
-<li>applyOrElse<br>作用: 接受两个参数，如果第一个参数匹配，返回匹配值，否则调用第二个参数(回调函数)</li>
-</ul>
-<pre><code class="scala">val onePf.PartialFunction[Int, String] = {
-    case num if num == 1 =&gt; &quot;The num is 1&quot;
-}
-
-onePf.applyOrElse(1, {num:Int =&gt; &quot;Not 1&quot;}) // The num is 1
-onePf.applyOrElse(2, {num:Int =&gt; &quot;Not 1&quot;}) // Not 1</code></pre>
-<hr>
-<h2 id="偏应用函数"><a href="#偏应用函数" class="headerlink" title="偏应用函数"></a>偏应用函数</h2><p>偏应用函数(Partial Applied Function)也叫 部分应用函数, 和偏函数没有关系。<br>是指： 一个函数有N个参数,现在只提供k个参数(k &lt; N), 就得到了部分应用函数</p>
-<pre><code class="scala">def add(x:Int, y:Int, z:Int) = x+y+z
-
-def addx(1, _:Int, _:Int)
-
-def addy(_:Int, 2, _:Int)
-
-def addxaddy(1, 11, _:Int)
+scala&gt; val new_str_2 = str.filter(_ != &quot;a&quot;)
+                                    ^
+       warning: comparing values of types Char and String using `!=` will always yield true
+new_str_2: String = wojiushiwoa</code></pre>
+<ol start="2">
+<li><code>drop()</code> 和 <code>take()</code><pre><code class="scala">val str = &quot;wojiushiwo&quot;
 </code></pre>
+</li>
+</ol>
+<p>val droped_str = str.drop(2)<br>droped_str: String = jiushiwo</p>
+<p>val taked_str = droped_str.take(3)<br>taked_str: String = jiu</p>
+<p>“woJiushiWo”.drop(1).take(8).capitalize<br>// String = OJiushiW</p>
+<pre><code>⚠️：scala 和 python 中的captialize有区别，python中是将首字母大写，其余字母统一小写，scala中只是将首字母大写。
+
+3. 字符串的比较
+scala中使用`==`进行比较字符串是否相同，在比较之前，会先进行比较两方是否为null，所有将字符串与null进行比较是不会出错的。
+```scala
+scala&gt; val s1 = &quot;hey&quot;
+s1: String = hey
+
+scala&gt; val s2 = &quot;hey&quot;
+s2: String = hey
+
+scala&gt; val s3 = &quot;Hey&quot;
+s3: String = Hey
+
+scala&gt; val s4 = null
+s4: Null = null
+
+scala&gt; s1 == s2
+res1: Boolean = true
+
+scala&gt; s1 == s4
+res2: Boolean = false
+
+scala&gt; s1.toUpperCase == s3.toUpperCase
+res3: Boolean = true
+
+scala&gt; s1.equalsIgnoreCase(s3)
+res4: Boolean = true
+
+scala&gt; s1.toUpperCase == s4.toUpperCase
+                            ^
+       error: value toUpperCase is not a member of Null
+
+scala&gt; s4.equalsIgnoreCase(s1)
+          ^
+       error: value equalsIgnoreCase is not a member of Null
+
+scala&gt; s1.equalsIgnoreCase(s4)
+res7: Boolean = false</code></pre><ol start="4">
+<li>多行字符串及<code>stripMargin()</code>的使用<br>scala的多行字符串很很多其他语言一致，使用<code>&quot;&quot;&quot;....&quot;&quot;&quot;</code>三个双引号包裹，<code>stripMargin</code>是为了解决多行双引号的对齐问题，可以在多行字符串行首加入默认的<code>|</code>作为连接符</li>
+</ol>
+<p>示例:</p>
+<pre><code class="scala">scala&gt; val sql_str = &quot;&quot;&quot;
+     |  |select count(*)
+     | |from order
+     |   |where 1=1
+     | &quot;&quot;&quot;
+sql_str: String =
+&quot;
+ |select count(*)
+|from order
+  |where 1=1
+&quot;
+
+scala&gt; sql_str.stripMargin(&#39;|&#39;)
+res10: String =
+&quot;
+select count(*)
+from order
+where 1=1
+&quot;
+
+scala&gt; sql_str.stripMargin
+res11: String =
+&quot;
+select count(*)
+from order
+where 1=1
+&quot;</code></pre>
+<p>可以使用 replaceAll(“\n”, “ “) 将多行字符串转化为一行</p>
+<pre><code class="scala">sql_str.stripMargin.replaceAll(&quot;\n&quot;, &quot; &quot;)
+res12: String = &quot; select count(*) from order where 1=1 &quot;</code></pre>
+<ol start="5">
+<li>字符串分割<br>⚠️：需要对空字符的处理<pre><code class="scala">scala&gt; val s = &quot;eggs, milk, butter, Coco Puffs&quot;
+s: String = eggs, milk, butter, Coco Puffs
+</code></pre>
+</li>
+</ol>
+<p>scala&gt; val a = s.split(“,”)<br>a: Array[String] = Array(eggs, “ milk”, “ butter”, “ Coco Puffs”)</p>
+<p>scala&gt; val a = s.split(‘,’)<br>a: Array[String] = Array(eggs, “ milk”, “ butter”, “ Coco Puffs”)</p>
+<p>scala&gt; a.foreach(println)<br>eggs<br> milk<br> butter<br> Coco Puffs</p>
+<p>scala&gt; val b = s.split(‘,’).map(_.trim)<br>b: Array[String] = Array(eggs, milk, butter, Coco Puffs)</p>
+<p>scala&gt; b.foreach(println)<br>eggs<br>milk<br>butter<br>Coco Puffs</p>
+<pre><code>scala中split方法，对于不同类型(char/String)类型的参数，使用的是不同的方法，但是对结果没有影响。
+
+6. 变量替换
+在字符串前面加`s` 变量名称前面加`$`可进行变量替换
+
+示例：
+```scala
+scala&gt; val name = &quot;koko&quot;
+name: String = koko
+
+scala&gt; val age = &quot;21&quot;
+age: String = 21
+
+scala&gt; val weight = &quot;62&quot;
+weight: String = 62
+
+scala&gt; s&quot;$name is $age years old, and weights $weight kg&quot;
+res15: String = koko is 21 years old, and weights 62 kg</code></pre><p>表达式使用 <code>${}</code></p>
+<p>示例:</p>
+<pre><code class="scala">scala&gt; s&quot;Age next year: ${age.toInt + 1}&quot;
+res17: String = Age next year: 22</code></pre>
+<p>如果使用对象字段也需要<code>{}</code></p>
+<pre><code class="scala">scala&gt; case class Student(name:String, score:Int)
+defined class Student
+
+scala&gt; val ko = Student(&quot;ko&quot;, 149)
+ko: Student = Student(ko,149)
+
+scala&gt; s&quot;${ko.name} has a score of ${ko.score}&quot;
+res19: String = ko has a score of 149</code></pre>
+<p>在字符串前面加<code>f</code>可以格式化字符串</p>
+<p>示例:</p>
+<pre><code class="scala">scala&gt; val weight = 62.595
+weight: Double = 62.595
+
+scala&gt; f&quot;$name is $age years old, and weights $weight%.2f kg&quot;
+res29: String = koko is 21 years old, and weights 62.60 kg</code></pre>
+<p>在字符串前面加 <code>raw</code>插入符，不会对字符串进行转义</p>
+<p>示例:</p>
+<pre><code class="scala">scala&gt; raw&quot;foo\nraw&quot;
+res30: String = foo\nraw
+
+scala&gt; &quot;foo\nraw&quot;
+res31: String =
+foo
+raw</code></pre>
+<ol start="7">
+<li>正则<br>字符串后面接<code>.r</code>变成Regex类正则表达式</li>
+</ol>
+<p>使用 <code>findFirstIn</code> 或 <code>findAllIn</code> 匹配</p>
+<p>使用 <code>replaceFirstIn</code> 或 <code>replaceAllIn</code> 替换</p>
+<p>示例:</p>
+<pre><code class="scala">scala&gt; val pattern = &quot;Scala&quot;.r
+pattern: scala.util.matching.Regex = Scala
+
+scala&gt; val str = &quot;Scala is Sca Scala SSS&quot;
+str: String = Scala is Sca Scala SSS
+
+scala&gt; pattern.findFirstIn(str).foreach(println)
+Scala
+
+scala&gt; pattern.findAllIn(str).foreach(println)
+Scala
+Scala
+
+scala&gt; pattern.replaceFirstIn(str, &quot;python&quot;)
+res35: String = python is Sca Scala SSS
+
+scala&gt; pattern.replaceAllIn(str, &quot;python&quot;)
+res36: String = python is Sca python SSS</code></pre>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">

@@ -64,36 +64,36 @@
             
             September 30, 2019
         </p>
-        <h3 class="post-title animated fadeInDown"><a href="/2019/09/30/itertools模块/" title="itertools模块" class="posttitle">itertools模块</a></h3>
+        <h3 class="post-title animated fadeInDown"><a href="/2019/09/30/hadoop-hive-wordcount示例/" title="hadoop-hive-wordcount示例" class="posttitle">hadoop-hive-wordcount示例</a></h3>
         
             <p class="post-count animated fadeInDown">
                 
                     <span>
                         <b class="iconfont icon-text2"></b> <i>Words count</i>
-                        11k
+                        4k
                     </span>
                 
                 
                     <span>
                         <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
-                        10 mins.
+                        4 mins.
                     </span>
                 
                 
             </p>
         
         
-            <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/python/">python</a></li></ul>
+            <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/hadoop/">hadoop</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/hive/">hive</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/大数据/">大数据</a></li></ul>
         
         <div class="md-content animated fadeIn">
             
-                <h3 id="迭代器"><a href="#迭代器" class="headerlink" title="迭代器"></a>迭代器</h3><blockquote>
-<p>迭代器是 <strong><em>惰性求值(lazy evaluation)</em></strong> 的, 只有在迭代到某个值的时候才会计算，而不是一开始就计算好，所以迭代器适合遍历大文件或者无限集合等。</p>
+                <h3 id="一、MapReduce-方式的wordcount"><a href="#一、MapReduce-方式的wordcount" class="headerlink" title="一、MapReduce 方式的wordcount"></a>一、MapReduce 方式的wordcount</h3><blockquote>
+<p>思路： 使用python代码构建map 和 reduce 两部分，使用hadoop进行执行</p>
 </blockquote>
-<h3 id="itertools模块"><a href="#itertools模块" class="headerlink" title="itertools模块"></a>itertools模块</h3><blockquote>
-<p>python...</p></blockquote>
+<h4 id="准备数据"><a href="#准备数据" class="headerlink" title="准备数据"></a>准备数据</h4><ul>
+<li><p>~/mapreduce_demo/datas/...</p></li></ul>
             
-            <span class="read-more gradient-text"><a href="/2019/09/30/itertools模块/" title="Read article" class="posttitle">Read article</a></span>
+            <span class="read-more gradient-text"><a href="/2019/09/30/hadoop-hive-wordcount示例/" title="Read article" class="posttitle">Read article</a></span>
         </div>
     </div>
     
@@ -113,6 +113,72 @@
 
     <div id="primary">
         
+<div class="post" id="post">
+    <div class="post-cover" style="
+            background-image:
+            radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+            url(/img/welcome-cover.jpg);">
+    </div>
+    <div class="else">
+        <p class="animated fadeInDown">
+            
+                <a href="javascript:;"><b>「 </b>Article<b> 」</b></a>
+            
+            September 30, 2019
+        </p>
+        <h3 class="post-title animated fadeInDown"><a href="/2019/09/30/hadoop-hive-wordcount示例/" title="hadoop-hive-wordcount示例" class="posttitle">hadoop-hive-wordcount示例</a></h3>
+        
+            <p class="post-count animated fadeInDown">
+                
+                    <span>
+                        <b class="iconfont icon-text2"></b> <i>Words count</i>
+                        4k
+                    </span>
+                
+                
+                    <span>
+                        <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
+                        4 mins.
+                    </span>
+                
+                
+            </p>
+            
+                <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/hadoop/">hadoop</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/hive/">hive</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/大数据/">大数据</a></li></ul>
+            
+        
+        <div class="md-content animated fadeIn">
+            
+                <h3 id="一、MapReduce-方式的wordcount"><a href="#一、MapReduce-方式的wordcount" class="headerlink" title="一、MapReduce 方式的wordcount"></a>一、MapReduce 方式的wordcount</h3><blockquote>
+<p>思路： 使用python代码构建map 和 reduce 两部分，使用hadoop进行执行</p>
+</blockquote>
+<h4 id="准备数据"><a href="#准备数据" class="headerlink" title="准备数据"></a>准备数据</h4><ul>
+<li><p>~/mapreduce_demo/datas/dt_01.txt</p>
+<blockquote>
+<p>wd wd tr tr dt rd dt</p>
+</blockquote>
+</li>
+<li><p>~/mapreduce_demo/datas/dt_02.txt</p>
+<blockquote>
+<p>ev ev ev </p>
+</blockquote>
+<blockquote>
+<p>sds ec ve ec</p>
+</blockquote>
+<blockquote>
+<p>dse de de </p>
+</blockquote>
+</li>
+</ul>
+<h4 id="放入hdfs"><a href="#放入hdfs" class="headerlink" title="放入hdfs"></a>放入hdfs</h4><pre><code class="shell">hadoop fs -copyFromLocal ~/mapreduce_demo...</code></pre>
+            
+            <span class="read-more gradient-text"><a href="/2019/09/30/hadoop-hive-wordcount示例/" title="Read article" class="posttitle">Read article</a></span>
+        </div>
+    </div>
+</div>
+
+
+
 <div class="post" id="post">
     <div class="post-cover" style="
             background-image:
