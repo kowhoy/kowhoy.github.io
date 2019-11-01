@@ -5,16 +5,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Scala操作Spark示例 - ko_whoy</title>
+    <title>用python将scala_cookbook保存为md - ko_whoy</title>
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate">
     <meta name="keywords" content="ko_whoy,"> 
-    <meta name="description" content="启动spark-shell
-cd /usr/local/spark-2.4.3/bin
-./spark-shell
-使用的是高速公路出入口数据
-import org.apache.spark.sql,"> 
+    <meta name="description" content="用python将scala_cookbook保存为mdThe Scala Cookbook在线阅读
+由于布局和广告，想将每章节保存到本地，方便阅读
+主要分为两个部分:
+
+保存文章的html(save,"> 
     <meta name="author" content="ko_whoy"> 
     <link rel="alternative" href="atom.xml" title="ko_whoy" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -34,7 +34,7 @@ import org.apache.spark.sql,">
     <div class="bar" style="width: 0;"></div>
     <a id="home-icon" class="image-icon icon-home iconfont" href="javascript:;" data-url="https://kowhoy.github.io"></a>
     <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
-    <h3 class="subtitle">Scala操作Spark示例</h3>
+    <h3 class="subtitle">用python将scala_cookbook保存为md</h3>
     <div class="social">
 <!--        <div class="like-icon">-->
 <!--            <a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
@@ -63,21 +63,21 @@ import org.apache.spark.sql,">
                 
                     <a href="javascript:;"><b>「 </b>Article<b> 」</b></a>
                 
-                October 25, 2019
+                November 01, 2019
             </p>
-            <h3 class="post-title animated fadeInDown"><a href="/2019/10/25/Scala操作Spark示例/" title="Scala操作Spark示例">Scala操作Spark示例</a></h3>
+            <h3 class="post-title animated fadeInDown"><a href="/2019/11/01/用python将scala-cookbook保存为md/" title="用python将scala_cookbook保存为md">用python将scala_cookbook保存为md</a></h3>
             
                 <p class="post-count animated fadeInDown">
                     
                         <span>
                         <b class="iconfont icon-text2"></b> <i>Words count</i>
-                        2.8k
+                        2.4k
                     </span>
                     
                     
                         <span>
                         <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
-                        3 mins.
+                        2 mins.
                     </span>
                     
                     
@@ -85,7 +85,7 @@ import org.apache.spark.sql,">
                 </p>
             
             
-                <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Scala/">Scala</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Spark/">Spark</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/大数据/">大数据</a></li></ul>
+                <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/python/">python</a></li></ul>
             
         </div>
     </div>
@@ -106,88 +106,70 @@ import org.apache.spark.sql,">
 <div class="article">
     <div class='main'>
         <div class="content markdown animated fadeIn slower">
-            <p>启动spark-shell</p>
-<pre><code class="shell">cd /usr/local/spark-2.4.3/bin
-./spark-shell</code></pre>
-<p>使用的是高速公路出入口数据</p>
-<pre><code class="scala">import org.apache.spark.sql.SparkSession
+            <h3 id="用python将scala-cookbook保存为md"><a href="#用python将scala-cookbook保存为md" class="headerlink" title="用python将scala_cookbook保存为md"></a>用python将scala_cookbook保存为md</h3><p><a href="http://scalacookbook.com/" target="_blank" rel="noopener">The Scala Cookbook</a>在线阅读</p>
+<p>由于布局和广告，想将每章节保存到本地，方便阅读</p>
+<p>主要分为两个部分:</p>
+<ol>
+<li><p>保存文章的html(save_art_html.py)</p>
+</li>
+<li><p>将文章部分截取并保存为md(trans_2_md.py)</p>
+</li>
+</ol>
+<p>两个部分可以合并为一</p>
+<p>目录结构：</p>
+<p>├── result</p>
+<p>├── save_art_html.py</p>
+<p>├── source</p>
+<p>└── trans_2_md.py</p>
+<pre><code class="shell">curl http://scalacookbook.com/ &gt; ./source/index.html </code></pre>
+<p><code>save_art_html.py</code></p>
+<pre><code class="python">from lxml import etree
+import os
 
-val ss = SparkSession.builder.master(&quot;local&quot;).appName(&quot;testDemo&quot;).getOrCreate()
+with open(&quot;./source/index.html&quot;, &quot;r&quot;) as f:
+    index_html = f.read()
 
-filePath = &quot;~/Desktop/tmp/highway.txt&quot;
+tree = etree.HTML(index_html)
 
-val rdd = ss.read.textFile(filePath)
+urls_content = tree.xpath(&quot;//a&quot;)
 
-//删除第一行数据
-val data = rdd.filter(_.split(&quot;,&quot;)(0) != &quot;FID&quot;)
+urls_list = [i.attrib[&#39;href&#39;] for i in urls_content]
 
-case class Highway(fid:Int, name:String, kind:Int, lon:Float, lat:Float)
+for url in urls_list:
+    url_list = url.split(&quot;/&quot;)
+    url_name = url_list[-1]
+    os.system(&quot;curl &quot;+ url + &quot;&gt; ./source/&quot; + url_name + &quot;.html&quot;)
+print(&quot;Done&quot;)</code></pre>
+<p><code>trans_2_md.py</code></p>
+<pre><code class="python">import os
+import html2text
+from lxml import etree
 
-val df = data.map(_.split(&quot;,&quot;)).map(x=&gt;Highway(x(0).toInt, x(1).toString, x(2).toInt, x(3).toFloat, x(4).toFloat)).toDF
+text_maker = html2text.HTML2Text()
+text_maker.ignore_links = True
+text_maker.bypass_tables = False
 
-df.show
+files_list = os.listdir(&#39;./source&#39;)
 
-+---+--------------+----+----------+---------+
-|fid|          name|kind|       lon|      lat|
-+---+--------------+----+----------+---------+
-|  0|      东至出口|8301| 117.00496| 30.08415|
-|  1|    太平湖出口|8301| 117.96871|30.322758|
-|  2|          入口|8302| 117.90406|30.392708|
-|  3|          入口|8302|   117.084|  30.4774|
-+---+--------------+----+----------+---------+
+for filename in files_list:
+    with open(&quot;./source/&quot; + filename, &quot;r&quot;) as f:
+        art_html = f.read()
+        art_tree = etree.HTML(art_html)
+        try:
+            art_content = art_tree.xpath(&quot;//div[@id=&#39;block-aadotcom-content&#39;]&quot;)[0]
+            art_content_html = str(etree.tostring(art_content, method=&quot;html&quot;), encoding=&quot;utf-8&quot;)
+            art_content_html = art_content_html.replace(&quot;\\n&quot;, &quot;&quot;)
+            art_md = text_maker.handle(str(art_content_html))
+            filename = filename.split(&#39;.&#39;)[0]
+            art_md = &quot;## &quot; + filename + &quot;\n&quot; + art_md
+            end_num = art_md.rfind(&#39;The Scala CookBook&#39;)
+            art_md = art_md[:end_num]
 
-df.printSchema()
-
-root
- |-- fid: integer (nullable = false)
- |-- name: string (nullable = true)
- |-- kind: integer (nullable = false)
- |-- lon: float (nullable = false)
- |-- lat: float (nullable = false)
-
- df.cache()
-
-// 以kind为维度统计次数
-
-// 方法一:使用groupBy函数
-df.groupBy(&quot;kind&quot;).count().orderBy($&quot;count&quot;.desc).show()
-
-+----+-----+                                                                    
-|kind|count|
-+----+-----+
-|8301|11615|
-|8302|10258|
-+----+-----+
-
-// 方法二: 使用sql
-
-df.createOrReplaceTempView(&quot;highway&quot;)
-
-ss.sql(&quot;select kind, count(*) as num from highway group by kind order by num desc&quot;).show()
-
-+----+-----+
-|kind|  num|
-+----+-----+
-|8301|11615|
-|8302|10258|
-+----+-----+
-
-
- val summary = df.describe()
-summary: org.apache.spark.sql.DataFrame = [summary: string, fid: string ... 4 more fields]
-
-summary.show()
-+-------+-----------------+------------+------------------+------------------+-----------------+
-|summary|              fid|        name|              kind|               lon|              lat|
-+-------+-----------------+------------+------------------+------------------+-----------------+
-|  count|            21873|       21873|             21873|             21873|            21873|
-|   mean|          10936.0|        null|  8301.46898002103|113.86118025643036|32.16994257129792|
-| stddev|6314.335554909954|        null|0.4990482412048125| 6.897239660174894|6.430847299197006|
-|    min|                0|    一品出口|              8301|         80.470375|        18.296991|
-|    max|            21872|Ｘ６１２出口|              8302|         131.12318|        49.616005|
-+-------+-----------------+------------+------------------+------------------+-----------------+
-
-</code></pre>
+            with open(&quot;./result/&quot; + filename + &quot;.md&quot;, &quot;w&quot;) as wf:
+                wf.write(art_md)
+        except:
+            print(filename)
+print(&quot;Done&quot;)</code></pre>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">

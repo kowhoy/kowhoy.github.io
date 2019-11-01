@@ -62,15 +62,15 @@
             
                 <a href="javascript:;"><b>「 </b>Article<b> 」</b></a>
             
-            October 23, 2019
+            November 01, 2019
         </p>
-        <h3 class="post-title animated fadeInDown"><a href="/2019/10/23/pandas的datetime64-ns-fillna的异常/" title="pandas的datetime64[ns]fillna的异常" class="posttitle">pandas的datetime64[ns]fillna的异常</a></h3>
+        <h3 class="post-title animated fadeInDown"><a href="/2019/11/01/用python将scala-cookbook保存为md/" title="用python将scala_cookbook保存为md" class="posttitle">用python将scala_cookbook保存为md</a></h3>
         
             <p class="post-count animated fadeInDown">
                 
                     <span>
                         <b class="iconfont icon-text2"></b> <i>Words count</i>
-                        1.8k
+                        2.4k
                     </span>
                 
                 
@@ -87,10 +87,13 @@
         
         <div class="md-content animated fadeIn">
             
-                <p>情况说明: pandas的一列类型为datetime64[ns]的列, fillna以后, 数据产生差异，由 2019-10-23 变成 2019-10-23 00:00:00</p>
-<pre><code class="python">In [25]: t1...</code></pre>
+                <h3 id="用python将scala-cookbook保存为md"><a href="#用python将scala-cookbook保存为md" class="headerlink" title="用python将scala_cookbook保存为md"></a>用python将scala_cookbook保存为md</h3><p><a href="http://scalacookbook.com/" target="_blank" rel="noopener">The Scala Cookbook</a>在线阅读</p>
+<p>由于布局和广告，想将每章节保存到本地，方便阅读</p>
+<p>主要分为两个部分:</p>
+<ol>
+<li><p>保存文章的html(save_art_html...</p></li></ol>
             
-            <span class="read-more gradient-text"><a href="/2019/10/23/pandas的datetime64-ns-fillna的异常/" title="Read article" class="posttitle">Read article</a></span>
+            <span class="read-more gradient-text"><a href="/2019/11/01/用python将scala-cookbook保存为md/" title="Read article" class="posttitle">Read article</a></span>
         </div>
     </div>
     
@@ -110,6 +113,62 @@
 
     <div id="primary">
         
+<div class="post" id="post">
+    <div class="post-cover" style="
+            background-image:
+            radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+            url(/img/welcome-cover.jpg);">
+    </div>
+    <div class="else">
+        <p class="animated fadeInDown">
+            
+                <a href="javascript:;"><b>「 </b>Article<b> 」</b></a>
+            
+            October 23, 2019
+        </p>
+        <h3 class="post-title animated fadeInDown"><a href="/2019/10/23/pandas的datetime64-ns-fillna的异常/" title="pandas的datetime64[ns]fillna的异常" class="posttitle">pandas的datetime64[ns]fillna的异常</a></h3>
+        
+            <p class="post-count animated fadeInDown">
+                
+                    <span>
+                        <b class="iconfont icon-text2"></b> <i>Words count</i>
+                        1.8k
+                    </span>
+                
+                
+                    <span>
+                        <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
+                        2 mins.
+                    </span>
+                
+                
+            </p>
+            
+                <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/python/">python</a></li></ul>
+            
+        
+        <div class="md-content animated fadeIn">
+            
+                <p>情况说明: pandas的一列类型为datetime64[ns]的列, fillna以后, 数据产生差异，由 2019-10-23 变成 2019-10-23 00:00:00</p>
+<pre><code class="python">In [25]: t1 = DataFrame({&quot;日期&quot;:[datetime.datetime(2019, 1, 1), None]})                                                                                                          
+
+In [26]: t1                                                                                                                                                                      
+Out[26]: 
+          日期
+0 2019-01-01
+1        NaT
+
+In [27]: t1.fillna(0, inplace=True)                                                                                                                                              
+
+In...</code></pre>
+            
+            <span class="read-more gradient-text"><a href="/2019/10/23/pandas的datetime64-ns-fillna的异常/" title="Read article" class="posttitle">Read article</a></span>
+        </div>
+    </div>
+</div>
+
+
+
 <div class="post" id="post">
     <div class="post-cover" style="
             background-image:
