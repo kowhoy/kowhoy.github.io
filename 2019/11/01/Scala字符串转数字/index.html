@@ -5,13 +5,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>pandas的datetime64[ns]fillna的异常 - ko_whoy</title>
+    <title>Scala字符串转数字 - ko_whoy</title>
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate">
     <meta name="keywords" content="ko_whoy,"> 
-    <meta name="description" content="情况说明: pandas的一列类型为datetime64[ns]的列, fillna以后, 数据产生差异，由 2019-10-23 变成 2019-10-23 00:00:00
-In [25]: t,"> 
+    <meta name="description" content="how to parse number from string in scala?
+
+使用to*
+
+
+toInt, toDouble, toFloat, toLong, toShort, toByt,"> 
     <meta name="author" content="ko_whoy"> 
     <link rel="alternative" href="atom.xml" title="ko_whoy" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -31,7 +35,7 @@ In [25]: t,">
     <div class="bar" style="width: 0;"></div>
     <a id="home-icon" class="image-icon icon-home iconfont" href="javascript:;" data-url="https://kowhoy.github.io"></a>
     <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
-    <h3 class="subtitle">pandas的datetime64[ns]fillna的异常</h3>
+    <h3 class="subtitle">Scala字符串转数字</h3>
     <div class="social">
 <!--        <div class="like-icon">-->
 <!--            <a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
@@ -60,15 +64,15 @@ In [25]: t,">
                 
                     <a href="javascript:;"><b>「 </b>Article<b> 」</b></a>
                 
-                October 23, 2019
+                November 01, 2019
             </p>
-            <h3 class="post-title animated fadeInDown"><a href="/2019/10/23/pandas的datetime64-ns-fillna的异常/" title="pandas的datetime64[ns]fillna的异常">pandas的datetime64[ns]fillna的异常</a></h3>
+            <h3 class="post-title animated fadeInDown"><a href="/2019/11/01/Scala字符串转数字/" title="Scala字符串转数字">Scala字符串转数字</a></h3>
             
                 <p class="post-count animated fadeInDown">
                     
                         <span>
                         <b class="iconfont icon-text2"></b> <i>Words count</i>
-                        1.8k
+                        2.2k
                     </span>
                     
                     
@@ -82,7 +86,7 @@ In [25]: t,">
                 </p>
             
             
-                <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/python/">python</a></li></ul>
+                <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Scala/">Scala</a></li></ul>
             
         </div>
     </div>
@@ -103,38 +107,91 @@ In [25]: t,">
 <div class="article">
     <div class='main'>
         <div class="content markdown animated fadeIn slower">
-            <p>情况说明: pandas的一列类型为datetime64[ns]的列, fillna以后, 数据产生差异，由 2019-10-23 变成 2019-10-23 00:00:00</p>
-<pre><code class="python">In [25]: t1 = DataFrame({&quot;日期&quot;:[datetime.datetime(2019, 1, 1), None]})                                                                                                          
-
-In [26]: t1                                                                                                                                                                      
-Out[26]: 
-          日期
-0 2019-01-01
-1        NaT
-
-In [27]: t1.fillna(0, inplace=True)                                                                                                                                              
-
-In [28]: t1                                                                                                                                                                      
-Out[28]: 
-                    日期
-0  2019-01-01 00:00:00
-1                    0
+            <p>how to parse number from string in scala?</p>
+<ol>
+<li>使用<code>to*</code></li>
+</ol>
+<blockquote>
+<p><code>toInt</code>, <code>toDouble</code>, <code>toFloat</code>, <code>toLong</code>, <code>toShort</code>, <code>toByte</code></p>
+</blockquote>
+<pre><code class="scala">&quot;11&quot;.toInt
+&quot;12.2&quot;.toFloat
 </code></pre>
-<p>如果没有空数据，就不会出现</p>
-<pre><code class="python">In [29]: t2 = DataFrame({&quot;日期&quot;:[datetime.datetime(2019, 1, 1)]})                                                                                                                
+<ol start="2">
+<li>使用 <code>BigInt()</code> <code>BigDecimal</code><pre><code class="scala">val b = BigInt(&quot;1&quot;)
+</code></pre>
+</li>
+</ol>
+<p>val c = BigDecimal(“2.33444”)</p>
+<pre><code>
+3. 使用 `Integer.parseInt()`
+如果要指定转化进制，使用Integer.parseInt()
+```scala
+scala&gt; **Integer.parseInt(&quot;1&quot;, 2)**
+res0: Int = 1
 
-In [30]: t2                                                                                                                                                                      
-Out[30]: 
-          日期
-0 2019-01-01
+scala&gt; **Integer.parseInt(&quot;10&quot;, 2)**
+res1: Int = 2
 
-In [31]: t2.fillna(0, inplace=True)                                                                                                                                              
+scala&gt; **Integer.parseInt(&quot;100&quot;, 2)**
+res2: Int = 4
 
-In [32]: t2                                                                                                                                                                      
-Out[32]: 
-          日期
-0 2019-01-01</code></pre>
+scala&gt; **Integer.parseInt(&quot;1&quot;, 8)**
+res3: Int = 1
 
+scala&gt; **Integer.parseInt(&quot;10&quot;, 8)**
+res4: Int = 8</code></pre><ol start="4">
+<li>使用隐式类<pre><code class="scala">implicit class String2Int(s:String) {
+  def toInt(radix:Int) = Integer.parseInt(s, radix)
+}
+</code></pre>
+</li>
+</ol>
+<p>scala&gt; <strong>“1”.toInt(2)</strong><br>res0: Int = 1</p>
+<p>scala&gt; <strong>“10”.toInt(2)</strong><br>res1: Int = 2</p>
+<p>scala&gt; <strong>“100”.toInt(2)</strong><br>res2: Int = 4</p>
+<p>scala&gt; <strong>“100”.toInt(8)</strong><br>res3: Int = 64</p>
+<p>scala&gt; <strong>“100”.toInt(16)</strong><br>res4: Int = 256</p>
+<pre><code>
+----
+
+这些方式当参数不满足参数要求的话，会&quot;throws NumberFormatException&quot;，怎么处理不显示报错？
+1. 使用 `try...catch...`
+
+2. 使用 `match`
+
+```scala
+object ParseNum {
+   def toInt(s:String): Option[Int] = {
+     try {
+       Some(s.toInt)
+     } catch {
+       case e: NumberFormatException =&gt; None
+     }
+   }
+
+  def toInt2(s:String): Int = {
+    try {
+      s.toInt
+    } catch {
+      case e: NumberFormatException =&gt; 0
+    }
+  }
+
+  val s = &quot;c&quot;
+  val res = toInt(s) match {
+    case Some(n) =&gt; println(n)
+    case None =&gt; println(&quot;aaaaa&quot;)
+  }
+
+  def main(args: Array[String]): Unit = {
+    val a = toInt(&quot;1a&quot;)
+    val b = toInt2(&quot;1&quot;)
+    println(toInt(&quot;a&quot;).getOrElse(0))
+    println(b)
+  }
+}
+</code></pre>
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
                 <source type="audio/mpeg" src="">

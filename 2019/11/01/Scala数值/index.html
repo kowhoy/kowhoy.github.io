@@ -5,13 +5,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>pandas的datetime64[ns]fillna的异常 - ko_whoy</title>
+    <title>Scala数值 - ko_whoy</title>
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate">
     <meta name="keywords" content="ko_whoy,"> 
-    <meta name="description" content="情况说明: pandas的一列类型为datetime64[ns]的列, fillna以后, 数据产生差异，由 2019-10-23 变成 2019-10-23 00:00:00
-In [25]: t,"> 
+    <meta name="description" content="scala数值
++= -=scala中不支持 ++ 或者 – 的操作，使用 += -= *= 这些， 需要注意的是，进行自增自减等操作的变量需要是var可变类型的，不可以是val
+
+浮点型数字比较可,"> 
     <meta name="author" content="ko_whoy"> 
     <link rel="alternative" href="atom.xml" title="ko_whoy" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -31,7 +33,7 @@ In [25]: t,">
     <div class="bar" style="width: 0;"></div>
     <a id="home-icon" class="image-icon icon-home iconfont" href="javascript:;" data-url="https://kowhoy.github.io"></a>
     <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
-    <h3 class="subtitle">pandas的datetime64[ns]fillna的异常</h3>
+    <h3 class="subtitle">Scala数值</h3>
     <div class="social">
 <!--        <div class="like-icon">-->
 <!--            <a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
@@ -60,21 +62,21 @@ In [25]: t,">
                 
                     <a href="javascript:;"><b>「 </b>Article<b> 」</b></a>
                 
-                October 23, 2019
+                November 01, 2019
             </p>
-            <h3 class="post-title animated fadeInDown"><a href="/2019/10/23/pandas的datetime64-ns-fillna的异常/" title="pandas的datetime64[ns]fillna的异常">pandas的datetime64[ns]fillna的异常</a></h3>
+            <h3 class="post-title animated fadeInDown"><a href="/2019/11/01/Scala数值/" title="Scala数值">Scala数值</a></h3>
             
                 <p class="post-count animated fadeInDown">
                     
                         <span>
                         <b class="iconfont icon-text2"></b> <i>Words count</i>
-                        1.8k
+                        1.4k
                     </span>
                     
                     
                         <span>
                         <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
-                        2 mins.
+                        1 mins.
                     </span>
                     
                     
@@ -82,7 +84,7 @@ In [25]: t,">
                 </p>
             
             
-                <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/python/">python</a></li></ul>
+                <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Scala/">Scala</a></li></ul>
             
         </div>
     </div>
@@ -103,37 +105,56 @@ In [25]: t,">
 <div class="article">
     <div class='main'>
         <div class="content markdown animated fadeIn slower">
-            <p>情况说明: pandas的一列类型为datetime64[ns]的列, fillna以后, 数据产生差异，由 2019-10-23 变成 2019-10-23 00:00:00</p>
-<pre><code class="python">In [25]: t1 = DataFrame({&quot;日期&quot;:[datetime.datetime(2019, 1, 1), None]})                                                                                                          
+            <h2 id="scala数值"><a href="#scala数值" class="headerlink" title="scala数值"></a>scala数值</h2><ol>
+<li><p>+= -=<br>scala中不支持 ++ 或者 – 的操作，使用 += -= *= 这些， 需要注意的是，进行自增自减等操作的变量需要是var可变类型的，不可以是val</p>
+</li>
+<li><p>浮点型数字比较<br>可以写一个工具函数</p>
+</li>
+</ol>
+<pre><code class="scala">def ~= (x:Double, y:Double, precision:Double) = {
+    if ((x-y).abs &lt; precision) true else false
+}
+val a = 0.3
+val b = 0.2 + 0.1
+~=(a, b, 0.1)</code></pre>
+<ol start="3">
+<li>随机数<br>使用<code>scala.util.Random</code>类</li>
+</ol>
+<pre><code class="scala">val r = scala.util.Random
 
-In [26]: t1                                                                                                                                                                      
-Out[26]: 
-          日期
-0 2019-01-01
-1        NaT
+r.nextInt
 
-In [27]: t1.fillna(0, inplace=True)                                                                                                                                              
+r.nextFloat
 
-In [28]: t1                                                                                                                                                                      
-Out[28]: 
-                    日期
-0  2019-01-01 00:00:00
-1                    0
-</code></pre>
-<p>如果没有空数据，就不会出现</p>
-<pre><code class="python">In [29]: t2 = DataFrame({&quot;日期&quot;:[datetime.datetime(2019, 1, 1)]})                                                                                                                
+r.nextDouble
 
-In [30]: t2                                                                                                                                                                      
-Out[30]: 
-          日期
-0 2019-01-01
+r.nextInt(100)  //0~99随机整数
 
-In [31]: t2.fillna(0, inplace=True)                                                                                                                                              
+r.between(90, 100)
 
-In [32]: t2                                                                                                                                                                      
-Out[32]: 
-          日期
-0 2019-01-01</code></pre>
+r.nextPrintableChar
+
+range = 0 to r.nextInt(10)</code></pre>
+<ol start="4">
+<li>创建数值区间、列表或数组</li>
+</ol>
+<p>使用 <code>to</code> 创建整数range</p>
+<pre><code class="scala">val r = 1 to 10</code></pre>
+<p>使用 <code>by</code> 指定步长</p>
+<pre><code class="scala">val r = 1 to 10 by 2</code></pre>
+<p>使用 <code>until</code> 创建</p>
+<pre><code class="scala">for (i &lt;- 1 until 5) println(i)</code></pre>
+<pre><code class="scala">val x = (1 to 10).toArray
+
+val y = (1 until 10).toList</code></pre>
+<ol start="5">
+<li>格式化数字和货币</li>
+</ol>
+<p><code>f&quot;&quot;</code></p>
+<p><code>&quot;&quot;.format</code></p>
+<p><code>java.text.NumberFormat.getIntegerInstance</code></p>
+<p><code>java.text.NumberFormat.getInstance</code></p>
+<p><code>java.text.NumberFormat.getCurrencyInstance</code></p>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">

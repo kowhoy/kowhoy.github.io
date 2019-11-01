@@ -62,21 +62,21 @@
             
                 <a href="javascript:;"><b>「 </b>Article<b> 」</b></a>
             
-            October 31, 2019
+            November 01, 2019
         </p>
-        <h3 class="post-title animated fadeInDown"><a href="/2019/10/31/scala-implicit/" title="scala_implicit" class="posttitle">scala_implicit</a></h3>
+        <h3 class="post-title animated fadeInDown"><a href="/2019/11/01/Scala数值/" title="Scala数值" class="posttitle">Scala数值</a></h3>
         
             <p class="post-count animated fadeInDown">
                 
                     <span>
                         <b class="iconfont icon-text2"></b> <i>Words count</i>
-                        2.6k
+                        1.4k
                     </span>
                 
                 
                     <span>
                         <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
-                        2 mins.
+                        1 mins.
                     </span>
                 
                 
@@ -87,13 +87,12 @@
         
         <div class="md-content animated fadeIn">
             
-                <h3 id="scala的-implicit的初步使用"><a href="#scala的-implicit的初步使用" class="headerlink" title="scala的 implicit的初步使用"></a>scala的 implicit的初步使用</h3><ol>
-<li>隐式参数<br>效果跟函数参数使用默认值类似，但是使用更灵活</li>
-</ol>
-<pre><code class="scala">object ImplicitParamsDemo {
-  implicit val name:String...</code></pre>
+                <ol>
+<li><p>+= -=<br>scala中不支持 ++ 或者 – 的操作，使用 += -= *= 这些， 需要注意的是，进行自增自减等操作的变量需要是var可变类型的，不可以是val</p>
+</li>
+<li><p>浮点型数字比较<br>可以写一个工具函数...</p></li></ol>
             
-            <span class="read-more gradient-text"><a href="/2019/10/31/scala-implicit/" title="Read article" class="posttitle">Read article</a></span>
+            <span class="read-more gradient-text"><a href="/2019/11/01/Scala数值/" title="Read article" class="posttitle">Read article</a></span>
         </div>
     </div>
     
@@ -113,6 +112,123 @@
 
     <div id="primary">
         
+<div class="post" id="post">
+    <div class="post-cover" style="
+            background-image:
+            radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+            url(/img/welcome-cover.jpg);">
+    </div>
+    <div class="else">
+        <p class="animated fadeInDown">
+            
+                <a href="javascript:;"><b>「 </b>Article<b> 」</b></a>
+            
+            November 01, 2019
+        </p>
+        <h3 class="post-title animated fadeInDown"><a href="/2019/11/01/Scala字符串转数字/" title="Scala字符串转数字" class="posttitle">Scala字符串转数字</a></h3>
+        
+            <p class="post-count animated fadeInDown">
+                
+                    <span>
+                        <b class="iconfont icon-text2"></b> <i>Words count</i>
+                        2.2k
+                    </span>
+                
+                
+                    <span>
+                        <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
+                        2 mins.
+                    </span>
+                
+                
+            </p>
+            
+                <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Scala/">Scala</a></li></ul>
+            
+        
+        <div class="md-content animated fadeIn">
+            
+                <p>how to parse number from string in scala?</p>
+<ol>
+<li>使用<code>to*</code></li>
+</ol>
+<blockquote>
+<p><code>toInt</code>, <code>toDouble</code>, <code>toFloat</code>, <code>toLong</code>, <code>toShort</code>, <code>toByte</code></p>
+</blockquote>
+<pre><code class="scala">&quot;11&quot;.toInt
+&quot;12.2&quot;.toFloat
+</code></pre>
+<ol start="2">
+<li>使用 <code>BigInt()</code> <code>BigDecimal</code><pre><code class="scala">val b = BigInt(&quot;1&quot;)
+</code></pre>
+</li>
+</ol>
+<p>val c = BigDecimal(“2.33444”)</p>
+<pre><code>
+3. 使用 `Integer...</code></pre>
+            
+            <span class="read-more gradient-text"><a href="/2019/11/01/Scala字符串转数字/" title="Read article" class="posttitle">Read article</a></span>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="post" id="post">
+    <div class="post-cover" style="
+            background-image:
+            radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+            url(/img/welcome-cover.jpg);">
+    </div>
+    <div class="else">
+        <p class="animated fadeInDown">
+            
+                <a href="javascript:;"><b>「 </b>Article<b> 」</b></a>
+            
+            October 31, 2019
+        </p>
+        <h3 class="post-title animated fadeInDown"><a href="/2019/10/31/scala-implicit/" title="scala_implicit" class="posttitle">scala_implicit</a></h3>
+        
+            <p class="post-count animated fadeInDown">
+                
+                    <span>
+                        <b class="iconfont icon-text2"></b> <i>Words count</i>
+                        2.6k
+                    </span>
+                
+                
+                    <span>
+                        <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
+                        2 mins.
+                    </span>
+                
+                
+            </p>
+            
+                <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Scala/">Scala</a></li></ul>
+            
+        
+        <div class="md-content animated fadeIn">
+            
+                <h3 id="scala的-implicit的初步使用"><a href="#scala的-implicit的初步使用" class="headerlink" title="scala的 implicit的初步使用"></a>scala的 implicit的初步使用</h3><ol>
+<li>隐式参数<br>效果跟函数参数使用默认值类似，但是使用更灵活</li>
+</ol>
+<pre><code class="scala">object ImplicitParamsDemo {
+  implicit val name:String = &quot;default&quot;
+
+  log(&quot;init&quot;)
+
+  def log(msg:String)(implicit name:String):Unit = println(s&quot;[$name] $msg&quot;)
+
+  def process1():Unit ...</code></pre>
+            
+            <span class="read-more gradient-text"><a href="/2019/10/31/scala-implicit/" title="Read article" class="posttitle">Read article</a></span>
+        </div>
+    </div>
+</div>
+
+
+
 <div class="post" id="post">
     <div class="post-cover" style="
             background-image:
