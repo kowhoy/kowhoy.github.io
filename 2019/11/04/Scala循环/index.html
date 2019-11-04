@@ -5,16 +5,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>scala_implicit - ko_whoy</title>
+    <title>Scala循环 - ko_whoy</title>
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate">
     <meta name="keywords" content="ko_whoy,"> 
-    <meta name="description" content="scala的 implicit的初步使用
-隐式参数效果跟函数参数使用默认值类似，但是使用更灵活
+    <meta name="description" content="Scala循环
+for循环
 
-object ImplicitParamsDemo {
-  implicit val name:St,"> 
+
+使用 yield生成新数组
+
+val a = Array(&amp;quot;apple&amp;quot;, &amp;quot;banana&amp;quot;, &amp;quot;orange&amp;qu,"> 
     <meta name="author" content="ko_whoy"> 
     <link rel="alternative" href="atom.xml" title="ko_whoy" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -34,7 +36,7 @@ object ImplicitParamsDemo {
     <div class="bar" style="width: 0;"></div>
     <a id="home-icon" class="image-icon icon-home iconfont" href="javascript:;" data-url="https://kowhoy.github.io"></a>
     <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
-    <h3 class="subtitle">scala_implicit</h3>
+    <h3 class="subtitle">Scala循环</h3>
     <div class="social">
 <!--        <div class="like-icon">-->
 <!--            <a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
@@ -63,21 +65,21 @@ object ImplicitParamsDemo {
                 
                     <a href="javascript:;"><b>「 </b>Article<b> 」</b></a>
                 
-                October 31, 2019
+                November 04, 2019
             </p>
-            <h3 class="post-title animated fadeInDown"><a href="/2019/10/31/scala-implicit/" title="scala_implicit">scala_implicit</a></h3>
+            <h3 class="post-title animated fadeInDown"><a href="/2019/11/04/Scala循环/" title="Scala循环">Scala循环</a></h3>
             
                 <p class="post-count animated fadeInDown">
                     
                         <span>
                         <b class="iconfont icon-text2"></b> <i>Words count</i>
-                        2.6k
+                        3.4k
                     </span>
                     
                     
                         <span>
                         <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
-                        2 mins.
+                        3 mins.
                     </span>
                     
                     
@@ -106,105 +108,155 @@ object ImplicitParamsDemo {
 <div class="article">
     <div class='main'>
         <div class="content markdown animated fadeIn slower">
-            <h3 id="scala的-implicit的初步使用"><a href="#scala的-implicit的初步使用" class="headerlink" title="scala的 implicit的初步使用"></a>scala的 implicit的初步使用</h3><ol>
-<li>隐式参数<br>效果跟函数参数使用默认值类似，但是使用更灵活</li>
+            <h3 id="Scala循环"><a href="#Scala循环" class="headerlink" title="Scala循环"></a>Scala循环</h3><ol>
+<li>for循环</li>
 </ol>
-<pre><code class="scala">object ImplicitParamsDemo {
-  implicit val name:String = &quot;default&quot;
+<ul>
+<li>使用 yield生成新数组</li>
+</ul>
+<pre><code class="scala">val a = Array(&quot;apple&quot;, &quot;banana&quot;, &quot;orange&quot;)
 
-  log(&quot;init&quot;)
+for (e &lt;- a) println(e)
 
-  def log(msg:String)(implicit name:String):Unit = println(s&quot;[$name] $msg&quot;)
+for (e &lt;- a) {
+    val s = e.toUpperCase
+    println(s)
+}
 
-  def process1():Unit = {
-    implicit val name:String = &quot;process&quot;
-    log(&quot;doing something&quot;)
-  }
+//生成新的数组
+val newArray = for (e &lt;- a) yield e.toUpperCase
 
-  def process2():Unit = {
-    log(&quot;doing other something&quot;)
-  }
+val newArray = for (e &lt;- a) yield {
+    val s = s.toUpperCase
+    s
+}
 
-  def main(args:Array[String]):Unit = {
-    implicit val name:String = &quot;main&quot;
-    log(&quot;start1&quot;)
-    process1()
-    log(&quot;start2&quot;)
-    process2()
-    log(&quot;end&quot;)(&quot;custom name&quot;)
-  }
+-  使用计数器的方式遍历
+
+```scala
+for (i &lt;- 0 until a.length) {
+    println(s&quot;$i is ${a(i)}&quot;)
 }</code></pre>
-<p>输出:</p>
-<pre><code>[default] init
-[main] start1
-[process] doing something
-[main] start2
-[default] doing other something
-[custom name] end</code></pre><ol start="2">
-<li>隐式方法</li>
-</ol>
-<pre><code class="scala">import java.time.LocalDate
+<p><code>zipWithIndex</code></p>
+<pre><code class="scala">for ((e, count) &lt;- a.zipWithIndex) {
+    println(s&quot;$count is $e&quot;)
+}</code></pre>
+<ul>
+<li>在for语句中可以加上判断条件</li>
+</ul>
+<pre><code class="scala">for (i &lt;- 1 to 10 if i &lt; 4) println(i)
 
-class DateHelper(offset:Int) {
-  def days(when:String):LocalDate = {
-    val today = LocalDate.now
+for ((e, count) &lt;- a.zipWithIndex if count &lt; 2) {
+    println(count)
+}</code></pre>
+<ul>
+<li>遍历map</li>
+</ul>
+<pre><code class="scala">val names = Map(&quot;fname&quot; -&gt; &quot;Robert&quot;, &quot;lname&quot; -&gt; &quot;Goren&quot;)
 
-    when match {
-      case &quot;ago&quot; =&gt; today.minusDays(offset)
-      case &quot;from_now&quot; =&gt; today.plusDays(offset)
-      case _ =&gt; today
+for ((key, value) &lt;- names) {
+    println(s&quot;key:$key, value:$value&quot;)
+}</code></pre>
+<hr>
+<ul>
+<li>foreach</li>
+</ul>
+<pre><code class="scala">a.foreach(println)
+
+a.foreach(e =&gt; println(e.toUpperCase))
+
+a.foreach {
+    e =&gt; val s = e.toUpperCase
+    println(s)
+}</code></pre>
+<hr>
+<p>for循环中的多次计数器</p>
+<pre><code class="scala">for {
+    i &lt;- 1 to 2
+    j &lt;- 1 to 2
+} println(s&quot;i=$i, j=$j&quot;)
+
+val array = Array.ofDim[Int](2, 2)
+
+scala&gt; array(0)(0) = 0
+
+scala&gt; array(0)(1) = 1
+
+scala&gt; array(1)(0) = 2
+
+scala&gt; array(1)(1) = 3
+
+scala&gt; array
+res18: Array[Array[Int]] = Array(Array(0, 1), Array(2, 3))
+
+scala&gt; for {
+     | i &lt;- 0 to 1
+     | j &lt;- 0 to 1
+     | } println(s&quot;($i)($j) = ${array(i)(j)}&quot;)
+(0)(0) = 0
+(0)(1) = 1
+(1)(0) = 2
+(1)(1) = 3</code></pre>
+<hr>
+<p>在for语句中使用if(卫语句)</p>
+<pre><code class="scala">for {
+    i &lt;- 1 to 10
+    if i%2 == 0
+} println(i)
+
+for {
+    i &lt;- 1 to 10
+    if i &gt; 3
+    if i &lt; 5
+} println(i)
+
+for {
+    i &lt;- 1 to 10
+    if (i &gt; 3 &amp;&amp; i &lt; 5)
+} println(i)</code></pre>
+<p>不带卫语句的循环可以使用 <code>map</code></p>
+<pre><code class="scala">var fruits = scala.collection.mutable.ArrayBuffer[String]()
+fruits += &quot;apple&quot;
+fruits += &quot;banana&quot;
+fruits += &quot;orange&quot;
+
+val out = for (e &lt;- fruits) yield e.toUpperCase
+
+val out = fruits.map(_.toUpperCase)
+
+val in = out.map(_.toLowerCase)</code></pre>
+<hr>
+<p>scala 中的break 和 continue</p>
+<p>在scala中是没有<code>break</code>和 <code>continue</code>关键字的</p>
+<p><code>import util.control.Breaks._</code> 引入，breakable 在循环体内为continue， 在循环体外为break</p>
+<pre><code class="scala">import util.control.Breaks._
+
+object BreakAndContinurDemo extends App {
+    println(&quot;=== Break example ===&quot;)
+    breakable {
+        for (i &lt;- 1 to 10) {
+            println(i)
+            if (i &gt; 4) break
+        }
     }
-  }
-}
 
-object DateHelper {
-  val ago = &quot;ago&quot;
-  val from_now = &quot;from_now&quot;
+    println(&quot;=== Continue example ===&quot;)
+    val searchStr = &quot;peter piper picked a peck of pickled peppers&quot;
+    var numPs = 0
 
-  implicit def convertInt2DateHelper(offset:Int):DateHelper = new DateHelper(offset)
-}
-
-object DaysDSL extends App {
-  import DateHelper._
-
-  println(2 days ago)
-  println(5 days from_now)
-  println(convertInt2DateHelper(2).days(&quot;ago&quot;))
-  println(convertInt2DateHelper(5) days from_now)
-}</code></pre>
-<p>输出:</p>
-<pre><code>2019-10-29
-2019-11-05
-2019-10-29
-2019-11-05</code></pre><ol start="3">
-<li>隐式类</li>
-</ol>
-<pre><code class="scala">import java.time.LocalDate
-
-object DateUnit {
-  val ago = &quot;ago&quot;
-  val from_now = &quot;from_now&quot;
-
-  implicit class DateHelpImplicitClass(offset:Int) {
-    def days(when:String):LocalDate = {
-      val today = LocalDate.now
-      when match {
-        case &quot;ago&quot; =&gt; today.minusDays(offset)
-        case &quot;from_now&quot; =&gt; today.plusDays(offset)
-        case _ =&gt; today
-      }
+    for (i &lt;- 0 until searchStr.length) {
+        breakable {
+            if (searchStr.charAt(i) != &#39;p&#39;) {
+                break
+            } else {
+                numPs += 1
+            }
+        }
     }
-  }
+
+    println(&quot;Found &quot; + numPs + &quot; p&#39;s in the string&quot;)
 }
-
-object DaysDSL2 extends App {
-  import DateUnit._
-
-  println(2 days ago)
-  println(5 days from_now)
-  println(DateHelpImplicitClass(2).days(&quot;ago&quot;))
-  println(DateHelpImplicitClass(5) days &quot;from_now&quot;)
-}</code></pre>
+</code></pre>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
