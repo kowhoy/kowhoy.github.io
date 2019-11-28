@@ -64,19 +64,19 @@
             
             October 25, 2019
         </p>
-        <h3 class="post-title animated fadeInDown"><a href="/2019/10/25/Scala传值函数和传名函数/" title="Scala传值函数和传名函数" class="posttitle">Scala传值函数和传名函数</a></h3>
+        <h3 class="post-title animated fadeInDown"><a href="/2019/10/25/Scala偏函数和偏应用函数/" title="Scala偏函数和偏应用函数" class="posttitle">Scala偏函数和偏应用函数</a></h3>
         
             <p class="post-count animated fadeInDown">
                 
                     <span>
                         <b class="iconfont icon-text2"></b> <i>Words count</i>
-                        831
+                        2.2k
                     </span>
                 
                 
                     <span>
                         <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
-                        1 mins.
+                        2 mins.
                     </span>
                 
                 
@@ -87,12 +87,9 @@
         
         <div class="md-content animated fadeIn">
             
-                <p>Scala解释器在解析<code>函数参数(function arguments)</code>有两种方式:</p>
-<ol>
-<li>传值调用(call-by-value)<br>先计算参数表达式的值，再应用到函数内部</li>
-<li>传名字调用(call-by-name...</li></ol>
+                <p>偏函数(Partial Function)，是一个数学概念，不是函数的一种。<br>Scala中的偏函数是一个Trait,类型为<code>PartialFunction[A, B]</code>,接受A类型的参数，返回B类型的结果。...</p>
             
-            <span class="read-more gradient-text"><a href="/2019/10/25/Scala传值函数和传名函数/" title="Read article" class="posttitle">Read article</a></span>
+            <span class="read-more gradient-text"><a href="/2019/10/25/Scala偏函数和偏应用函数/" title="Read article" class="posttitle">Read article</a></span>
         </div>
     </div>
     
@@ -112,6 +109,56 @@
 
     <div id="primary">
         
+<div class="post" id="post">
+    <div class="post-cover" style="
+            background-image:
+            radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+            url(/img/welcome-cover.jpg);">
+    </div>
+    <div class="else">
+        <p class="animated fadeInDown">
+            
+                <a href="javascript:;"><b>「 </b>Article<b> 」</b></a>
+            
+            October 25, 2019
+        </p>
+        <h3 class="post-title animated fadeInDown"><a href="/2019/10/25/Scala偏函数和偏应用函数/" title="Scala偏函数和偏应用函数" class="posttitle">Scala偏函数和偏应用函数</a></h3>
+        
+            <p class="post-count animated fadeInDown">
+                
+                    <span>
+                        <b class="iconfont icon-text2"></b> <i>Words count</i>
+                        2.2k
+                    </span>
+                
+                
+                    <span>
+                        <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
+                        2 mins.
+                    </span>
+                
+                
+            </p>
+            
+                <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Scala/">Scala</a></li></ul>
+            
+        
+        <div class="md-content animated fadeIn">
+            
+                <p>偏函数(Partial Function)，是一个数学概念，不是函数的一种。<br>Scala中的偏函数是一个Trait,类型为<code>PartialFunction[A, B]</code>,接受A类型的参数，返回B类型的结果。</p>
+<pre><code class="scala">val pf:PartialFunction(Int, String) = {
+    case 1 =&gt; &quot;one&quot;
+    case 2 =&gt; &quot;two&quot;
+    case 3 =&gt; &quot;three&quot;
+    case _ =&gt; &quot;other...</code></pre>
+            
+            <span class="read-more gradient-text"><a href="/2019/10/25/Scala偏函数和偏应用函数/" title="Read article" class="posttitle">Read article</a></span>
+        </div>
+    </div>
+</div>
+
+
+
 <div class="post" id="post">
     <div class="post-cover" style="
             background-image:
