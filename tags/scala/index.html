@@ -62,21 +62,21 @@
             
                 <a href="javascript:;"><b>「 </b>Article<b> 」</b></a>
             
-            November 04, 2019
+            December 02, 2019
         </p>
-        <h3 class="post-title animated fadeInDown"><a href="/2019/11/04/Scala循环/" title="Scala循环" class="posttitle">Scala循环</a></h3>
+        <h3 class="post-title animated fadeInDown"><a href="/2019/12/02/Scala数组合并成字符串/" title="Scala数组合并成字符串" class="posttitle">Scala数组合并成字符串</a></h3>
         
             <p class="post-count animated fadeInDown">
                 
                     <span>
                         <b class="iconfont icon-text2"></b> <i>Words count</i>
-                        3.4k
+                        950
                     </span>
                 
                 
                     <span>
                         <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
-                        3 mins.
+                        1 mins.
                     </span>
                 
                 
@@ -87,15 +87,13 @@
         
         <div class="md-content animated fadeIn">
             
-                <h3 id="Scala循环"><a href="#Scala循环" class="headerlink" title="Scala循环"></a>Scala循环</h3><ol>
-<li>for循环</li>
+                <h4 id="Scala数据合并成字符串"><a href="#Scala数据合并成字符串" class="headerlink" title="Scala数据合并成字符串"></a>Scala数据合并成字符串</h4><ol>
+<li>方式一：使用 +=</li>
 </ol>
-<ul>
-<li>使用 yield生成新数组</li>
-</ul>
-<pre><code class="scala">val a = Array(&quot;apple&quot;, &quot;banana&quot;, &quot;orange&quot...</code></pre>
+<pre><code class="scala">scala&gt; val str = &quot;wo, jiu, shi, wo, a&quot;
+str: String = wo, jiu, ...</code></pre>
             
-            <span class="read-more gradient-text"><a href="/2019/11/04/Scala循环/" title="Read article" class="posttitle">Read article</a></span>
+            <span class="read-more gradient-text"><a href="/2019/12/02/Scala数组合并成字符串/" title="Read article" class="posttitle">Read article</a></span>
         </div>
     </div>
     
@@ -115,6 +113,69 @@
 
     <div id="primary">
         
+<div class="post" id="post">
+    <div class="post-cover" style="
+            background-image:
+            radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+            url(/img/welcome-cover.jpg);">
+    </div>
+    <div class="else">
+        <p class="animated fadeInDown">
+            
+                <a href="javascript:;"><b>「 </b>Article<b> 」</b></a>
+            
+            November 04, 2019
+        </p>
+        <h3 class="post-title animated fadeInDown"><a href="/2019/11/04/Scala循环/" title="Scala循环" class="posttitle">Scala循环</a></h3>
+        
+            <p class="post-count animated fadeInDown">
+                
+                    <span>
+                        <b class="iconfont icon-text2"></b> <i>Words count</i>
+                        3.4k
+                    </span>
+                
+                
+                    <span>
+                        <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
+                        3 mins.
+                    </span>
+                
+                
+            </p>
+            
+                <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Scala/">Scala</a></li></ul>
+            
+        
+        <div class="md-content animated fadeIn">
+            
+                <h3 id="Scala循环"><a href="#Scala循环" class="headerlink" title="Scala循环"></a>Scala循环</h3><ol>
+<li>for循环</li>
+</ol>
+<ul>
+<li>使用 yield生成新数组</li>
+</ul>
+<pre><code class="scala">val a = Array(&quot;apple&quot;, &quot;banana&quot;, &quot;orange&quot;)
+
+for (e &lt;- a) println(e)
+
+for (e &lt;- a) {
+    val s = e.toUpperCase
+    println(s)
+}
+
+//生成新的数组
+val newArray = for (e &lt;- a) yield e.toUpperCase
+
+val newArray...</code></pre>
+            
+            <span class="read-more gradient-text"><a href="/2019/11/04/Scala循环/" title="Read article" class="posttitle">Read article</a></span>
+        </div>
+    </div>
+</div>
+
+
+
 <div class="post" id="post">
     <div class="post-cover" style="
             background-image:

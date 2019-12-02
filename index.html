@@ -62,39 +62,38 @@
             
                 <a href="javascript:;"><b>「 </b>Article<b> 」</b></a>
             
-            November 28, 2019
+            December 02, 2019
         </p>
-        <h3 class="post-title animated fadeInDown"><a href="/2019/11/28/DataFrame操作/" title="DataFrame操作" class="posttitle">DataFrame操作</a></h3>
+        <h3 class="post-title animated fadeInDown"><a href="/2019/12/02/Scala数组合并成字符串/" title="Scala数组合并成字符串" class="posttitle">Scala数组合并成字符串</a></h3>
         
             <p class="post-count animated fadeInDown">
                 
                     <span>
                         <b class="iconfont icon-text2"></b> <i>Words count</i>
-                        6.2k
+                        950
                     </span>
                 
                 
                     <span>
                         <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
-                        6 mins.
+                        1 mins.
                     </span>
                 
                 
             </p>
         
         
-            <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Spark/">Spark</a></li></ul>
+            <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Scala/">Scala</a></li></ul>
         
         <div class="md-content animated fadeIn">
             
-                <h3 id="DataFrame操作"><a href="#DataFrame操作" class="headerlink" title="DataFrame操作"></a>DataFrame操作</h3><h4 id="part-1-创建DataFrame"><a href="#part-1-创建DataFrame" class="headerlink" title="part 1, 创建DataFrame"></a>part 1, 创建DataFrame</h4><ol>
-<li>使用Seq</li>
+                <h4 id="Scala数据合并成字符串"><a href="#Scala数据合并成字符串" class="headerlink" title="Scala数据合并成字符串"></a>Scala数据合并成字符串</h4><ol>
+<li>方式一：使用 +=</li>
 </ol>
-<pre><code class="scala">import org.apache.spark.sql.SparkSession
-
-val spark = SparkSession...</code></pre>
+<pre><code class="scala">scala&gt; val str = &quot;wo, jiu, shi, wo, a&quot;
+str: String = wo, jiu, ...</code></pre>
             
-            <span class="read-more gradient-text"><a href="/2019/11/28/DataFrame操作/" title="Read article" class="posttitle">Read article</a></span>
+            <span class="read-more gradient-text"><a href="/2019/12/02/Scala数组合并成字符串/" title="Read article" class="posttitle">Read article</a></span>
         </div>
     </div>
     
@@ -114,6 +113,59 @@ val spark = SparkSession...</code></pre>
 
     <div id="primary">
         
+<div class="post" id="post">
+    <div class="post-cover" style="
+            background-image:
+            radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+            url(/img/welcome-cover.jpg);">
+    </div>
+    <div class="else">
+        <p class="animated fadeInDown">
+            
+                <a href="javascript:;"><b>「 </b>Article<b> 」</b></a>
+            
+            November 28, 2019
+        </p>
+        <h3 class="post-title animated fadeInDown"><a href="/2019/11/28/DataFrame操作/" title="DataFrame操作" class="posttitle">DataFrame操作</a></h3>
+        
+            <p class="post-count animated fadeInDown">
+                
+                    <span>
+                        <b class="iconfont icon-text2"></b> <i>Words count</i>
+                        6.2k
+                    </span>
+                
+                
+                    <span>
+                        <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
+                        6 mins.
+                    </span>
+                
+                
+            </p>
+            
+                <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Spark/">Spark</a></li></ul>
+            
+        
+        <div class="md-content animated fadeIn">
+            
+                <h3 id="DataFrame操作"><a href="#DataFrame操作" class="headerlink" title="DataFrame操作"></a>DataFrame操作</h3><h4 id="part-1-创建DataFrame"><a href="#part-1-创建DataFrame" class="headerlink" title="part 1, 创建DataFrame"></a>part 1, 创建DataFrame</h4><ol>
+<li>使用Seq</li>
+</ol>
+<pre><code class="scala">import org.apache.spark.sql.SparkSession
+
+val spark = SparkSession.builder().appName(&quot;createDataFrame&quot;).master(&quot;local[2]&quot;).getOrCreate()
+
+val createBySeqDf = spark.createDataFrame(Seq(
+    (&quot;xiaoming...</code></pre>
+            
+            <span class="read-more gradient-text"><a href="/2019/11/28/DataFrame操作/" title="Read article" class="posttitle">Read article</a></span>
+        </div>
+    </div>
+</div>
+
+
+
 <div class="post" id="post">
     <div class="post-cover" style="
             background-image:
@@ -568,62 +620,6 @@ val ss = SparkSession.builder.master(&quot;local&quot;).appName(&quot;testDemo&q
 filePath = &quot;~/Desktop/tmp/highway...</code></pre>
             
             <span class="read-more gradient-text"><a href="/2019/10/25/Scala操作Spark示例/" title="Read article" class="posttitle">Read article</a></span>
-        </div>
-    </div>
-</div>
-
-
-
-<div class="post" id="post">
-    <div class="post-cover" style="
-            background-image:
-            radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
-            url(/img/welcome-cover.jpg);">
-    </div>
-    <div class="else">
-        <p class="animated fadeInDown">
-            
-                <a href="javascript:;"><b>「 </b>Article<b> 」</b></a>
-            
-            October 25, 2019
-        </p>
-        <h3 class="post-title animated fadeInDown"><a href="/2019/10/25/Scala函数柯里化-Currying/" title="Scala函数柯里化(Currying)" class="posttitle">Scala函数柯里化(Currying)</a></h3>
-        
-            <p class="post-count animated fadeInDown">
-                
-                    <span>
-                        <b class="iconfont icon-text2"></b> <i>Words count</i>
-                        389
-                    </span>
-                
-                
-                    <span>
-                        <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
-                        1 mins.
-                    </span>
-                
-                
-            </p>
-            
-                <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Scala/">Scala</a></li></ul>
-            
-        
-        <div class="md-content animated fadeIn">
-            
-                <p>将函数进行往下分解</p>
-<pre><code class="scala">def add(x:Int, y:Int) = x + y
-
-// ==&gt; 柯里化
-
-def add(x:Int)(y:Int) = x+y
-// =&gt; 转化
-def add(x:Int)=(y:Int) =&gt; x + y
-</code></pre>
-<p>转化过程： 将add函数看成 x = y的一个匿名函数 x+y<br>接受一个x的参数，返回一个匿名函数，这个匿名函数相当与一个闭包</p>
-<p>柯里化的意义:将多参数的函数等价转化为多个单参数的函数，所有的函数都统一了，<em>?方便lambda演算?</em></p>
-
-            
-            <span class="read-more gradient-text"><a href="/2019/10/25/Scala函数柯里化-Currying/" title="Read article" class="posttitle">Read article</a></span>
         </div>
     </div>
 </div>
