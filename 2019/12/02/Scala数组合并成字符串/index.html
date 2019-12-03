@@ -71,7 +71,7 @@ str: String = wo, jiu,,">
                     
                         <span>
                         <b class="iconfont icon-text2"></b> <i>Words count</i>
-                        950
+                        910
                     </span>
                     
                     
@@ -126,14 +126,16 @@ scala&gt; for (c &lt;- new_ar) resStr += c
 scala&gt; resStr
 res99: String = wojiushiwoa</code></pre>
 <ol start="2">
-<li>方式二: 使用 StringBuilder<pre><code class="scala">scala&gt; val resStr = new StringBuilder
-resStr: StringBuilder =
-</code></pre>
-</li>
+<li>方式二: 使用 StringBuilder</li>
 </ol>
-<p>scala&gt; for (c &lt;- new_ar) resStr ++= c</p>
-<p>scala&gt; resStr<br>res102: StringBuilder = wojiushiwoa</p>
-<pre><code></code></pre>
+<pre><code class="scala">scala&gt; val resStr = new StringBuilder
+resStr: StringBuilder =
+
+scala&gt; for (c &lt;- new_ar) resStr ++= c
+
+scala&gt; resStr
+res102: StringBuilder = wojiushiwoa</code></pre>
+
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
                 <source type="audio/mpeg" src="">
